@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_landing_page_logo_sliders",
+  "info": {
+    "displayName": "logo_slider"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

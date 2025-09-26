@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_charitypartner_page_image_text_cards",
+  "info": {
+    "displayName": "image_text_card"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "text": {
+      "type": "text"
+    },
+    "image_position": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "subtext": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

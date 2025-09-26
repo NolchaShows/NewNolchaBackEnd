@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_landing_page_image_carousal_sections",
+  "info": {
+    "displayName": "image_carousal_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "carousal_item": {
+      "type": "component",
+      "component": "landing-page.carousal-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

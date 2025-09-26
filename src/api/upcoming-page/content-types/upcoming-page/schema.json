@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "upcoming_pages",
+  "info": {
+    "singularName": "upcoming-page",
+    "pluralName": "upcoming-pages",
+    "displayName": "UpcomingPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "upcoming_events_section": {
+      "type": "component",
+      "component": "upcoming-page.upcoming-events",
+      "repeatable": true
+    }
+  }
+}

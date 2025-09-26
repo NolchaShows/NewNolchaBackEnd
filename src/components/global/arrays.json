@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_global_arrays",
+  "info": {
+    "displayName": "arrays"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

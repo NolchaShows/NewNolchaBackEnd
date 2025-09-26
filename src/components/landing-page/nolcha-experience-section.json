@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_landing_page_nolcha_experience_sections",
+  "info": {
+    "displayName": "nolcha_experience_section"
+  },
+  "options": {},
+  "attributes": {
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image_caption": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "accordion_sections": {
+      "type": "component",
+      "component": "landing-page.accordion-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

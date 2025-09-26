@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_landing_page_service_items",
+  "info": {
+    "displayName": "service_item"
+  },
+  "options": {},
+  "attributes": {
+    "service_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "single",
+        "double",
+        "stacked"
+      ]
+    }
+  },
+  "config": {}
+}

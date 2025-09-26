@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_charitypartner_page_text_heroes",
+  "info": {
+    "displayName": "text_hero"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "component": "charitypartner-page.slide",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

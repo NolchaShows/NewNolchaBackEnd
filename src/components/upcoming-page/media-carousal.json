@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_upcoming_page_media_carousals",
+  "info": {
+    "displayName": "media_carousal"
+  },
+  "options": {},
+  "attributes": {
+    "media_id": {
+      "type": "string"
+    },
+    "url": {
+      "type": "component",
+      "component": "global.arrays",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

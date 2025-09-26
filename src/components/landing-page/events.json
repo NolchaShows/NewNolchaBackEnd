@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_page_events",
+  "info": {
+    "displayName": "events"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "video_url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

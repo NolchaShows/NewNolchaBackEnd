@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_artist_page_artist_sections",
+  "info": {
+    "displayName": "artist_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "carousal_item": {
+      "type": "component",
+      "component": "global.arrays",
+      "repeatable": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

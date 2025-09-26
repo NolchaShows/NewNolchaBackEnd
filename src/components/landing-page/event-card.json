@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_landing_page_event_cards",
+  "info": {
+    "displayName": "event_card"
+  },
+  "options": {},
+  "attributes": {
+    "event_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "what_to_expect": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "get_tickets_url": {
+      "type": "string"
+    },
+    "learn_more_url": {
+      "type": "string"
+    },
+    "social_links": {
+      "type": "component",
+      "component": "landing-page.social-links",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

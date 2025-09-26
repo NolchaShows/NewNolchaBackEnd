@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_landing_page_speaker_sections",
+  "info": {
+    "displayName": "speaker_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "speakers": {
+      "type": "component",
+      "component": "landing-page.speaker-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
