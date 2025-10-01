@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_experience_page_partners",
+  "info": {
+    "displayName": "partner"
+  },
+  "options": {},
+  "attributes": {
+    "imageWhite": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imageBlack": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "altText": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "bg-black",
+        "bg-[#E7F0D3]"
+      ]
+    }
+  },
+  "config": {}
+}

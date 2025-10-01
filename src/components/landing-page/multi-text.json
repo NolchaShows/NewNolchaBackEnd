@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_landing_page_multi_texts",
+  "info": {
+    "displayName": "multi_text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

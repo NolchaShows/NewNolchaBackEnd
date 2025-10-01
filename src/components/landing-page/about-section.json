@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_landing_page_about_sections",
+  "info": {
+    "displayName": "about_section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "link_text": {
+      "type": "string"
+    },
+    "paragraphs": {
+      "type": "component",
+      "component": "landing-page.paragraphs",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

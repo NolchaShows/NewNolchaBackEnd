@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designer_pages",
+  "info": {
+    "singularName": "designer-page",
+    "pluralName": "designer-pages",
+    "displayName": "DesignerPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "artisttitle": {
+      "type": "string"
+    },
+    "artistdescription": {
+      "type": "component",
+      "component": "global.arrays",
+      "repeatable": true
+    },
+    "videos": {
+      "type": "component",
+      "component": "designer-page.media-item",
+      "repeatable": true
+    },
+    "galleryImages": {
+      "type": "component",
+      "component": "designer-page.image-item",
+      "repeatable": true
+    },
+    "pressPartners": {
+      "type": "component",
+      "component": "designer-page.press-partners",
+      "repeatable": true
+    }
+  }
+}

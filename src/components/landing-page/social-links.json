@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_landing_page_social_links",
+  "info": {
+    "displayName": "social_links"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

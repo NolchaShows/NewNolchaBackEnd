@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artist_pages",
+  "info": {
+    "singularName": "artist-page",
+    "pluralName": "artist-pages",
+    "displayName": "ArtistPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_heading": {
+      "type": "string"
+    },
+    "artist_section": {
+      "type": "component",
+      "component": "artist-page.artist-section",
+      "repeatable": false
+    },
+    "card": {
+      "type": "component",
+      "component": "artist-page.card",
+      "repeatable": true
+    }
+  }
+}

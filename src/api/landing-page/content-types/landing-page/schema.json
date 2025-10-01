@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "LandingPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "component": "landing-page.hero-section",
+      "repeatable": false
+    },
+    "logo_slider": {
+      "type": "component",
+      "component": "landing-page.logo-slider",
+      "repeatable": false
+    },
+    "about_section": {
+      "type": "component",
+      "component": "landing-page.about-section",
+      "repeatable": false
+    },
+    "recent_events": {
+      "type": "component",
+      "component": "landing-page.recent-events",
+      "repeatable": false
+    },
+    "service_section": {
+      "type": "component",
+      "component": "landing-page.service-section",
+      "repeatable": false
+    },
+    "partner_section": {
+      "type": "component",
+      "component": "landing-page.partner-section",
+      "repeatable": false
+    },
+    "speaker_section": {
+      "type": "component",
+      "component": "landing-page.speaker-section",
+      "repeatable": false
+    },
+    "texthero_section": {
+      "type": "component",
+      "component": "landing-page.texthero-section",
+      "repeatable": false
+    },
+    "nolcha_experience_section": {
+      "type": "component",
+      "component": "landing-page.nolcha-experience-section",
+      "repeatable": false
+    },
+    "partner_section_2": {
+      "type": "component",
+      "component": "landing-page.partner-section",
+      "repeatable": false
+    },
+    "artist_section": {
+      "type": "component",
+      "component": "landing-page.artist-section",
+      "repeatable": false
+    },
+    "carousal_section": {
+      "type": "component",
+      "component": "landing-page.image-carousal-section",
+      "repeatable": false
+    },
+    "contact_section": {
+      "type": "component",
+      "component": "landing-page.contact-section",
+      "repeatable": false
+    }
+  }
+}

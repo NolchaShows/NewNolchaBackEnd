@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_press_page_press_cards",
+  "info": {
+    "displayName": "press-card"
+  },
+  "options": {},
+  "attributes": {
+    "newsPaper": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
