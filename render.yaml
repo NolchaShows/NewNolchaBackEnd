@@ -13,10 +13,6 @@ services:
     buildCommand: npm ci && npm run build
     startCommand: npm run start
     healthCheckPath: /admin
-    disk:
-      name: strapi-uploads
-      mountPath: /opt/render/project/src/public/uploads
-      sizeGB: 5
     envVars:
       - key: NODE_ENV
         value: production
@@ -38,6 +34,14 @@ services:
 
       # Set this to your Render URL or custom domain, e.g. https://your-service.onrender.com
       - key: PUBLIC_URL
+        sync: false
+
+      # Cloudinary (required for media uploads)
+      - key: CLOUDINARY_NAME
+        sync: false
+      - key: CLOUDINARY_KEY
+        sync: false
+      - key: CLOUDINARY_SECRET
         sync: false
 
       # Strapi secrets (generate securely in Render)
