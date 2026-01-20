@@ -40,6 +40,24 @@ services:
       - key: PUBLIC_URL
         sync: false
 
+      # Cloudflare R2 (S3-compatible) for Strapi uploads
+      - key: R2_ENDPOINT
+        sync: false
+      - key: R2_BUCKET
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_REGION
+        value: auto
+      # Optional: if you expose the bucket via a custom domain/CDN, set this
+      - key: R2_PUBLIC_URL
+        sync: false
+      # Optional: store uploads under a folder prefix in the bucket
+      - key: R2_ROOT_PATH
+        value: uploads
+
       # Strapi secrets (generate securely in Render)
       - key: APP_KEYS
         generateValue: true
