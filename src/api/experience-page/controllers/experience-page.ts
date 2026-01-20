@@ -23,7 +23,9 @@ export default factories.createCoreController(
                 populate: ['firstImage', 'secondImage', 'thirdImage'],
               },
               'blocks.gallery': { populate: { items: { populate: ['image'] } } },
-              'blocks.fashion-grid-section': { populate: ['images'] },
+              'blocks.fashion-grid-section': {
+                populate: ['topImage', 'middleImage1', 'middleImage2', 'middleImage3', 'bottomImage'],
+              },
               'blocks.image-text-section': { populate: { image: true, tags: true, paragraphs: true } },
               'blocks.evening-recap-section': { populate: ['video'] },
             },

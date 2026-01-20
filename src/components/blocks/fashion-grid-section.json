@@ -12,10 +12,34 @@
     "rightVideoUrl": {
       "type": "string"
     },
-    "images": {
+    "topImage": {
       "type": "media",
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "middleImage1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "middleImage2": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "middleImage3": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "bottomImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": ["images"]
     }
   }

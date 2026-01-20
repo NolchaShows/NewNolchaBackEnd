@@ -13,26 +13,17 @@
       "required": true,
       "allowedTypes": ["images"]
     },
-    "firstLink": {
-      "type": "string"
-    },
     "secondImage": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
     },
-    "secondLink": {
-      "type": "string"
-    },
     "thirdImage": {
       "type": "media",
       "multiple": false,
       "required": true,
       "allowedTypes": ["images"]
-    },
-    "thirdLink": {
-      "type": "string"
     }
   }
 }
