@@ -7,10 +7,16 @@
   "options": {},
   "attributes": {
     "leftVideoUrl": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
     },
     "rightVideoUrl": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
     },
     "topImage": {
       "type": "media",

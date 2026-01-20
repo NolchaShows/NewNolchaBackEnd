@@ -24,7 +24,15 @@ export default factories.createCoreController(
               },
               'blocks.gallery': { populate: { items: { populate: ['image'] } } },
               'blocks.fashion-grid-section': {
-                populate: ['topImage', 'middleImage1', 'middleImage2', 'middleImage3', 'bottomImage'],
+                populate: [
+                  'leftVideoUrl',
+                  'rightVideoUrl',
+                  'topImage',
+                  'middleImage1',
+                  'middleImage2',
+                  'middleImage3',
+                  'bottomImage',
+                ],
               },
               'blocks.image-text-section': { populate: { image: true, tags: true, paragraphs: true } },
               'blocks.evening-recap-section': { populate: ['video'] },
