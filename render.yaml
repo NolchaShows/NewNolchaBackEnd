@@ -1,6 +1,9 @@
 databases:
   - name: new-nolcha-postgres
-    plan: starter
+    # Render no longer allows legacy Postgres plans (like `starter`) for new DBs.
+    # Pick a current Postgres plan (adjust as needed in Render).
+    plan: basic-256mb
+    diskSizeGB: 15
 
 services:
   - type: web
