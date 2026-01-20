@@ -101,6 +101,7 @@ node_modules
 # Package managers
 ############################
 
+.npm-cache
 .yarn/*
 !.yarn/cache
 !.yarn/unplugged
