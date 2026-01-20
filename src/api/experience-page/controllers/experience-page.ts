@@ -25,8 +25,8 @@ export default factories.createCoreController(
               'blocks.gallery': { populate: { items: { populate: ['image'] } } },
               'blocks.fashion-grid-section': {
                 populate: [
-                  'leftVideoUrl',
-                  'rightVideoUrl',
+                  'leftVideo',
+                  'rightVideo',
                   'topImage',
                   'middleImage1',
                   'middleImage2',

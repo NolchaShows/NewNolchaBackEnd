@@ -6,13 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "leftVideoUrl": {
+    "leftVideo": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["videos"]
     },
-    "rightVideoUrl": {
+    "rightVideo": {
       "type": "media",
       "multiple": false,
       "required": false,
