@@ -22,10 +22,8 @@ export default ({ env }) => ({
         },
       },
       actionOptions: {
-        // Cloudflare R2 does NOT support S3 ACLs. The Strapi S3 provider sends an ACL
-        // by default, so we explicitly override it to avoid sending the header.
-        upload: { ACL: undefined },
-        uploadStream: { ACL: undefined },
+        upload: {},
+        uploadStream: {},
         delete: {},
       },
     },
