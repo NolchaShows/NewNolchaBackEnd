@@ -3,7 +3,7 @@ databases:
     # Render no longer allows legacy Postgres plans (like `starter`) for new DBs.
     # Pick a current Postgres plan (adjust as needed in Render).
     plan: basic-256mb
-    diskSizeGB: 15
+    diskSizeGB: 5
 
 services:
   - type: web
