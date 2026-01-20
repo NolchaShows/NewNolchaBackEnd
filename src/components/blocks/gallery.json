@@ -3,15 +3,15 @@
   "info": {
     "displayName": "Gallery",
     "icon": "images",
-    "description": "A gallery of images."
+    "description": "A reorderable list of images."
   },
   "options": {},
   "attributes": {
-    "images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": ["images"]
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.gallery-item",
+      "required": false
     }
   }
 }

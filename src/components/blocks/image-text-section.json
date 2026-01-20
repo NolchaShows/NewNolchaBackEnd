@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_image_text_sections",
+  "info": {
+    "displayName": "Image + Text Section",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.paragraph",
+      "required": false
+    },
+    "tagsLabel": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.tag",
+      "required": false
+    }
+  }
+}
+

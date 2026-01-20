@@ -13,11 +13,21 @@ export default factories.createCoreController(
       }
 
       const entity = await strapi.db.query('api::experience-page.experience-page').findOne({
-        where: { slug },
+        where: { slug, publishedAt: { $notNull: true } },
         populate: {
           seo: { populate: ['ogImage'] },
-          hero: { populate: ['image'] },
-          blocks: { populate: '*' },
+          hero: { populate: ['video'] },
+          blocks: {
+            on: {
+              'blocks.three-image-row': {
+                populate: ['firstImage', 'secondImage', 'thirdImage'],
+              },
+              'blocks.gallery': { populate: { items: { populate: ['image'] } } },
+              'blocks.fashion-grid-section': { populate: ['images'] },
+              'blocks.image-text-section': { populate: { image: true, tags: true, paragraphs: true } },
+              'blocks.evening-recap-section': { populate: ['video'] },
+            },
+          },
         },
       });
 

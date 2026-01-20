@@ -1,16 +1,12 @@
 {
-  "collectionName": "components_experience_heroes",
+  "collectionName": "components_blocks_evening_recap_sections",
   "info": {
-    "displayName": "Hero (Video)",
-    "icon": "play",
-    "description": "Hero section with a single uploaded video."
+    "displayName": "Evening Recap Section",
+    "icon": "clock"
   },
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "subtitle": {
       "type": "string"
     },
     "video": {
@@ -21,3 +17,4 @@
     }
   }
 }
+

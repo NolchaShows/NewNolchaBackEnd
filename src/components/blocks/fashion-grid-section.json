@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_fashion_grid_sections",
+  "info": {
+    "displayName": "Fashion Grid Section",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "leftVideoUrl": {
+      "type": "string"
+    },
+    "rightVideoUrl": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
+

@@ -3,18 +3,36 @@
   "info": {
     "displayName": "Three Image Row",
     "icon": "apps",
-    "description": "A row of 3 images (captions optional)."
+    "description": "A row of exactly 3 images."
   },
   "options": {},
   "attributes": {
-    "images": {
+    "firstImage": {
       "type": "media",
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "allowedTypes": ["images"]
     },
-    "captions": {
-      "type": "json"
+    "firstLink": {
+      "type": "string"
+    },
+    "secondImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "secondLink": {
+      "type": "string"
+    },
+    "thirdImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "thirdLink": {
+      "type": "string"
     }
   }
 }
