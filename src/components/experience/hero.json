@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_experience_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "star",
+    "description": "Hero section supporting image or video."
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["image", "video"],
+      "required": true,
+      "default": "image"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "videoUrl": {
+      "type": "string"
+    }
+  }
+}

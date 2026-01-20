@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_image_texts",
+  "info": {
+    "displayName": "Image + Text",
+    "icon": "picture",
+    "description": "Text with an image aligned left or right."
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "bodyRichText": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": ["left", "right"],
+      "required": true,
+      "default": "left"
+    }
+  }
+}

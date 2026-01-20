@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_three_image_rows",
+  "info": {
+    "displayName": "Three Image Row",
+    "icon": "apps",
+    "description": "A row of 3 images (captions optional)."
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "captions": {
+      "type": "json"
+    }
+  }
+}
