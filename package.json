@@ -1,5 +1,5 @@
 {
-  "name": "nolcha-strapi-backend",
+  "name": "new-nolcha-strapi",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -15,10 +15,11 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.23.5",
-    "@strapi/plugin-users-permissions": "5.23.5",
-    "@strapi/strapi": "5.23.5",
-    "better-sqlite3": "11.3.0",
+    "@strapi/plugin-cloud": "5.33.3",
+    "@strapi/plugin-users-permissions": "5.33.3",
+    "@strapi/strapi": "5.33.3",
+    "better-sqlite3": "12.4.1",
+    "pg": "^8.17.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -31,11 +32,11 @@
     "typescript": "^5"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
+    "node": ">=20.0.0 <=24.x.x",
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "cf80da3b-eb45-4ecd-9bdd-e19d38b4b38e",
-    "installId": "8865bba1dd9b35543446b4689c94d50cf067d6668f3fdf8409174d603a15e1c1"
+    "uuid": "46f78319-5b47-4d59-8475-c17e06b81a30",
+    "installId": "92e5c0bc51d1ef8e5199c08b29370ed87c7cc3b499736f7571207c09c62e18e0"
   }
 }

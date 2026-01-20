@@ -203,6 +203,63 @@ export interface AdminRole extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface AdminSession extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_sessions';
+  info: {
+    description: 'Session Manager storage';
+    displayName: 'Session';
+    name: 'Session';
+    pluralName: 'sessions';
+    singularName: 'session';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+    i18n: {
+      localized: false;
+    };
+  };
+  attributes: {
+    absoluteExpiresAt: Schema.Attribute.DateTime & Schema.Attribute.Private;
+    childId: Schema.Attribute.String & Schema.Attribute.Private;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    deviceId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    expiresAt: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::session'> &
+      Schema.Attribute.Private;
+    origin: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sessionId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique;
+    status: Schema.Attribute.String & Schema.Attribute.Private;
+    type: Schema.Attribute.String & Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    userId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface AdminTransferToken extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_transfer_tokens';
   info: {
@@ -370,346 +427,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     username: Schema.Attribute.String;
-  };
-}
-
-export interface ApiArtistPageArtistPage extends Struct.CollectionTypeSchema {
-  collectionName: 'artist_pages';
-  info: {
-    displayName: 'ArtistPage';
-    pluralName: 'artist-pages';
-    singularName: 'artist-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    artist_section: Schema.Attribute.Component<
-      'artist-page.artist-section',
-      false
-    >;
-    card: Schema.Attribute.Component<'artist-page.card', true>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::artist-page.artist-page'
-    > &
-      Schema.Attribute.Private;
-    main_heading: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiCharityPartnerPageCharityPartnerPage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'charity_partner_pages';
-  info: {
-    displayName: 'CharityPartnerPage';
-    pluralName: 'charity-partner-pages';
-    singularName: 'charity-partner-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    charity_partner_section: Schema.Attribute.Component<
-      'charitypartner-page.charity-partner-section',
-      true
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::charity-partner-page.charity-partner-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiDesignerPageDesignerPage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'designer_pages';
-  info: {
-    displayName: 'DesignerPage';
-    pluralName: 'designer-pages';
-    singularName: 'designer-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    artistdescription: Schema.Attribute.Component<'global.arrays', true>;
-    artisttitle: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    galleryImages: Schema.Attribute.Component<'designer-page.image-item', true>;
-    heroImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::designer-page.designer-page'
-    > &
-      Schema.Attribute.Private;
-    pressPartners: Schema.Attribute.Component<
-      'designer-page.press-partners',
-      true
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    videos: Schema.Attribute.Component<'designer-page.media-item', true>;
-  };
-}
-
-export interface ApiExperiencePageExperiencePage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'experience_pages';
-  info: {
-    displayName: 'ExperiencePage';
-    pluralName: 'experience-pages';
-    singularName: 'experience-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    buttonText: Schema.Attribute.String;
-    conferenceImage: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    galleryImages: Schema.Attribute.Component<
-      'experience-page.gallery-image',
-      true
-    >;
-    hostDescription: Schema.Attribute.Component<'global.arrays', true>;
-    hostImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    hostName: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::experience-page.experience-page'
-    > &
-      Schema.Attribute.Private;
-    mainHeading: Schema.Attribute.String;
-    page: Schema.Attribute.Enumeration<
-      [
-        'vv_raching_with_jack_butcher',
-        'bitcoin_conferance',
-        'opening_night_consensus',
-        'ctrl_ordinals_collection_launch',
-        'new_york_fashion_week',
-      ]
-    >;
-    partners: Schema.Attribute.Component<'experience-page.partner', true>;
-    posts: Schema.Attribute.Component<'experience-page.post', true>;
-    pressCards: Schema.Attribute.Component<'experience-page.press-card', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    subHeading: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    videos: Schema.Attribute.Component<'experience-page.video', true>;
-  };
-}
-
-export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
-  collectionName: 'landing_pages';
-  info: {
-    displayName: 'LandingPage';
-    pluralName: 'landing-pages';
-    singularName: 'landing-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    about_section: Schema.Attribute.Component<
-      'landing-page.about-section',
-      false
-    >;
-    artist_section: Schema.Attribute.Component<
-      'landing-page.artist-section',
-      false
-    >;
-    carousal_section: Schema.Attribute.Component<
-      'landing-page.image-carousal-section',
-      false
-    >;
-    contact_section: Schema.Attribute.Component<
-      'landing-page.contact-section',
-      false
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    hero_section: Schema.Attribute.Component<
-      'landing-page.hero-section',
-      false
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::landing-page.landing-page'
-    > &
-      Schema.Attribute.Private;
-    logo_slider: Schema.Attribute.Component<'landing-page.logo-slider', false>;
-    nolcha_experience_section: Schema.Attribute.Component<
-      'landing-page.nolcha-experience-section',
-      false
-    >;
-    partner_section: Schema.Attribute.Component<
-      'landing-page.partner-section',
-      false
-    >;
-    partner_section_2: Schema.Attribute.Component<
-      'landing-page.partner-section',
-      false
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    recent_events: Schema.Attribute.Component<
-      'landing-page.recent-events',
-      false
-    >;
-    service_section: Schema.Attribute.Component<
-      'landing-page.service-section',
-      false
-    >;
-    speaker_section: Schema.Attribute.Component<
-      'landing-page.speaker-section',
-      false
-    >;
-    texthero_section: Schema.Attribute.Component<
-      'landing-page.texthero-section',
-      false
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPressPagePressPage extends Struct.CollectionTypeSchema {
-  collectionName: 'press_pages';
-  info: {
-    displayName: 'PressPage';
-    pluralName: 'press-pages';
-    singularName: 'press-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    aboutSection: Schema.Attribute.Component<'press-page.about-section', false>;
-    cards: Schema.Attribute.Component<'press-page.press-card', true>;
-    companies: Schema.Attribute.Component<'press-page.company', true>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    heroTitle: Schema.Attribute.String;
-    heroVideo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::press-page.press-page'
-    > &
-      Schema.Attribute.Private;
-    logos: Schema.Attribute.Component<'press-page.logo', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSpeakersPageSpeakersPage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'speakers_pages';
-  info: {
-    displayName: 'SpeakersPage';
-    pluralName: 'speakers-pages';
-    singularName: 'speakers-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    carousal1: Schema.Attribute.Component<'speakers-page.animated-cards', true>;
-    carousal2: Schema.Attribute.Component<'speakers-page.animated-cards', true>;
-    carousal3: Schema.Attribute.Component<'speakers-page.animated-cards', true>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    gallery: Schema.Attribute.Component<'speakers-page.animated-cards', true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::speakers-page.speakers-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    stack_section: Schema.Attribute.Component<
-      'speakers-page.stack-section',
-      false
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    videos: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-  };
-}
-
-export interface ApiUpcomingPageUpcomingPage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'upcoming_pages';
-  info: {
-    displayName: 'UpcomingPage';
-    pluralName: 'upcoming-pages';
-    singularName: 'upcoming-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::upcoming-page.upcoming-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    upcoming_events_section: Schema.Attribute.Component<
-      'upcoming-page.upcoming-events',
-      true
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -970,8 +687,8 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    alternativeText: Schema.Attribute.String;
-    caption: Schema.Attribute.String;
+    alternativeText: Schema.Attribute.Text;
+    caption: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -995,7 +712,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     mime: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    previewUrl: Schema.Attribute.String;
+    previewUrl: Schema.Attribute.Text;
     provider: Schema.Attribute.String & Schema.Attribute.Required;
     provider_metadata: Schema.Attribute.JSON;
     publishedAt: Schema.Attribute.DateTime;
@@ -1004,7 +721,7 @@ export interface PluginUploadFile extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.Text & Schema.Attribute.Required;
     width: Schema.Attribute.Integer;
   };
 }
@@ -1219,17 +936,10 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::permission': AdminPermission;
       'admin::role': AdminRole;
+      'admin::session': AdminSession;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::artist-page.artist-page': ApiArtistPageArtistPage;
-      'api::charity-partner-page.charity-partner-page': ApiCharityPartnerPageCharityPartnerPage;
-      'api::designer-page.designer-page': ApiDesignerPageDesignerPage;
-      'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
-      'api::landing-page.landing-page': ApiLandingPageLandingPage;
-      'api::press-page.press-page': ApiPressPagePressPage;
-      'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;
-      'api::upcoming-page.upcoming-page': ApiUpcomingPageUpcomingPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
