@@ -15,11 +15,8 @@
     "title": {
       "type": "string"
     },
-    "paragraphs": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.paragraph",
-      "required": false
+    "description": {
+      "type": "richtext"
     },
     "tagsLabel": {
       "type": "string"

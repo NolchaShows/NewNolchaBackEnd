@@ -34,7 +34,7 @@ export default factories.createCoreController(
                   'bottomImage',
                 ],
               },
-              'blocks.image-text-section': { populate: { image: true, tags: true, paragraphs: true } },
+              'blocks.image-text-section': { populate: { image: true, tags: true } },
               'blocks.evening-recap-section': { populate: ['video'] },
             },
           },

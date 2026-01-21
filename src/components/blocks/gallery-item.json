@@ -6,6 +6,9 @@
   },
   "options": {},
   "attributes": {
+    "imageName": {
+      "type": "string"
+    },
     "image": {
       "type": "media",
       "multiple": false,
