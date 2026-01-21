@@ -7,7 +7,64 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register({ strapi }: { strapi: Core.Strapi }) {
+    // GraphQL: custom query to fetch an Experience Page by slug.
+    // This keeps the frontend query simple and matches the REST `/by-slug/:slug` pattern.
+    try {
+      const extensionService = strapi.plugin('graphql')?.service('extension');
+      if (!extensionService) return;
+
+      extensionService.use(({ nexus }) => {
+        const UID = 'api::experience-page.experience-page';
+        const contentType = strapi.contentTypes[UID];
+
+        // If the content type isn't registered (e.g. during bootstrap/migrations), skip.
+        if (!contentType) return {};
+
+        const { naming } = strapi.plugin('graphql').service('utils');
+        const { transformArgs } = strapi.plugin('graphql').service('builders').utils;
+        const { findFirst } = strapi
+          .plugin('graphql')
+          .service('builders')
+          .get('content-api')
+          .buildQueriesResolvers({ contentType });
+
+        const typeName = naming.getTypeName(contentType);
+
+        return {
+          types: [
+            nexus.extendType({
+              type: 'Query',
+              definition(t) {
+                t.field('experiencePageBySlug', {
+                  type: typeName,
+                  args: {
+                    slug: nexus.nonNull(nexus.stringArg()),
+                  },
+                  async resolve(parent, args, ctx) {
+                    const transformedArgs = transformArgs(
+                      { filters: { slug: { eq: args.slug } } },
+                      { contentType }
+                    );
+
+                    return await findFirst(parent, transformedArgs, ctx);
+                  },
+                });
+              },
+            }),
+          ],
+          resolversConfig: {
+            // Use the same permission scope as the built-in "find" query for this content-type.
+            'Query.experiencePageBySlug': {
+              auth: { scope: [`${UID}.find`] },
+            },
+          },
+        };
+      });
+    } catch {
+      // If GraphQL plugin isn't available, don't break Strapi startup.
+    }
+  },
 
   /**
    * An asynchronous bootstrap function that runs before

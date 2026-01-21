@@ -40,6 +40,17 @@ services:
       - key: PUBLIC_URL
         sync: false
 
+      # GraphQL (optional; turn on only when needed for schema/codegen)
+      - key: GRAPHQL_LANDING_PAGE
+        value: "false"
+      - key: GRAPHQL_INTROSPECTION
+        value: "false"
+      # Safety/perf limits (tune as needed)
+      - key: GRAPHQL_DEPTH_LIMIT
+        value: "7"
+      - key: GRAPHQL_AMOUNT_LIMIT
+        value: "50"
+
       # Cloudflare R2 (S3-compatible) for Strapi uploads
       - key: R2_ENDPOINT
         sync: false
