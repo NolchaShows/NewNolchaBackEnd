@@ -6,9 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "imageName": {
-      "type": "string"
-    },
+    "label": { "type": "string" },
     "image": {
       "type": "media",
       "multiple": false,
