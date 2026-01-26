@@ -6,47 +6,47 @@
   },
   "options": {},
   "attributes": {
-    "leftVideo": {
+    "leftMedia": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": ["images", "videos"]
     },
-    "rightVideo": {
+    "rightMedia": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": ["images", "videos"]
     },
-    "topImage": {
+    "topMedia": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "middleImage1": {
+    "middleMedia1": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "middleImage2": {
+    "middleMedia2": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "middleImage3": {
+    "middleMedia3": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "bottomImage": {
+    "bottomMedia": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     }
   }
 }

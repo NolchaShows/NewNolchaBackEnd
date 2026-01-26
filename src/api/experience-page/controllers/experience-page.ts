@@ -25,6 +25,16 @@ export default factories.createCoreController(
               'blocks.gallery': { populate: { items: { populate: ['image'] } } },
               'blocks.fashion-grid-section': {
                 populate: [
+                  // New flexible media fields (image or video)
+                  'leftMedia',
+                  'rightMedia',
+                  'topMedia',
+                  'middleMedia1',
+                  'middleMedia2',
+                  'middleMedia3',
+                  'bottomMedia',
+
+                  // Backward-compat fallback (older entries created before rename)
                   'leftVideo',
                   'rightVideo',
                   'topImage',
