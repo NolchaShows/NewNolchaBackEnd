@@ -3,27 +3,27 @@
   "info": {
     "displayName": "Three Image Row",
     "icon": "apps",
-    "description": "A row of exactly 3 images."
+    "description": "A row of exactly 3 media items (image or video)."
   },
   "options": {},
   "attributes": {
-    "firstImage": {
+    "firstMedia": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "secondImage": {
+    "secondMedia": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     },
-    "thirdImage": {
+    "thirdMedia": {
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images", "videos"]
     }
   }
 }

@@ -20,12 +20,15 @@ export default factories.createCoreController(
           blocks: {
             on: {
               'blocks.three-image-row': {
-                populate: ['firstImage', 'secondImage', 'thirdImage'],
+                populate: [
+                  'firstMedia',
+                  'secondMedia',
+                  'thirdMedia',
+                ],
               },
               'blocks.gallery': { populate: { items: { populate: ['image'] } } },
               'blocks.fashion-grid-section': {
                 populate: [
-                  // New flexible media fields (image or video)
                   'leftMedia',
                   'rightMedia',
                   'topMedia',
@@ -33,15 +36,6 @@ export default factories.createCoreController(
                   'middleMedia2',
                   'middleMedia3',
                   'bottomMedia',
-
-                  // Backward-compat fallback (older entries created before rename)
-                  'leftVideo',
-                  'rightVideo',
-                  'topImage',
-                  'middleImage1',
-                  'middleImage2',
-                  'middleImage3',
-                  'bottomImage',
                 ],
               },
               'blocks.image-text-section': { populate: { image: true, tags: true } },
