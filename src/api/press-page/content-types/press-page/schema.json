@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "press_pages",
+  "info": {
+    "singularName": "press-page",
+    "pluralName": "press-pages",
+    "displayName": "Press Page",
+    "description": "Singleton content for the Press page."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mediaCoverage": {
+      "type": "component",
+      "component": "press.media-coverage",
+      "required": false
+    },
+    "pressCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "press.press-card",
+      "required": false
+    }
+  }
+}
+

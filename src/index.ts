@@ -85,6 +85,8 @@ export default {
     const actions = [
       'api::experience-page.experience-page.find',
       'api::experience-page.experience-page.findOne',
+      // Press page (single type)
+      'api::press-page.press-page.find',
     ];
 
     const existing = await strapi.db.query('plugin::users-permissions.permission').findMany({
