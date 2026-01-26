@@ -16,13 +16,13 @@
     "secondMedia": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": ["images", "videos"]
     },
     "thirdMedia": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": ["images", "videos"]
     }
   }
