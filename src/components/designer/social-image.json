@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_designer_social_images",
+  "info": {
+    "displayName": "Social Image",
+    "icon": "picture",
+    "description": "A social media image for the designer"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

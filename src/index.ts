@@ -14,6 +14,7 @@ export default {
       const extensionService = strapi.plugin('graphql')?.service('extension');
       if (!extensionService) return;
 
+      // Experience Page by slug query
       extensionService.use(({ nexus }) => {
         const UID = 'api::experience-page.experience-page';
         const contentType = strapi.contentTypes[UID];
@@ -61,6 +62,53 @@ export default {
           },
         };
       });
+
+      // Designer by slug query
+      extensionService.use(({ nexus }) => {
+        const UID = 'api::designer.designer';
+        const contentType = strapi.contentTypes[UID];
+
+        if (!contentType) return {};
+
+        const { naming } = strapi.plugin('graphql').service('utils');
+        const { transformArgs } = strapi.plugin('graphql').service('builders').utils;
+        const { findFirst } = strapi
+          .plugin('graphql')
+          .service('builders')
+          .get('content-api')
+          .buildQueriesResolvers({ contentType });
+
+        const typeName = naming.getTypeName(contentType);
+
+        return {
+          types: [
+            nexus.extendType({
+              type: 'Query',
+              definition(t) {
+                t.field('designerBySlug', {
+                  type: typeName,
+                  args: {
+                    slug: nexus.nonNull(nexus.stringArg()),
+                  },
+                  async resolve(parent, args, ctx) {
+                    const transformedArgs = transformArgs(
+                      { filters: { slug: { eq: args.slug } } },
+                      { contentType }
+                    );
+
+                    return await findFirst(parent, transformedArgs, ctx);
+                  },
+                });
+              },
+            }),
+          ],
+          resolversConfig: {
+            'Query.designerBySlug': {
+              auth: { scope: [`${UID}.find`] },
+            },
+          },
+        };
+      });
     } catch {
       // If GraphQL plugin isn't available, don't break Strapi startup.
     }
@@ -87,6 +135,9 @@ export default {
       'api::experience-page.experience-page.findOne',
       // Press page (single type)
       'api::press-page.press-page.find',
+      // Designer pages
+      'api::designer.designer.find',
+      'api::designer.designer.findOne',
     ];
 
     const existing = await strapi.db.query('plugin::users-permissions.permission').findMany({

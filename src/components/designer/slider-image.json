@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_designer_slider_images",
+  "info": {
+    "displayName": "Slider Image",
+    "icon": "picture",
+    "description": "An image for the designer slider"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

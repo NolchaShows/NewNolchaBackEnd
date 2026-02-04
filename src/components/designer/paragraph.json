@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_designer_paragraphs",
+  "info": {
+    "displayName": "Paragraph",
+    "icon": "align-left",
+    "description": "A text paragraph for designer bio"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

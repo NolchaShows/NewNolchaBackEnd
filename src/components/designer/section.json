@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_designer_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "layer",
+    "description": "A section showcasing designer's work category"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  }
+}
