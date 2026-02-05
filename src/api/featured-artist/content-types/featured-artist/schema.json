@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_artists",
+  "info": {
+    "singularName": "featured-artist",
+    "pluralName": "featured-artists",
+    "displayName": "Featured Artist",
+    "description": "Featured Artist profile and portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "heading": {
+      "type": "text",
+      "required": false
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "designer.paragraph"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "listingImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "source": {
+      "type": "string",
+      "required": false
+    },
+    "sliderImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "designer.slider-image"
+    },
+    "socialImages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "designer.social-image"
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "designer.section"
+    }
+  }
+}
