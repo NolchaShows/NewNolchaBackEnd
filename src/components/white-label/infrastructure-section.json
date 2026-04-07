@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_white_label_infrastructure_sections",
+  "info": {
+    "displayName": "Infrastructure Section",
+    "description": "White-label infrastructure grid and supporting copy"
+  },
+  "options": {},
+  "attributes": {
+    "headingLineOne": {
+      "type": "string",
+      "required": true
+    },
+    "headingLineTwo": {
+      "type": "string",
+      "required": true
+    },
+    "tiles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "white-label.infrastructure-item"
+    },
+    "paragraphOne": {
+      "type": "richtext"
+    },
+    "paragraphTwo": {
+      "type": "richtext"
+    },
+    "paragraphThree": {
+      "type": "richtext"
+    }
+  }
+}

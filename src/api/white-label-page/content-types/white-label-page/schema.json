@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "white_label_pages",
+  "info": {
+    "singularName": "white-label-page",
+    "pluralName": "white-label-pages",
+    "displayName": "White Label Page",
+    "description": "Strapi content model for the white-label marketing page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.video-hero-section"
+    },
+    "intro_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "white-label.intro-section"
+    },
+    "infrastructure_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "white-label.infrastructure-section"
+    },
+    "partner_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.partner-section"
+    },
+    "cta_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "white-label.cta-section"
+    }
+  }
+}

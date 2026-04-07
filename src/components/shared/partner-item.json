@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_partner_items",
+  "info": {
+    "displayName": "Partner Item",
+    "description": "Reusable partner logo pair"
+  },
+  "options": {},
+  "attributes": {
+    "primary": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "secondary": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "alt_text": {
+      "type": "string"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "light"
+      ],
+      "default": "black"
+    }
+  }
+}

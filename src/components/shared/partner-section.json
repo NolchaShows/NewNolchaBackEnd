@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_partner_sections",
+  "info": {
+    "displayName": "Partner Section",
+    "description": "Reusable partner/logo wall section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.partner-item"
+    }
+  }
+}

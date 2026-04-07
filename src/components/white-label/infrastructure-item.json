@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_white_label_infrastructure_items",
+  "info": {
+    "displayName": "Infrastructure Item",
+    "description": "Single white-label infrastructure tile"
+  },
+  "options": {},
+  "attributes": {
+    "titleLineOne": {
+      "type": "string",
+      "required": true
+    },
+    "titleLineTwo": {
+      "type": "string",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#CEC2AF"
+    }
+  }
+}
