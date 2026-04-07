@@ -6,11 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "headingLineOne": {
-      "type": "string",
-      "required": true
-    },
-    "headingLineTwo": {
+    "heading": {
       "type": "string",
       "required": true
     },
@@ -19,13 +15,7 @@
       "repeatable": true,
       "component": "white-label.infrastructure-item"
     },
-    "paragraphOne": {
-      "type": "richtext"
-    },
-    "paragraphTwo": {
-      "type": "richtext"
-    },
-    "paragraphThree": {
+    "paragraph": {
       "type": "richtext"
     }
   }

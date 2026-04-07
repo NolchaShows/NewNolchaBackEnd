@@ -19,17 +19,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "alt_text": {
-      "type": "string"
-    },
-    "color": {
-      "type": "enumeration",
-      "enum": [
-        "black",
-        "light"
-      ],
-      "default": "black"
     }
   }
 }

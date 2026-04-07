@@ -20,28 +20,6 @@
         "files",
         "videos"
       ]
-    },
-    "isGoogleDrive": {
-      "type": "boolean",
-      "default": false
-    },
-    "overlayOpacity": {
-      "type": "integer",
-      "default": 20,
-      "min": 0,
-      "max": 100
-    },
-    "strokeColor": {
-      "type": "string",
-      "default": "#000000"
-    },
-    "fillColor": {
-      "type": "string",
-      "default": "#FEF991"
-    },
-    "textColor": {
-      "type": "string",
-      "default": "#FFFFFF"
     }
   }
 }

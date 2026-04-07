@@ -6,17 +6,9 @@
   },
   "options": {},
   "attributes": {
-    "titleLineOne": {
+    "title": {
       "type": "string",
       "required": true
-    },
-    "titleLineTwo": {
-      "type": "string",
-      "required": true
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#CEC2AF"
     }
   }
 }

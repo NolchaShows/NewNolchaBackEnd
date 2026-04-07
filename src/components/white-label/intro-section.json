@@ -17,13 +17,8 @@
         "images"
       ]
     },
-    "paragraphs": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.text-item"
-    },
-    "byline": {
-      "type": "string"
+    "paragraph": {
+      "type": "text"
     }
   }
 }
