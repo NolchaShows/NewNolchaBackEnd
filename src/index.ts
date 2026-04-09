@@ -180,14 +180,23 @@ export default {
     const actions = [
       'api::experience-page.experience-page.find',
       'api::experience-page.experience-page.findOne',
+      // White label page
+      'api::white-label-page.white-label-page.find',
+      'api::white-label-page.white-label-page.findOne',
       // Press page (single type)
       'api::press-page.press-page.find',
+      'api::press-page.press-page.findOne',
       // Designer pages
       'api::designer.designer.find',
       'api::designer.designer.findOne',
       // Featured Artist pages
       'api::featured-artist.featured-artist.find',
       'api::featured-artist.featured-artist.findOne',
+      // Reusable shared sections
+      'api::shared-partner-section.shared-partner-section.find',
+      'api::shared-partner-section.shared-partner-section.findOne',
+      'api::shared-tweet-carousel.shared-tweet-carousel.find',
+      'api::shared-tweet-carousel.shared-tweet-carousel.findOne',
     ];
 
     const existing = await strapi.db.query('plugin::users-permissions.permission').findMany({
