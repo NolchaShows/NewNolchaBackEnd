@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_tweet_items",
+  "info": {
+    "displayName": "Tweet Item",
+    "description": "Single tweet/X post reference"
+  },
+  "options": {},
+  "attributes": {
+    "tweetId": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

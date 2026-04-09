@@ -32,6 +32,12 @@
       "component": "experience.hero",
       "required": false
     },
+    "shared_tweet_carousel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-tweet-carousel.shared-tweet-carousel",
+      "required": false
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [

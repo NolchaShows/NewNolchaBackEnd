@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shared_tweet_carousels",
+  "info": {
+    "singularName": "shared-tweet-carousel",
+    "pluralName": "shared-tweet-carousels",
+    "displayName": "Shared Tweet Carousel",
+    "description": "Reusable tweet/community moments carousel for multiple pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.tweet-item"
+    }
+  }
+}

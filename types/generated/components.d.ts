@@ -252,6 +252,17 @@ export interface SharedTextItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTweetItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tweet_items';
+  info: {
+    description: 'Single tweet/X post reference';
+    displayName: 'Tweet Item';
+  };
+  attributes: {
+    tweetId: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedVideoHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_video_hero_sections';
   info: {
@@ -341,6 +352,7 @@ declare module '@strapi/strapi' {
       'shared.partner-section': SharedPartnerSection;
       'shared.seo': SharedSeo;
       'shared.text-item': SharedTextItem;
+      'shared.tweet-item': SharedTweetItem;
       'shared.video-hero-section': SharedVideoHeroSection;
       'white-label.cta-section': WhiteLabelCtaSection;
       'white-label.infrastructure-item': WhiteLabelInfrastructureItem;

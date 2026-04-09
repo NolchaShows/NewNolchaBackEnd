@@ -17,6 +17,7 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
+          shared_tweet_carousel: { populate: ['items'] },
           blocks: {
             on: {
               'blocks.three-image-row': {
