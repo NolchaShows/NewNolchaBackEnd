@@ -430,6 +430,244 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
+  collectionName: 'designers';
+  info: {
+    description: 'Designer/Artist profile and portfolio';
+    displayName: 'Designer';
+    pluralName: 'designers';
+    singularName: 'designer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Text;
+    heroImage: Schema.Attribute.Media<'images'>;
+    listingImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::designer.designer'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    paragraphs: Schema.Attribute.Component<'designer.paragraph', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'designer.section', true>;
+    sliderImages: Schema.Attribute.Component<'designer.slider-image', true>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    socialImages: Schema.Attribute.Component<'designer.social-image', true>;
+    source: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiExperiencePageExperiencePage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'experience_pages';
+  info: {
+    description: 'Dynamic experience pages rendered by the Next.js route /experiences/[slug].';
+    displayName: 'Experience Page';
+    pluralName: 'experience-pages';
+    singularName: 'experience-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'blocks.three-image-row',
+        'blocks.gallery',
+        'blocks.fashion-grid-section',
+        'blocks.image-text-section',
+        'blocks.evening-recap-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience-page.experience-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    shared_partner_section: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-partner-section.shared-partner-section'
+    >;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeaturedArtistFeaturedArtist
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'featured_artists';
+  info: {
+    description: 'Featured Artist profile and portfolio';
+    displayName: 'Featured Artist';
+    pluralName: 'featured-artists';
+    singularName: 'featured-artist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    heading: Schema.Attribute.Text;
+    heroImage: Schema.Attribute.Media<'images'>;
+    listingImage: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::featured-artist.featured-artist'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    paragraphs: Schema.Attribute.Component<'designer.paragraph', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'designer.section', true>;
+    sliderImages: Schema.Attribute.Component<'designer.slider-image', true>;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    socialImages: Schema.Attribute.Component<'designer.social-image', true>;
+    source: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
+  collectionName: 'press_pages';
+  info: {
+    description: 'Singleton content for the Press page.';
+    displayName: 'Press Page';
+    pluralName: 'press-pages';
+    singularName: 'press-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::press-page.press-page'
+    > &
+      Schema.Attribute.Private;
+    mediaCoverage: Schema.Attribute.Component<'press.media-coverage', false>;
+    pressCards: Schema.Attribute.Component<'press.press-card', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSharedPartnerSectionSharedPartnerSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'shared_partner_sections';
+  info: {
+    description: 'Reusable partner/logo wall section that can be attached to multiple pages';
+    displayName: 'Shared Partner Section';
+    pluralName: 'shared-partner-sections';
+    singularName: 'shared-partner-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    key: Schema.Attribute.UID<'title'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shared-partner-section.shared-partner-section'
+    > &
+      Schema.Attribute.Private;
+    partners: Schema.Attribute.Component<'shared.partner-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWhiteLabelPageWhiteLabelPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'white_label_pages';
+  info: {
+    description: 'Strapi content model for the white-label marketing page';
+    displayName: 'White Label Page';
+    pluralName: 'white-label-pages';
+    singularName: 'white-label-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta_section: Schema.Attribute.Component<'white-label.cta-section', false>;
+    hero_section: Schema.Attribute.Component<
+      'shared.video-hero-section',
+      false
+    >;
+    infrastructure_section: Schema.Attribute.Component<
+      'white-label.infrastructure-section',
+      false
+    >;
+    intro_section: Schema.Attribute.Component<
+      'white-label.intro-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::white-label-page.white-label-page'
+    > &
+      Schema.Attribute.Private;
+    partner_section: Schema.Attribute.Component<
+      'shared.partner-section',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    shared_partner_section: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-partner-section.shared-partner-section'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -940,6 +1178,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::designer.designer': ApiDesignerDesigner;
+      'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
+      'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
+      'api::press-page.press-page': ApiPressPagePressPage;
+      'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
+      'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

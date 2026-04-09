@@ -32,6 +32,11 @@
       "repeatable": false,
       "component": "shared.partner-section"
     },
+    "shared_partner_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-partner-section.shared-partner-section"
+    },
     "cta_section": {
       "type": "component",
       "repeatable": false,

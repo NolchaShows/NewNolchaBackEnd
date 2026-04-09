@@ -32,6 +32,12 @@
       "component": "experience.hero",
       "required": false
     },
+    "shared_partner_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-partner-section.shared-partner-section",
+      "required": false
+    },
     "blocks": {
       "type": "dynamiczone",
       "components": [

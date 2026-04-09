@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shared_partner_sections",
+  "info": {
+    "singularName": "shared-partner-section",
+    "pluralName": "shared-partner-sections",
+    "displayName": "Shared Partner Section",
+    "description": "Reusable partner/logo wall section that can be attached to multiple pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.partner-item"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
