@@ -502,6 +502,10 @@ export interface ApiExperiencePageExperiencePage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    shared_tweet_carousel: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-tweet-carousel.shared-tweet-carousel'
+    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -606,6 +610,38 @@ export interface ApiSharedPartnerSectionSharedPartnerSection
     > &
       Schema.Attribute.Private;
     partners: Schema.Attribute.Component<'shared.partner-item', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSharedTweetCarouselSharedTweetCarousel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'shared_tweet_carousels';
+  info: {
+    description: 'Reusable tweet/community moments carousel for multiple pages';
+    displayName: 'Shared Tweet Carousel';
+    pluralName: 'shared-tweet-carousels';
+    singularName: 'shared-tweet-carousel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.Component<'shared.tweet-item', true>;
+    key: Schema.Attribute.UID<'title'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shared-tweet-carousel.shared-tweet-carousel'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1175,6 +1211,7 @@ declare module '@strapi/strapi' {
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
+      'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
