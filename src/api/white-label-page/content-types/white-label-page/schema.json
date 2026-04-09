@@ -27,11 +27,6 @@
       "repeatable": false,
       "component": "white-label.infrastructure-section"
     },
-    "partner_section": {
-      "type": "component",
-      "repeatable": false,
-      "component": "shared.partner-section"
-    },
     "shared_partner_section": {
       "type": "relation",
       "relation": "manyToOne",

@@ -502,10 +502,6 @@ export interface ApiExperiencePageExperiencePage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    shared_partner_section: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::shared-partner-section.shared-partner-section'
-    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -653,10 +649,6 @@ export interface ApiWhiteLabelPageWhiteLabelPage
       'api::white-label-page.white-label-page'
     > &
       Schema.Attribute.Private;
-    partner_section: Schema.Attribute.Component<
-      'shared.partner-section',
-      false
-    >;
     publishedAt: Schema.Attribute.DateTime;
     shared_partner_section: Schema.Attribute.Relation<
       'manyToOne',

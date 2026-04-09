@@ -17,11 +17,6 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
-          shared_partner_section: {
-            populate: {
-              partners: { populate: ['primary', 'secondary'] },
-            },
-          },
           blocks: {
             on: {
               'blocks.three-image-row': {
