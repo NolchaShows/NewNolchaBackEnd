@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "charity_pages",
+  "info": {
+    "singularName": "charity-page",
+    "pluralName": "charity-pages",
+    "displayName": "Charity Page",
+    "description": "Charity page rendered by the Next.js route /charity."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "shared_tweet_carousel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-tweet-carousel.shared-tweet-carousel",
+      "required": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.three-image-row",
+        "blocks.gallery",
+        "blocks.fashion-grid-section",
+        "blocks.image-text-section",
+        "blocks.evening-recap-section"
+      ],
+      "required": false
+    }
+  }
+}
