@@ -27,7 +27,12 @@ export default factories.createCoreController(
                   'thirdMedia',
                 ],
               },
-              'blocks.gallery': { populate: { items: { populate: ['image'] } } },
+              'blocks.gallery': {
+                populate: {
+                  images: true,
+                  items: { populate: ['image'] },
+                },
+              },
               'blocks.fashion-grid-section': {
                 populate: [
                   'leftMedia',

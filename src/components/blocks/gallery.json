@@ -3,10 +3,16 @@
   "info": {
     "displayName": "Gallery",
     "icon": "images",
-    "description": "A reorderable list of images."
+    "description": "A bulk-upload friendly gallery with optional legacy support."
   },
   "options": {},
   "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "items": {
       "type": "component",
       "repeatable": true,

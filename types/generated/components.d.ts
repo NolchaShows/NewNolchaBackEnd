@@ -37,11 +37,12 @@ export interface BlocksFashionGridSection extends Struct.ComponentSchema {
 export interface BlocksGallery extends Struct.ComponentSchema {
   collectionName: 'components_blocks_galleries';
   info: {
-    description: 'A reorderable list of images.';
+    description: 'A bulk-upload friendly gallery with optional legacy support.';
     displayName: 'Gallery';
     icon: 'images';
   };
   attributes: {
+    images: Schema.Attribute.Media<'images', true>;
     items: Schema.Attribute.Component<'blocks.gallery-item', true>;
   };
 }
