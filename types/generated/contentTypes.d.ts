@@ -615,9 +615,6 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     artist_section: Schema.Attribute.Component<'home.artist-section', false>;
-    blocks: Schema.Attribute.DynamicZone<
-      ['blocks.gallery', 'blocks.evening-recap-section']
-    >;
     build_momentum_section: Schema.Attribute.Component<
       'home.build-momentum-section',
       false
@@ -626,12 +623,17 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    evening_recap_section: Schema.Attribute.Component<
+      'blocks.evening-recap-section',
+      false
+    >;
     feature_banner_one: Schema.Attribute.Media<'videos'>;
     feature_banner_two: Schema.Attribute.Media<'videos'>;
     featured_experiences: Schema.Attribute.Relation<
       'manyToMany',
       'api::experience-page.experience-page'
     >;
+    gallery_section: Schema.Attribute.Component<'blocks.gallery', false>;
     hero: Schema.Attribute.Component<'experience.hero', false>;
     image_gallery_slider: Schema.Attribute.Component<
       'home.image-gallery-slider',

@@ -205,7 +205,7 @@ export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    logos: Schema.Attribute.Component<'home.logo-item', true>;
+    logos: Schema.Attribute.Media<'images', true>;
     paragraphs: Schema.Attribute.Component<'home.rich-paragraph', true>;
   };
 }
@@ -265,7 +265,7 @@ export interface HomeLogoSlider extends Struct.ComponentSchema {
     displayName: 'Logo Slider';
   };
   attributes: {
-    logos: Schema.Attribute.Component<'home.logo-item', true>;
+    logos: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
   };
 }
