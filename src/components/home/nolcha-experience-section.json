@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_nolcha_experience_sections",
+  "info": {
+    "displayName": "Nolcha Experience Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "image_caption": {
+      "type": "text"
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "accordion_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.accordion-item"
+    }
+  }
+}

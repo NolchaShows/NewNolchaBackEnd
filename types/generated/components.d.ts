@@ -174,6 +174,232 @@ export interface ExperienceHero extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeAccordionItem extends Struct.ComponentSchema {
+  collectionName: 'components_home_accordion_items';
+  info: {
+    displayName: 'Accordion Item';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeArtistSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_artist_sections';
+  info: {
+    displayName: 'Artist Section';
+  };
+  attributes: {
+    carousal_item: Schema.Attribute.Component<'home.carousel-text-item', true>;
+    description: Schema.Attribute.Text;
+    media: Schema.Attribute.Media<'images' | 'videos', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_build_momentum_sections';
+  info: {
+    displayName: 'Build Momentum Section';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    logos: Schema.Attribute.Component<'home.logo-item', true>;
+    paragraphs: Schema.Attribute.Component<'home.rich-paragraph', true>;
+  };
+}
+
+export interface HomeCarouselTextItem extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_text_items';
+  info: {
+    displayName: 'Carousel Text Item';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface HomeContactSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_contact_sections';
+  info: {
+    displayName: 'Contact Section';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<'images'>;
+    description: Schema.Attribute.Text;
+    email_placeholder: Schema.Attribute.String;
+    first_name_placeholder: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    message_placeholder: Schema.Attribute.String;
+    second_name_placeholder: Schema.Attribute.String;
+    submit_button_text: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface HomeImageGallerySlider extends Struct.ComponentSchema {
+  collectionName: 'components_home_image_gallery_sliders';
+  info: {
+    displayName: 'Image Gallery Slider';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<'images', true>;
+  };
+}
+
+export interface HomeLogoItem extends Struct.ComponentSchema {
+  collectionName: 'components_home_logo_items';
+  info: {
+    displayName: 'Logo Item';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface HomeLogoSlider extends Struct.ComponentSchema {
+  collectionName: 'components_home_logo_sliders';
+  info: {
+    displayName: 'Logo Slider';
+  };
+  attributes: {
+    logos: Schema.Attribute.Component<'home.logo-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeNolchaExperienceSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_nolcha_experience_sections';
+  info: {
+    displayName: 'Nolcha Experience Section';
+  };
+  attributes: {
+    accordion_sections: Schema.Attribute.Component<'home.accordion-item', true>;
+    heading: Schema.Attribute.Text;
+    image_caption: Schema.Attribute.Text;
+    main_image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface HomeRichParagraph extends Struct.ComponentSchema {
+  collectionName: 'components_home_rich_paragraphs';
+  info: {
+    displayName: 'Rich Paragraph';
+  };
+  attributes: {
+    highlight: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    text_after: Schema.Attribute.Text;
+    text_before: Schema.Attribute.Text;
+  };
+}
+
+export interface HomeServiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_home_service_items';
+  info: {
+    displayName: 'Service Item';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    label: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    work: Schema.Attribute.Text;
+  };
+}
+
+export interface HomeServiceSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_service_sections';
+  info: {
+    displayName: 'Service Section';
+  };
+  attributes: {
+    caption: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    services: Schema.Attribute.Component<'home.service-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeSpeakerItem extends Struct.ComponentSchema {
+  collectionName: 'components_home_speaker_items';
+  info: {
+    displayName: 'Speaker Item';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String;
+    twitter: Schema.Attribute.String;
+  };
+}
+
+export interface HomeSpeakerSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_speaker_sections';
+  info: {
+    displayName: 'Speaker Section';
+  };
+  attributes: {
+    speakers: Schema.Attribute.Component<'home.speaker-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeTextHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_text_hero_sections';
+  info: {
+    displayName: 'Text Hero Section';
+  };
+  attributes: {
+    slides: Schema.Attribute.Component<'home.text-hero-slide', true>;
+  };
+}
+
+export interface HomeTextHeroSlide extends Struct.ComponentSchema {
+  collectionName: 'components_home_text_hero_slides';
+  info: {
+    displayName: 'Text Hero Slide';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    logo_image: Schema.Attribute.Media<'images'>;
+    main_image: Schema.Attribute.Media<'images'>;
+    second_image: Schema.Attribute.Media<'images'>;
+    video_url: Schema.Attribute.String;
+  };
+}
+
+export interface HomeUpcomingEvent extends Struct.ComponentSchema {
+  collectionName: 'components_home_upcoming_events';
+  info: {
+    displayName: 'Upcoming Event';
+  };
+  attributes: {
+    date: Schema.Attribute.String;
+    galleryImages: Schema.Attribute.Media<'images', true>;
+    image: Schema.Attribute.Media<'images'>;
+    location: Schema.Attribute.Text;
+    logo: Schema.Attribute.Media<'images'>;
+    mainImage: Schema.Attribute.Media<'images'>;
+    rsvpLink: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    venue: Schema.Attribute.Text;
+    whatToExpect: Schema.Attribute.RichText;
+  };
+}
+
+export interface HomeUpcomingEventsSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_upcoming_events_sections';
+  info: {
+    displayName: 'Upcoming Events Section';
+  };
+  attributes: {
+    events: Schema.Attribute.Component<'home.upcoming-event', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PressMediaCoverage extends Struct.ComponentSchema {
   collectionName: 'components_press_media_coverages';
   info: {
@@ -347,6 +573,24 @@ declare module '@strapi/strapi' {
       'designer.slider-image': DesignerSliderImage;
       'designer.social-image': DesignerSocialImage;
       'experience.hero': ExperienceHero;
+      'home.accordion-item': HomeAccordionItem;
+      'home.artist-section': HomeArtistSection;
+      'home.build-momentum-section': HomeBuildMomentumSection;
+      'home.carousel-text-item': HomeCarouselTextItem;
+      'home.contact-section': HomeContactSection;
+      'home.image-gallery-slider': HomeImageGallerySlider;
+      'home.logo-item': HomeLogoItem;
+      'home.logo-slider': HomeLogoSlider;
+      'home.nolcha-experience-section': HomeNolchaExperienceSection;
+      'home.rich-paragraph': HomeRichParagraph;
+      'home.service-item': HomeServiceItem;
+      'home.service-section': HomeServiceSection;
+      'home.speaker-item': HomeSpeakerItem;
+      'home.speaker-section': HomeSpeakerSection;
+      'home.text-hero-section': HomeTextHeroSection;
+      'home.text-hero-slide': HomeTextHeroSlide;
+      'home.upcoming-event': HomeUpcomingEvent;
+      'home.upcoming-events-section': HomeUpcomingEventsSection;
       'press.media-coverage': PressMediaCoverage;
       'press.press-card': PressPressCard;
       'shared.partner-item': SharedPartnerItem;

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_service_sections",
+  "info": {
+    "displayName": "Service Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.service-item"
+    }
+  }
+}

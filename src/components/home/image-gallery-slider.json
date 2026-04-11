@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_home_image_gallery_sliders",
+  "info": {
+    "displayName": "Image Gallery Slider"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

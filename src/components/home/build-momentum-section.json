@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_build_momentum_sections",
+  "info": {
+    "displayName": "Build Momentum Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.rich-paragraph"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.logo-item"
+    }
+  }
+}

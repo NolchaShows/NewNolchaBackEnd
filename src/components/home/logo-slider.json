@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_logo_sliders",
+  "info": {
+    "displayName": "Logo Slider"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.logo-item"
+    }
+  }
+}

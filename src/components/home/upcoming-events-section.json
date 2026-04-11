@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_home_upcoming_events_sections",
+  "info": {
+    "displayName": "Upcoming Events Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.upcoming-event"
+    }
+  }
+}

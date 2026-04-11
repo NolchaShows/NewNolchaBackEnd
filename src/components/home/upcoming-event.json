@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_home_upcoming_events",
+  "info": {
+    "displayName": "Upcoming Event"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "string"
+    },
+    "location": {
+      "type": "text"
+    },
+    "venue": {
+      "type": "text"
+    },
+    "whatToExpect": {
+      "type": "richtext"
+    },
+    "rsvpLink": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "galleryImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

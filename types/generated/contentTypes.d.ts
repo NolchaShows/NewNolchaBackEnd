@@ -430,6 +430,53 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
+  collectionName: 'charity_pages';
+  info: {
+    description: 'Charity page rendered by the Next.js route /charity.';
+    displayName: 'Charity Page';
+    pluralName: 'charity-pages';
+    singularName: 'charity-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'blocks.three-image-row',
+        'blocks.gallery',
+        'blocks.fashion-grid-section',
+        'blocks.image-text-section',
+        'blocks.evening-recap-section',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::charity-page.charity-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    shared_tweet_carousel: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-tweet-carousel.shared-tweet-carousel'
+    >;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
   collectionName: 'designers';
   info: {
@@ -549,6 +596,83 @@ export interface ApiFeaturedArtistFeaturedArtist
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     socialImages: Schema.Attribute.Component<'designer.social-image', true>;
     source: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    description: 'Structured homepage content rendered by the Next.js home route.';
+    displayName: 'Home Page';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    artist_section: Schema.Attribute.Component<'home.artist-section', false>;
+    blocks: Schema.Attribute.DynamicZone<
+      ['blocks.gallery', 'blocks.evening-recap-section']
+    >;
+    build_momentum_section: Schema.Attribute.Component<
+      'home.build-momentum-section',
+      false
+    >;
+    contact_section: Schema.Attribute.Component<'home.contact-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    feature_banner_one: Schema.Attribute.Media<'videos'>;
+    feature_banner_two: Schema.Attribute.Media<'videos'>;
+    featured_experiences: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::experience-page.experience-page'
+    >;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    image_gallery_slider: Schema.Attribute.Component<
+      'home.image-gallery-slider',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    logo_slider: Schema.Attribute.Component<'home.logo-slider', false>;
+    nolcha_experience_section: Schema.Attribute.Component<
+      'home.nolcha-experience-section',
+      false
+    >;
+    press_media_image: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    service_section: Schema.Attribute.Component<'home.service-section', false>;
+    shared_partner_section: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-partner-section.shared-partner-section'
+    >;
+    shared_tweet_carousel: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-tweet-carousel.shared-tweet-carousel'
+    >;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    speaker_section: Schema.Attribute.Component<'home.speaker-section', false>;
+    texthero_section: Schema.Attribute.Component<
+      'home.text-hero-section',
+      false
+    >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    upcoming_events_section: Schema.Attribute.Component<
+      'home.upcoming-events-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1206,9 +1330,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::charity-page.charity-page': ApiCharityPageCharityPage;
       'api::designer.designer': ApiDesignerDesigner;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;

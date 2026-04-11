@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_home_text_hero_sections",
+  "info": {
+    "displayName": "Text Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.text-hero-slide"
+    }
+  }
+}

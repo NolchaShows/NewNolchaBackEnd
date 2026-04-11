@@ -1,0 +1,130 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page",
+    "description": "Structured homepage content rendered by the Next.js home route."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "build_momentum_section": {
+      "type": "component",
+      "component": "home.build-momentum-section",
+      "required": false
+    },
+    "image_gallery_slider": {
+      "type": "component",
+      "component": "home.image-gallery-slider",
+      "required": false
+    },
+    "logo_slider": {
+      "type": "component",
+      "component": "home.logo-slider",
+      "required": false
+    },
+    "upcoming_events_section": {
+      "type": "component",
+      "component": "home.upcoming-events-section",
+      "required": false
+    },
+    "service_section": {
+      "type": "component",
+      "component": "home.service-section",
+      "required": false
+    },
+    "speaker_section": {
+      "type": "component",
+      "component": "home.speaker-section",
+      "required": false
+    },
+    "texthero_section": {
+      "type": "component",
+      "component": "home.text-hero-section",
+      "required": false
+    },
+    "shared_partner_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-partner-section.shared-partner-section",
+      "required": false
+    },
+    "feature_banner_one": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "nolcha_experience_section": {
+      "type": "component",
+      "component": "home.nolcha-experience-section",
+      "required": false
+    },
+    "press_media_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "artist_section": {
+      "type": "component",
+      "component": "home.artist-section",
+      "required": false
+    },
+    "feature_banner_two": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "shared_tweet_carousel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-tweet-carousel.shared-tweet-carousel",
+      "required": false
+    },
+    "featured_experiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience-page.experience-page",
+      "required": false
+    },
+    "contact_section": {
+      "type": "component",
+      "component": "home.contact-section",
+      "required": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.gallery",
+        "blocks.evening-recap-section"
+      ],
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,132 @@
+import { factories } from '@strapi/strapi';
+
+const UID = 'api::home-page.home-page' as any;
+
+export default factories.createCoreController(
+  UID,
+  ({ strapi }) => ({
+    async findBySlug(ctx) {
+      const slug = ctx.params?.slug;
+
+      if (!slug) {
+        return ctx.badRequest('Missing slug');
+      }
+
+      const entity = await strapi.db.query(UID).findOne({
+        where: { slug, publishedAt: { $notNull: true } },
+        populate: {
+          seo: { populate: ['ogImage'] },
+          hero: { populate: ['video'] },
+          build_momentum_section: {
+            populate: {
+              paragraphs: true,
+              logos: { populate: ['image'] },
+            },
+          },
+          image_gallery_slider: { populate: ['images'] },
+          logo_slider: {
+            populate: {
+              logos: { populate: ['image'] },
+            },
+          },
+          upcoming_events_section: {
+            populate: {
+              events: {
+                populate: ['image', 'logo', 'mainImage', 'galleryImages'],
+              },
+            },
+          },
+          service_section: {
+            populate: {
+              image: true,
+              services: true,
+            },
+          },
+          speaker_section: {
+            populate: {
+              speakers: { populate: ['image'] },
+            },
+          },
+          texthero_section: {
+            populate: {
+              slides: { populate: ['main_image', 'second_image', 'logo_image'] },
+            },
+          },
+          shared_partner_section: {
+            populate: {
+              partners: {
+                populate: ['primary', 'secondary'],
+              },
+            },
+          },
+          feature_banner_one: true,
+          nolcha_experience_section: {
+            populate: {
+              main_image: true,
+              accordion_sections: true,
+            },
+          },
+          press_media_image: true,
+          artist_section: {
+            populate: {
+              carousal_item: true,
+              media: true,
+            },
+          },
+          feature_banner_two: true,
+          shared_tweet_carousel: { populate: ['items'] },
+          featured_experiences: {
+            populate: {
+              hero: { populate: ['video'] },
+              blocks: {
+                on: {
+                  'blocks.three-image-row': {
+                    populate: ['firstMedia', 'secondMedia', 'thirdMedia'],
+                  },
+                  'blocks.gallery': {
+                    populate: {
+                      images: true,
+                      items: { populate: ['image'] },
+                    },
+                  },
+                  'blocks.fashion-grid-section': {
+                    populate: [
+                      'leftMedia',
+                      'rightMedia',
+                      'topMedia',
+                      'middleMedia1',
+                      'middleMedia2',
+                      'middleMedia3',
+                      'bottomMedia',
+                    ],
+                  },
+                  'blocks.image-text-section': { populate: { image: true, tags: true } },
+                  'blocks.evening-recap-section': { populate: ['video'] },
+                },
+              },
+            },
+          },
+          contact_section: { populate: ['background_image', 'video'] },
+          blocks: {
+            on: {
+              'blocks.gallery': {
+                populate: {
+                  images: true,
+                  items: { populate: ['image'] },
+                },
+              },
+              'blocks.evening-recap-section': { populate: ['video'] },
+            },
+          },
+        },
+      });
+
+      if (!entity) {
+        return ctx.notFound('Home page not found');
+      }
+
+      const sanitized = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitized);
+    },
+  })
+);

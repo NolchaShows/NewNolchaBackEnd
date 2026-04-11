@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_service_items",
+  "info": {
+    "displayName": "Service Item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "work": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_home_rich_paragraphs",
+  "info": {
+    "displayName": "Rich Paragraph"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    },
+    "text_before": {
+      "type": "text"
+    },
+    "highlight": {
+      "type": "string"
+    },
+    "text_after": {
+      "type": "text"
+    }
+  }
+}

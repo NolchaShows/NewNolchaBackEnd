@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_artist_sections",
+  "info": {
+    "displayName": "Artist Section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "carousal_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.carousel-text-item"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images", "videos"]
+    }
+  }
+}
