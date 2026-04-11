@@ -62,6 +62,23 @@
       "component": "home.service-section",
       "required": false
     },
+    "feature_banner_one": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "shared_partner_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-partner-section.shared-partner-section",
+      "required": false
+    },
+    "nolcha_experience_section": {
+      "type": "component",
+      "component": "home.nolcha-experience-section",
+      "required": false
+    },
     "speaker_section": {
       "type": "component",
       "component": "home.speaker-section",
@@ -70,23 +87,6 @@
     "texthero_section": {
       "type": "component",
       "component": "home.text-hero-section",
-      "required": false
-    },
-    "shared_partner_section": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::shared-partner-section.shared-partner-section",
-      "required": false
-    },
-    "feature_banner_one": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["videos"]
-    },
-    "nolcha_experience_section": {
-      "type": "component",
-      "component": "home.nolcha-experience-section",
       "required": false
     },
     "press_media_image": {
