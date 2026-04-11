@@ -9,9 +9,9 @@
       "type": "string"
     },
     "logos": {
-      "type": "component",
-      "repeatable": true,
-      "component": "home.logo-item"
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
     }
   }
 }

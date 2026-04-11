@@ -20,13 +20,13 @@ export default factories.createCoreController(
           build_momentum_section: {
             populate: {
               paragraphs: true,
-              logos: { populate: ['image'] },
+              logos: true,
             },
           },
           image_gallery_slider: { populate: ['images'] },
           logo_slider: {
             populate: {
-              logos: { populate: ['image'] },
+              logos: true,
             },
           },
           upcoming_events_section: {
