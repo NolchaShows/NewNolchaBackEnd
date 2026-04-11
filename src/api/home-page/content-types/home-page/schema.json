@@ -52,6 +52,11 @@
       "component": "home.upcoming-events-section",
       "required": false
     },
+    "evening_recap_section": {
+      "type": "component",
+      "component": "blocks.evening-recap-section",
+      "required": false
+    },
     "service_section": {
       "type": "component",
       "component": "home.service-section",
@@ -101,6 +106,11 @@
       "required": false,
       "allowedTypes": ["videos"]
     },
+    "gallery_section": {
+      "type": "component",
+      "component": "blocks.gallery",
+      "required": false
+    },
     "shared_tweet_carousel": {
       "type": "relation",
       "relation": "manyToOne",
@@ -116,14 +126,6 @@
     "contact_section": {
       "type": "component",
       "component": "home.contact-section",
-      "required": false
-    },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "blocks.gallery",
-        "blocks.evening-recap-section"
-      ],
       "required": false
     }
   }

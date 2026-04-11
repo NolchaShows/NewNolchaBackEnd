@@ -36,6 +36,7 @@ export default factories.createCoreController(
               },
             },
           },
+          evening_recap_section: { populate: ['video'] },
           service_section: {
             populate: {
               image: true,
@@ -74,6 +75,12 @@ export default factories.createCoreController(
             },
           },
           feature_banner_two: true,
+          gallery_section: {
+            populate: {
+              images: true,
+              items: { populate: ['image'] },
+            },
+          },
           shared_tweet_carousel: { populate: ['items'] },
           featured_experiences: {
             populate: {
@@ -107,17 +114,6 @@ export default factories.createCoreController(
             },
           },
           contact_section: { populate: ['background_image', 'video'] },
-          blocks: {
-            on: {
-              'blocks.gallery': {
-                populate: {
-                  images: true,
-                  items: { populate: ['image'] },
-                },
-              },
-              'blocks.evening-recap-section': { populate: ['video'] },
-            },
-          },
         },
       });
 
