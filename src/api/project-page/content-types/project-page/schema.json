@@ -1,11 +1,11 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "project_pages",
   "info": {
     "singularName": "project-page",
     "pluralName": "project-pages",
     "displayName": "Project Page",
-    "description": "Dynamic project pages rendered by custom frontend routes."
+    "description": "Singleton content for the project page."
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +15,6 @@
     "title": {
       "type": "string",
       "required": true
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": true,
-      "unique": true
     },
     "seo": {
       "type": "component",
