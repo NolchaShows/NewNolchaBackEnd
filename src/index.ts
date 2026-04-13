@@ -157,52 +157,6 @@ export default {
         };
       });
 
-      // Project Page by slug query
-      extensionService.use(({ nexus }) => {
-        const UID = 'api::project-page.project-page';
-        const contentType = strapi.contentTypes[UID];
-
-        if (!contentType) return {};
-
-        const { naming } = strapi.plugin('graphql').service('utils');
-        const { transformArgs } = strapi.plugin('graphql').service('builders').utils;
-        const { findFirst } = strapi
-          .plugin('graphql')
-          .service('builders')
-          .get('content-api')
-          .buildQueriesResolvers({ contentType });
-
-        const typeName = naming.getTypeName(contentType);
-
-        return {
-          types: [
-            nexus.extendType({
-              type: 'Query',
-              definition(t) {
-                t.field('projectPageBySlug', {
-                  type: typeName,
-                  args: {
-                    slug: nexus.nonNull(nexus.stringArg()),
-                  },
-                  async resolve(parent, args, ctx) {
-                    const transformedArgs = transformArgs(
-                      { filters: { slug: { eq: args.slug } } },
-                      { contentType }
-                    );
-
-                    return await findFirst(parent, transformedArgs, ctx);
-                  },
-                });
-              },
-            }),
-          ],
-          resolversConfig: {
-            'Query.projectPageBySlug': {
-              auth: { scope: [`${UID}.find`] },
-            },
-          },
-        };
-      });
     } catch {
       // If GraphQL plugin isn't available, don't break Strapi startup.
     }

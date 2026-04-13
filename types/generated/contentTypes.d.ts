@@ -711,10 +711,10 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiProjectPageProjectPage extends Struct.CollectionTypeSchema {
+export interface ApiProjectPageProjectPage extends Struct.SingleTypeSchema {
   collectionName: 'project_pages';
   info: {
-    description: 'Dynamic project pages rendered by custom frontend routes.';
+    description: 'Singleton content for the project page.';
     displayName: 'Project Page';
     pluralName: 'project-pages';
     singularName: 'project-page';
@@ -737,9 +737,6 @@ export interface ApiProjectPageProjectPage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    slug: Schema.Attribute.UID<'title'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
