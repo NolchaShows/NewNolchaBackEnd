@@ -711,6 +711,42 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiProjectPageProjectPage extends Struct.CollectionTypeSchema {
+  collectionName: 'project_pages';
+  info: {
+    description: 'Dynamic project pages rendered by custom frontend routes.';
+    displayName: 'Project Page';
+    pluralName: 'project-pages';
+    singularName: 'project-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detail_rows: Schema.Attribute.Component<'project.detail-row', true>;
+    gallery: Schema.Attribute.Component<'project.media-gallery', false>;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project-page.project-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSharedPartnerSectionSharedPartnerSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'shared_partner_sections';
@@ -1338,6 +1374,7 @@ declare module '@strapi/strapi' {
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::press-page.press-page': ApiPressPagePressPage;
+      'api::project-page.project-page': ApiProjectPageProjectPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;

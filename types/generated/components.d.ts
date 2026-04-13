@@ -429,6 +429,42 @@ export interface PressPressCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ProjectDetailRow extends Struct.ComponentSchema {
+  collectionName: 'components_project_detail_rows';
+  info: {
+    description: 'A labeled project detail row with optional title, description, or tags.';
+    displayName: 'Detail Row';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.Component<'blocks.tag', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ProjectMediaGallery extends Struct.ComponentSchema {
+  collectionName: 'components_project_media_galleries';
+  info: {
+    description: 'Bulk upload standard gallery media and separate full-width media.';
+    displayName: 'Media Gallery';
+    icon: 'picture';
+  };
+  attributes: {
+    featured_interval: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<6>;
+    featured_media: Schema.Attribute.Media<'images' | 'videos', true>;
+    standard_media: Schema.Attribute.Media<'images' | 'videos', true>;
+  };
+}
+
 export interface SharedPartnerItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_items';
   info: {
@@ -593,6 +629,8 @@ declare module '@strapi/strapi' {
       'home.upcoming-events-section': HomeUpcomingEventsSection;
       'press.media-coverage': PressMediaCoverage;
       'press.press-card': PressPressCard;
+      'project.detail-row': ProjectDetailRow;
+      'project.media-gallery': ProjectMediaGallery;
       'shared.partner-item': SharedPartnerItem;
       'shared.partner-section': SharedPartnerSection;
       'shared.seo': SharedSeo;
