@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_project_media_galleries",
+  "info": {
+    "displayName": "Media Gallery",
+    "icon": "picture",
+    "description": "Bulk upload standard gallery media and separate full-width media."
+  },
+  "options": {},
+  "attributes": {
+    "standard_media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "featured_media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "featured_interval": {
+      "type": "integer",
+      "default": 6,
+      "min": 1
+    }
+  }
+}
