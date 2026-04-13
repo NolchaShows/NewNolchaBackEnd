@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_pages",
+  "info": {
+    "singularName": "project-page",
+    "pluralName": "project-pages",
+    "displayName": "Project Page",
+    "description": "Dynamic project pages rendered by custom frontend routes."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "detail_rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project.detail-row",
+      "required": false
+    },
+    "gallery": {
+      "type": "component",
+      "component": "project.media-gallery",
+      "required": false
+    }
+  }
+}

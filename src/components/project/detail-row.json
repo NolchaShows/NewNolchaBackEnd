@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_project_detail_rows",
+  "info": {
+    "displayName": "Detail Row",
+    "icon": "bulletList",
+    "description": "A labeled project detail row with optional title, description, or tags."
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.tag"
+    }
+  }
+}
