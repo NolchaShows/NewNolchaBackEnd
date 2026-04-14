@@ -14,6 +14,7 @@ export default factories.createCoreController(UID, () => ({
           populate: {
             standard_media: true,
             featured_media: true,
+            featured_content_sections: true,
           },
         },
       },
