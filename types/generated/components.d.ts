@@ -444,6 +444,19 @@ export interface ProjectDetailRow extends Struct.ComponentSchema {
   };
 }
 
+export interface ProjectFeaturedContentSection extends Struct.ComponentSchema {
+  collectionName: 'components_project_featured_content_sections';
+  info: {
+    description: 'Text content shown after a featured gallery item.';
+    displayName: 'Featured Content Section';
+    icon: 'alignJustify';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface ProjectMediaGallery extends Struct.ComponentSchema {
   collectionName: 'components_project_media_galleries';
   info: {
@@ -452,6 +465,10 @@ export interface ProjectMediaGallery extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    featured_content_sections: Schema.Attribute.Component<
+      'project.featured-content-section',
+      true
+    >;
     featured_interval: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
@@ -630,6 +647,7 @@ declare module '@strapi/strapi' {
       'press.media-coverage': PressMediaCoverage;
       'press.press-card': PressPressCard;
       'project.detail-row': ProjectDetailRow;
+      'project.featured-content-section': ProjectFeaturedContentSection;
       'project.media-gallery': ProjectMediaGallery;
       'shared.partner-item': SharedPartnerItem;
       'shared.partner-section': SharedPartnerSection;

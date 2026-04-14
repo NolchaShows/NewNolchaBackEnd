@@ -19,6 +19,12 @@
       "required": false,
       "allowedTypes": ["images", "videos"]
     },
+    "featured_content_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project.featured-content-section",
+      "required": false
+    },
     "featured_interval": {
       "type": "integer",
       "default": 6,
