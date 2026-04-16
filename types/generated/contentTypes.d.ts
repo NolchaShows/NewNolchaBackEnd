@@ -433,7 +433,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
   collectionName: 'charity_pages';
   info: {
-    description: 'Charity page rendered by the Next.js route /charity.';
+    description: 'Dynamic charity pages rendered by the Next.js route /charity/[slug]. Matches the Experience Page content model (hero, detail rows, media gallery).';
     displayName: 'Charity Page';
     pluralName: 'charity-pages';
     singularName: 'charity-page';
@@ -442,18 +442,11 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      [
-        'blocks.three-image-row',
-        'blocks.gallery',
-        'blocks.fashion-grid-section',
-        'blocks.image-text-section',
-        'blocks.evening-recap-section',
-      ]
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    detail_rows: Schema.Attribute.Component<'project.detail-row', true>;
+    gallery: Schema.Attribute.Component<'project.media-gallery', false>;
     hero: Schema.Attribute.Component<'experience.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -463,10 +456,6 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
-    shared_tweet_carousel: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::shared-tweet-carousel.shared-tweet-carousel'
-    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
