@@ -10,6 +10,7 @@ export default factories.createCoreController(UID, () => ({
       populate: {
         mediaCoverage: { populate: ['image'] },
         pressCards: { populate: ['newsPaperLogo', 'image'] },
+        statementSection: true,
       },
     };
 
