@@ -5,17 +5,6 @@ const UID = 'api::charity-page.charity-page' as any;
 export default factories.createCoreController(
   UID,
   ({ strapi }) => ({
-    async listPublished(ctx) {
-      const entities = await strapi.db.query('api::charity-page.charity-page').findMany({
-        where: { publishedAt: { $notNull: true } },
-        select: ['title', 'slug'],
-        orderBy: { title: 'asc' },
-      });
-
-      const sanitized = await this.sanitizeOutput(entities, ctx);
-      return this.transformResponse(sanitized);
-    },
-
     async findBySlug(ctx) {
       const slug = ctx.params?.slug;
 
@@ -28,35 +17,12 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
-          shared_tweet_carousel: { populate: ['items'] },
-          blocks: {
-            on: {
-              'blocks.three-image-row': {
-                populate: [
-                  'firstMedia',
-                  'secondMedia',
-                  'thirdMedia',
-                ],
-              },
-              'blocks.gallery': {
-                populate: {
-                  images: true,
-                  items: { populate: ['image'] },
-                },
-              },
-              'blocks.fashion-grid-section': {
-                populate: [
-                  'leftMedia',
-                  'rightMedia',
-                  'topMedia',
-                  'middleMedia1',
-                  'middleMedia2',
-                  'middleMedia3',
-                  'bottomMedia',
-                ],
-              },
-              'blocks.image-text-section': { populate: { image: true, tags: true } },
-              'blocks.evening-recap-section': { populate: ['video'] },
+          detail_rows: { populate: ['tags'] },
+          gallery: {
+            populate: {
+              standard_media: true,
+              featured_media: true,
+              featured_content_sections: true,
             },
           },
         },

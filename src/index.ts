@@ -63,6 +63,53 @@ export default {
         };
       });
 
+      // Charity Page by slug query
+      extensionService.use(({ nexus }) => {
+        const UID = 'api::charity-page.charity-page';
+        const contentType = strapi.contentTypes[UID];
+
+        if (!contentType) return {};
+
+        const { naming } = strapi.plugin('graphql').service('utils');
+        const { transformArgs } = strapi.plugin('graphql').service('builders').utils;
+        const { findFirst } = strapi
+          .plugin('graphql')
+          .service('builders')
+          .get('content-api')
+          .buildQueriesResolvers({ contentType });
+
+        const typeName = naming.getTypeName(contentType);
+
+        return {
+          types: [
+            nexus.extendType({
+              type: 'Query',
+              definition(t) {
+                t.field('charityPageBySlug', {
+                  type: typeName,
+                  args: {
+                    slug: nexus.nonNull(nexus.stringArg()),
+                  },
+                  async resolve(parent, args, ctx) {
+                    const transformedArgs = transformArgs(
+                      { filters: { slug: { eq: args.slug } } },
+                      { contentType }
+                    );
+
+                    return await findFirst(parent, transformedArgs, ctx);
+                  },
+                });
+              },
+            }),
+          ],
+          resolversConfig: {
+            'Query.charityPageBySlug': {
+              auth: { scope: [`${UID}.find`] },
+            },
+          },
+        };
+      });
+
       // Designer by slug query
       extensionService.use(({ nexus }) => {
         const UID = 'api::designer.designer';
@@ -181,6 +228,10 @@ export default {
     const actions = [
       'api::experience-page.experience-page.find',
       'api::experience-page.experience-page.findOne',
+      'api::experience-page.experience-page.findBySlug',
+      'api::charity-page.charity-page.find',
+      'api::charity-page.charity-page.findOne',
+      'api::charity-page.charity-page.findBySlug',
       // White label page
       'api::white-label-page.white-label-page.find',
       'api::white-label-page.white-label-page.findOne',
