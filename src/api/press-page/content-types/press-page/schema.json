@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "statementSection": {
-      "type": "component",
-      "component": "press.statement-section",
-      "required": false
-    },
     "mediaCoverage": {
       "type": "component",
       "component": "press.media-coverage",
@@ -30,3 +25,4 @@
     }
   }
 }
+
