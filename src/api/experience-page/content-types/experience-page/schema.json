@@ -32,21 +32,15 @@
       "component": "experience.hero",
       "required": false
     },
-    "shared_tweet_carousel": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::shared-tweet-carousel.shared-tweet-carousel",
+    "detail_rows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project.detail-row",
       "required": false
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": [
-        "blocks.three-image-row",
-        "blocks.gallery",
-        "blocks.fashion-grid-section",
-        "blocks.image-text-section",
-        "blocks.evening-recap-section"
-      ],
+    "gallery": {
+      "type": "component",
+      "component": "project.media-gallery",
       "required": false
     }
   }
