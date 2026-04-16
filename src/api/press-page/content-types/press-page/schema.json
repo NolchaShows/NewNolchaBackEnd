@@ -22,11 +22,6 @@
       "repeatable": true,
       "component": "press.press-card",
       "required": false
-    },
-    "statementSection": {
-      "type": "component",
-      "component": "press.statement-section",
-      "required": false
     }
   }
 }
