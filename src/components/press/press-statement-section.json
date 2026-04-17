@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_press_press_statement_sections",
+  "info": {
+    "displayName": "Press Statement Section",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "text"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -429,6 +429,20 @@ export interface PressPressCard extends Struct.ComponentSchema {
   };
 }
 
+export interface PressPressStatementSection extends Struct.ComponentSchema {
+  collectionName: 'components_press_press_statement_sections';
+  info: {
+    displayName: 'Press Statement Section';
+    icon: 'quote';
+  };
+  attributes: {
+    ctaText: Schema.Attribute.String;
+    ctaUrl: Schema.Attribute.String;
+    headline: Schema.Attribute.Text;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface ProjectDetailRow extends Struct.ComponentSchema {
   collectionName: 'components_project_detail_rows';
   info: {
@@ -646,6 +660,7 @@ declare module '@strapi/strapi' {
       'home.upcoming-events-section': HomeUpcomingEventsSection;
       'press.media-coverage': PressMediaCoverage;
       'press.press-card': PressPressCard;
+      'press.press-statement-section': PressPressStatementSection;
       'project.detail-row': ProjectDetailRow;
       'project.featured-content-section': ProjectFeaturedContentSection;
       'project.media-gallery': ProjectMediaGallery;
