@@ -1,5 +1,120 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutClientsSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_clients_sections';
+  info: {
+    displayName: 'Clients Section';
+    icon: 'users';
+  };
+  attributes: {
+    ctaText: Schema.Attribute.String;
+    ctaUrl: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String;
+    logos: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutDifferentiatorItem extends Struct.ComponentSchema {
+  collectionName: 'components_about_differentiator_items';
+  info: {
+    displayName: 'Differentiator Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutDifferentiatorsSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_differentiators_sections';
+  info: {
+    displayName: 'Differentiators Section';
+    icon: 'apps';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'about.differentiator-item', true>;
+    label: Schema.Attribute.String;
+  };
+}
+
+export interface AboutEcosystemSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_ecosystem_sections';
+  info: {
+    displayName: 'Ecosystem Section';
+    icon: 'landscape';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutPressSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_press_sections';
+  info: {
+    displayName: 'Press Section';
+    icon: 'book';
+  };
+  attributes: {
+    featureDate: Schema.Attribute.Date;
+    featureImage: Schema.Attribute.Media<'images'>;
+    featureSource: Schema.Attribute.String;
+    featureTitle: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    viewMoreText: Schema.Attribute.String;
+    viewMoreUrl: Schema.Attribute.String;
+  };
+}
+
+export interface AboutServiceStory extends Struct.ComponentSchema {
+  collectionName: 'components_about_service_stories';
+  info: {
+    displayName: 'Service Story';
+    icon: 'file';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutServicesSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_services_sections';
+  info: {
+    displayName: 'Services Section';
+    icon: 'layout';
+  };
+  attributes: {
+    ctaText: Schema.Attribute.String;
+    ctaUrl: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    stories: Schema.Attribute.Component<'about.service-story', true>;
+    title: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface AboutStatementSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_statement_sections';
+  info: {
+    displayName: 'Statement Section';
+    icon: 'file';
+  };
+  attributes: {
+    ctaText: Schema.Attribute.String;
+    ctaUrl: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    headline: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    rightItems: Schema.Attribute.JSON;
+  };
+}
+
 export interface BlocksEveningRecapSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_evening_recap_sections';
   info: {
@@ -627,6 +742,14 @@ export interface WhiteLabelIntroSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.clients-section': AboutClientsSection;
+      'about.differentiator-item': AboutDifferentiatorItem;
+      'about.differentiators-section': AboutDifferentiatorsSection;
+      'about.ecosystem-section': AboutEcosystemSection;
+      'about.press-section': AboutPressSection;
+      'about.service-story': AboutServiceStory;
+      'about.services-section': AboutServicesSection;
+      'about.statement-section': AboutStatementSection;
       'blocks.evening-recap-section': BlocksEveningRecapSection;
       'blocks.fashion-grid-section': BlocksFashionGridSection;
       'blocks.gallery': BlocksGallery;

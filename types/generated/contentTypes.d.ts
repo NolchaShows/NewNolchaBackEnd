@@ -430,6 +430,53 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    description: 'Singleton content for the About page.';
+    displayName: 'About Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    clientsSection: Schema.Attribute.Component<'about.clients-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    differentiatorsSection: Schema.Attribute.Component<
+      'about.differentiators-section',
+      false
+    >;
+    ecosystemSection: Schema.Attribute.Component<
+      'about.ecosystem-section',
+      false
+    >;
+    heroVideo: Schema.Attribute.Media<'videos'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    pressSection: Schema.Attribute.Component<'about.press-section', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    servicesSection: Schema.Attribute.Component<
+      'about.services-section',
+      false
+    >;
+    statementSection: Schema.Attribute.Component<
+      'about.statement-section',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
   collectionName: 'charity_pages';
   info: {
@@ -1347,6 +1394,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::charity-page.charity-page': ApiCharityPageCharityPage;
       'api::designer.designer': ApiDesignerDesigner;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
