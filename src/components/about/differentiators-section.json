@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_differentiators_sections",
+  "info": {
+    "displayName": "Differentiators Section",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.differentiator-item"
+    }
+  }
+}

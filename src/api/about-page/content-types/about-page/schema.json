@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "Singleton content for the About page."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heroVideo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "statementSection": {
+      "type": "component",
+      "component": "about.statement-section",
+      "required": false
+    },
+    "differentiatorsSection": {
+      "type": "component",
+      "component": "about.differentiators-section",
+      "required": false
+    },
+    "servicesSection": {
+      "type": "component",
+      "component": "about.services-section",
+      "required": false
+    },
+    "ecosystemSection": {
+      "type": "component",
+      "component": "about.ecosystem-section",
+      "required": false
+    },
+    "clientsSection": {
+      "type": "component",
+      "component": "about.clients-section",
+      "required": false
+    },
+    "pressSection": {
+      "type": "component",
+      "component": "about.press-section",
+      "required": false
+    }
+  }
+}

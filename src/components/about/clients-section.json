@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_about_clients_sections",
+  "info": {
+    "displayName": "Clients Section",
+    "icon": "users"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "ctaText": { "type": "string" },
+    "ctaUrl": { "type": "string" },
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

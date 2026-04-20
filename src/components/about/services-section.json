@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_about_services_sections",
+  "info": {
+    "displayName": "Services Section",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "title": { "type": "string" },
+    "ctaText": { "type": "string" },
+    "ctaUrl": { "type": "string" },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["videos"]
+    },
+    "stories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.service-story"
+    }
+  }
+}

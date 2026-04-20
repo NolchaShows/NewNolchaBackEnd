@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_press_sections",
+  "info": {
+    "displayName": "Press Section",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "title": { "type": "string" },
+    "viewMoreText": { "type": "string" },
+    "viewMoreUrl": { "type": "string" },
+    "featureDate": { "type": "date" },
+    "featureTitle": { "type": "string" },
+    "featureSource": { "type": "string" },
+    "featureImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_about_statement_sections",
+  "info": {
+    "displayName": "Statement Section",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string" },
+    "headline": { "type": "string" },
+    "description": { "type": "text" },
+    "ctaText": { "type": "string" },
+    "ctaUrl": { "type": "string" },
+    "rightItems": { "type": "json" }
+  }
+}

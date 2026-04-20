@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_differentiator_items",
+  "info": {
+    "displayName": "Differentiator Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string" },
+    "description": { "type": "text" }
+  }
+}
