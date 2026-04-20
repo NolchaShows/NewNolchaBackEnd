@@ -9,15 +9,6 @@
     "label": { "type": "string" },
     "title": { "type": "string" },
     "viewMoreText": { "type": "string" },
-    "viewMoreUrl": { "type": "string" },
-    "featureDate": { "type": "date" },
-    "featureTitle": { "type": "string" },
-    "featureSource": { "type": "string" },
-    "featureImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"]
-    }
+    "viewMoreUrl": { "type": "string" }
   }
 }

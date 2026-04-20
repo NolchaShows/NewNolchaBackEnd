@@ -60,10 +60,6 @@ export interface AboutPressSection extends Struct.ComponentSchema {
     icon: 'book';
   };
   attributes: {
-    featureDate: Schema.Attribute.Date;
-    featureImage: Schema.Attribute.Media<'images'>;
-    featureSource: Schema.Attribute.String;
-    featureTitle: Schema.Attribute.String;
     label: Schema.Attribute.String;
     title: Schema.Attribute.String;
     viewMoreText: Schema.Attribute.String;
