@@ -111,7 +111,18 @@ export interface AboutStatementSection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     headline: Schema.Attribute.String;
     label: Schema.Attribute.String;
-    rightItems: Schema.Attribute.JSON;
+    rightItems: Schema.Attribute.Component<'about.text-item', true>;
+  };
+}
+
+export interface AboutTextItem extends Struct.ComponentSchema {
+  collectionName: 'components_about_text_items';
+  info: {
+    displayName: 'Text Item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    text: Schema.Attribute.String;
   };
 }
 
@@ -750,6 +761,7 @@ declare module '@strapi/strapi' {
       'about.service-story': AboutServiceStory;
       'about.services-section': AboutServicesSection;
       'about.statement-section': AboutStatementSection;
+      'about.text-item': AboutTextItem;
       'blocks.evening-recap-section': BlocksEveningRecapSection;
       'blocks.fashion-grid-section': BlocksFashionGridSection;
       'blocks.gallery': BlocksGallery;

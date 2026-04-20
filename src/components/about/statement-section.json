@@ -11,6 +11,10 @@
     "description": { "type": "text" },
     "ctaText": { "type": "string" },
     "ctaUrl": { "type": "string" },
-    "rightItems": { "type": "json" }
+    "rightItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.text-item"
+    }
   }
 }

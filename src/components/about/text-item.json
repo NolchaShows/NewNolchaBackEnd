@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_about_text_items",
+  "info": {
+    "displayName": "Text Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "text": { "type": "string" }
+  }
+}
