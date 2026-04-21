@@ -627,7 +627,7 @@ export interface ApiFeaturedArtistFeaturedArtist
   };
 }
 
-export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
     description: 'Structured homepage content rendered by the Next.js home route.';
@@ -691,9 +691,6 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::shared-tweet-carousel.shared-tweet-carousel'
     >;
-    slug: Schema.Attribute.UID<'title'> &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     texthero_section: Schema.Attribute.Component<
       'home.text-hero-section',
       false
