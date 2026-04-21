@@ -694,7 +694,6 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    speaker_section: Schema.Attribute.Component<'home.speaker-section', false>;
     texthero_section: Schema.Attribute.Component<
       'home.text-hero-section',
       false
@@ -907,7 +906,6 @@ export interface ApiSpeakersPageSpeakersPage
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
-    speaker_section: Schema.Attribute.Component<'home.speaker-section', false>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

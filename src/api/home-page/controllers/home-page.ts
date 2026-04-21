@@ -43,11 +43,6 @@ export default factories.createCoreController(
               services: true,
             },
           },
-          speaker_section: {
-            populate: {
-              speakers: { populate: ['image'] },
-            },
-          },
           shared_speaker_section: {
             populate: {
               speakers: { populate: ['image'] },

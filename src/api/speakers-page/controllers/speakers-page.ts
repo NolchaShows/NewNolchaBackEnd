@@ -22,11 +22,6 @@ export default factories.createCoreController(
               speakers: { populate: ['image'] },
             },
           },
-          speaker_section: {
-            populate: {
-              speakers: { populate: ['image'] },
-            },
-          },
           gallery: {
             populate: {
               standard_media: true,
