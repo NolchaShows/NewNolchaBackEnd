@@ -5,8 +5,8 @@ export default {
       path: '/featured-artists/by-slug/:slug',
       handler: 'featured-artist.findBySlug',
       config: {
-        auth: false
-      }
-    }
+        auth: false,
+      },
+    },
   ],
 };
