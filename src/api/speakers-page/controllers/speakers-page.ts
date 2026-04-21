@@ -17,6 +17,11 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
+          shared_speaker_section: {
+            populate: {
+              speakers: { populate: ['image'] },
+            },
+          },
           speaker_section: {
             populate: {
               speakers: { populate: ['image'] },

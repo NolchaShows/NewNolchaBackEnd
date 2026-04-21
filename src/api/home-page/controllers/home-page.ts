@@ -48,6 +48,11 @@ export default factories.createCoreController(
               speakers: { populate: ['image'] },
             },
           },
+          shared_speaker_section: {
+            populate: {
+              speakers: { populate: ['image'] },
+            },
+          },
           texthero_section: {
             populate: {
               slides: { populate: ['main_image', 'second_image', 'logo_image'] },

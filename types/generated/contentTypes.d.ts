@@ -683,6 +683,10 @@ export interface ApiHomePageHomePage extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::shared-partner-section.shared-partner-section'
     >;
+    shared_speaker_section: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-speaker-section.shared-speaker-section'
+    >;
     shared_tweet_carousel: Schema.Attribute.Relation<
       'manyToOne',
       'api::shared-tweet-carousel.shared-tweet-carousel'
@@ -806,6 +810,38 @@ export interface ApiSharedPartnerSectionSharedPartnerSection
   };
 }
 
+export interface ApiSharedSpeakerSectionSharedSpeakerSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'shared_speaker_sections';
+  info: {
+    description: 'Reusable speaker section that can be attached to multiple pages.';
+    displayName: 'Shared Speaker Section';
+    pluralName: 'shared-speaker-sections';
+    singularName: 'shared-speaker-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    key: Schema.Attribute.UID<'title'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shared-speaker-section.shared-speaker-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    speakers: Schema.Attribute.Component<'home.speaker-item', true>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSharedTweetCarouselSharedTweetCarousel
   extends Struct.CollectionTypeSchema {
   collectionName: 'shared_tweet_carousels';
@@ -864,6 +900,10 @@ export interface ApiSpeakersPageSpeakersPage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    shared_speaker_section: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-speaker-section.shared-speaker-section'
+    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -1440,6 +1480,7 @@ declare module '@strapi/strapi' {
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::project-page.project-page': ApiProjectPageProjectPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
+      'api::shared-speaker-section.shared-speaker-section': ApiSharedSpeakerSectionSharedSpeakerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;
       'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;

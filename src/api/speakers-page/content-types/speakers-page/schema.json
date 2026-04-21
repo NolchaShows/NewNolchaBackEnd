@@ -32,6 +32,12 @@
       "component": "experience.hero",
       "required": false
     },
+    "shared_speaker_section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-speaker-section.shared-speaker-section",
+      "required": false
+    },
     "speaker_section": {
       "type": "component",
       "component": "home.speaker-section",

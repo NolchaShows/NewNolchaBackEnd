@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shared_speaker_sections",
+  "info": {
+    "singularName": "shared-speaker-section",
+    "pluralName": "shared-speaker-sections",
+    "displayName": "Shared Speaker Section",
+    "description": "Reusable speaker section that can be attached to multiple pages."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "speakers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "home.speaker-item"
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
