@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "home_pages",
   "info": {
     "singularName": "home-page",
@@ -15,12 +15,6 @@
     "title": {
       "type": "string",
       "required": true
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title",
-      "required": true,
-      "unique": true
     },
     "seo": {
       "type": "component",

@@ -4,16 +4,10 @@ const UID = 'api::home-page.home-page' as any;
 
 export default factories.createCoreController(
   UID,
-  ({ strapi }) => ({
-    async findBySlug(ctx) {
-      const slug = ctx.params?.slug;
-
-      if (!slug) {
-        return ctx.badRequest('Missing slug');
-      }
-
-      const entity = await strapi.db.query(UID).findOne({
-        where: { slug, publishedAt: { $notNull: true } },
+  () => ({
+    async find(ctx) {
+      ctx.query = {
+        ...ctx.query,
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
@@ -115,14 +109,9 @@ export default factories.createCoreController(
           },
           contact_section: { populate: ['background_image', 'video'] },
         },
-      });
+      };
 
-      if (!entity) {
-        return ctx.notFound('Home page not found');
-      }
-
-      const sanitized = await this.sanitizeOutput(entity, ctx);
-      return this.transformResponse(sanitized);
+      return await super.find(ctx);
     },
   })
 );
