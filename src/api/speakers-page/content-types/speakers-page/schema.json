@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "speakers_pages",
+  "info": {
+    "singularName": "speakers-page",
+    "pluralName": "speakers-pages",
+    "displayName": "Speakers Page",
+    "description": "Structured speakers page rendered by the Next.js route /speakers."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true,
+      "unique": true
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "speaker_section": {
+      "type": "component",
+      "component": "home.speaker-section",
+      "required": false
+    },
+    "gallery": {
+      "type": "component",
+      "component": "project.media-gallery",
+      "required": false
+    }
+  }
+}

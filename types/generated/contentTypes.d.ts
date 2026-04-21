@@ -838,6 +838,43 @@ export interface ApiSharedTweetCarouselSharedTweetCarousel
   };
 }
 
+export interface ApiSpeakersPageSpeakersPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'speakers_pages';
+  info: {
+    description: 'Structured speakers page rendered by the Next.js route /speakers.';
+    displayName: 'Speakers Page';
+    pluralName: 'speakers-pages';
+    singularName: 'speakers-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gallery: Schema.Attribute.Component<'project.media-gallery', false>;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::speakers-page.speakers-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    speaker_section: Schema.Attribute.Component<'home.speaker-section', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiWhiteLabelPageWhiteLabelPage
   extends Struct.CollectionTypeSchema {
   collectionName: 'white_label_pages';
@@ -1404,6 +1441,7 @@ declare module '@strapi/strapi' {
       'api::project-page.project-page': ApiProjectPageProjectPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
+      'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;
       'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
