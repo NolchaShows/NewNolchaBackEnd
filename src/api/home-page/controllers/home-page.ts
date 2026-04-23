@@ -79,30 +79,12 @@ export default factories.createCoreController(
           featured_experiences: {
             populate: {
               hero: { populate: ['video'] },
-              blocks: {
-                on: {
-                  'blocks.three-image-row': {
-                    populate: ['firstMedia', 'secondMedia', 'thirdMedia'],
-                  },
-                  'blocks.gallery': {
-                    populate: {
-                      images: true,
-                      items: { populate: ['image'] },
-                    },
-                  },
-                  'blocks.fashion-grid-section': {
-                    populate: [
-                      'leftMedia',
-                      'rightMedia',
-                      'topMedia',
-                      'middleMedia1',
-                      'middleMedia2',
-                      'middleMedia3',
-                      'bottomMedia',
-                    ],
-                  },
-                  'blocks.image-text-section': { populate: { image: true, tags: true } },
-                  'blocks.evening-recap-section': { populate: ['video'] },
+              detail_rows: { populate: ['tags'] },
+              gallery: {
+                populate: {
+                  standard_media: true,
+                  featured_media: true,
+                  featured_content_sections: true,
                 },
               },
             },
