@@ -434,7 +434,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   collectionName: 'about_pages';
   info: {
     description: 'Singleton content for the About page.';
-    displayName: 'About Page';
+    displayName: 'About';
     pluralName: 'about-pages';
     singularName: 'about-page';
   };
@@ -477,7 +477,7 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
   collectionName: 'charity_pages';
   info: {
     description: 'Dynamic charity pages rendered by the Next.js route /charity/[slug]. Matches the Experience Page content model (hero, detail rows, media gallery).';
-    displayName: 'Charity Page';
+    displayName: 'Charity';
     pluralName: 'charity-pages';
     singularName: 'charity-page';
   };
@@ -551,7 +551,7 @@ export interface ApiExperiencePageExperiencePage
   collectionName: 'experience_pages';
   info: {
     description: 'Dynamic experience pages rendered by the Next.js route /experiences/[slug].';
-    displayName: 'Experience Page';
+    displayName: 'Experience';
     pluralName: 'experience-pages';
     singularName: 'experience-page';
   };
@@ -626,7 +626,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
     description: 'Structured homepage content rendered by the Next.js home route.';
-    displayName: 'Home Page';
+    displayName: 'Home';
     pluralName: 'home-pages';
     singularName: 'home-page';
   };
@@ -705,7 +705,7 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   collectionName: 'press_pages';
   info: {
     description: 'Singleton content for the Press page.';
-    displayName: 'Press Page';
+    displayName: 'Press';
     pluralName: 'press-pages';
     singularName: 'press-page';
   };
@@ -740,7 +740,7 @@ export interface ApiSharedPartnerSectionSharedPartnerSection
   collectionName: 'shared_partner_sections';
   info: {
     description: 'Reusable partner/logo wall section that can be attached to multiple pages';
-    displayName: 'Shared Partner Section';
+    displayName: 'Shared Partner';
     pluralName: 'shared-partner-sections';
     singularName: 'shared-partner-section';
   };
@@ -773,7 +773,7 @@ export interface ApiSharedSpeakerSectionSharedSpeakerSection
   collectionName: 'shared_speaker_sections';
   info: {
     description: 'Reusable speaker section that can be attached to multiple pages.';
-    displayName: 'Shared Speaker Section';
+    displayName: 'Shared Speaker';
     pluralName: 'shared-speaker-sections';
     singularName: 'shared-speaker-section';
   };
@@ -837,7 +837,7 @@ export interface ApiSpeakersPageSpeakersPage
   collectionName: 'speakers_pages';
   info: {
     description: 'Structured speakers page rendered by the Next.js route /speakers.';
-    displayName: 'Speakers Page';
+    displayName: 'Speakers';
     pluralName: 'speakers-pages';
     singularName: 'speakers-page';
   };

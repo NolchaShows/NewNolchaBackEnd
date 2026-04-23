@@ -4,7 +4,7 @@
   "info": {
     "singularName": "shared-partner-section",
     "pluralName": "shared-partner-sections",
-    "displayName": "Shared Partner Section",
+    "displayName": "Shared Partner",
     "description": "Reusable partner/logo wall section that can be attached to multiple pages"
   },
   "options": {

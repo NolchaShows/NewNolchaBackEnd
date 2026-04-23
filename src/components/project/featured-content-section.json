@@ -1,7 +1,7 @@
 {
   "collectionName": "components_project_featured_content_sections",
   "info": {
-    "displayName": "Featured Content Section",
+    "displayName": "Featured Content",
     "icon": "alignJustify",
     "description": "Text content shown after a featured gallery item."
   },

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "shared-speaker-section",
     "pluralName": "shared-speaker-sections",
-    "displayName": "Shared Speaker Section",
+    "displayName": "Shared Speaker",
     "description": "Reusable speaker section that can be attached to multiple pages."
   },
   "options": {

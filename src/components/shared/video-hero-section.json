@@ -1,7 +1,7 @@
 {
   "collectionName": "components_shared_video_hero_sections",
   "info": {
-    "displayName": "Video Hero Section",
+    "displayName": "Video Hero",
     "description": "Reusable video hero configuration for marketing pages"
   },
   "options": {},

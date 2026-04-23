@@ -4,7 +4,7 @@
   "info": {
     "singularName": "charity-page",
     "pluralName": "charity-pages",
-    "displayName": "Charity Page",
+    "displayName": "Charity",
     "description": "Dynamic charity pages rendered by the Next.js route /charity/[slug]. Matches the Experience Page content model (hero, detail rows, media gallery)."
   },
   "options": {

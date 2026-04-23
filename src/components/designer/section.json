@@ -1,7 +1,7 @@
 {
   "collectionName": "components_designer_sections",
   "info": {
-    "displayName": "Section",
+    "displayName": "Designer Block",
     "icon": "layer",
     "description": "A section showcasing designer's work category"
   },

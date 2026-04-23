@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home Page",
+    "displayName": "Home",
     "description": "Structured homepage content rendered by the Next.js home route."
   },
   "options": {

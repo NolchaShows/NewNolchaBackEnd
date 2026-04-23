@@ -3,7 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface AboutClientsSection extends Struct.ComponentSchema {
   collectionName: 'components_about_clients_sections';
   info: {
-    displayName: 'Clients Section';
+    displayName: 'Clients';
     icon: 'users';
   };
   attributes: {
@@ -31,7 +31,7 @@ export interface AboutDifferentiatorItem extends Struct.ComponentSchema {
 export interface AboutDifferentiatorsSection extends Struct.ComponentSchema {
   collectionName: 'components_about_differentiators_sections';
   info: {
-    displayName: 'Differentiators Section';
+    displayName: 'Differentiators';
     icon: 'apps';
   };
   attributes: {
@@ -43,7 +43,7 @@ export interface AboutDifferentiatorsSection extends Struct.ComponentSchema {
 export interface AboutPressSection extends Struct.ComponentSchema {
   collectionName: 'components_about_press_sections';
   info: {
-    displayName: 'Press Section';
+    displayName: 'Press';
     icon: 'book';
   };
   attributes: {
@@ -69,7 +69,7 @@ export interface AboutServiceStory extends Struct.ComponentSchema {
 export interface AboutServicesSection extends Struct.ComponentSchema {
   collectionName: 'components_about_services_sections';
   info: {
-    displayName: 'Services Section';
+    displayName: 'Services';
     icon: 'layout';
   };
   attributes: {
@@ -85,7 +85,7 @@ export interface AboutServicesSection extends Struct.ComponentSchema {
 export interface AboutStatementSection extends Struct.ComponentSchema {
   collectionName: 'components_about_statement_sections';
   info: {
-    displayName: 'Statement Section';
+    displayName: 'Statement';
     icon: 'file';
   };
   attributes: {
@@ -112,7 +112,7 @@ export interface AboutTextItem extends Struct.ComponentSchema {
 export interface BlocksEveningRecapSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_evening_recap_sections';
   info: {
-    displayName: 'Evening Recap Section';
+    displayName: 'Evening Recap';
     icon: 'clock';
   };
   attributes: {
@@ -124,7 +124,7 @@ export interface BlocksEveningRecapSection extends Struct.ComponentSchema {
 export interface BlocksFashionGridSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_fashion_grid_sections';
   info: {
-    displayName: 'Fashion Grid Section';
+    displayName: 'Fashion Grid';
     icon: 'grid';
   };
   attributes: {
@@ -170,7 +170,7 @@ export interface BlocksGalleryItem extends Struct.ComponentSchema {
 export interface BlocksImageTextSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_image_text_sections';
   info: {
-    displayName: 'Image + Text Section';
+    displayName: 'Image + Text';
     icon: 'picture';
   };
   attributes: {
@@ -235,7 +235,7 @@ export interface DesignerSection extends Struct.ComponentSchema {
   collectionName: 'components_designer_sections';
   info: {
     description: "A section showcasing designer's work category";
-    displayName: 'Section';
+    displayName: 'Designer Block';
     icon: 'layer';
   };
   attributes: {
@@ -297,7 +297,7 @@ export interface HomeAccordionItem extends Struct.ComponentSchema {
 export interface HomeArtistSection extends Struct.ComponentSchema {
   collectionName: 'components_home_artist_sections';
   info: {
-    displayName: 'Artist Section';
+    displayName: 'Artist';
   };
   attributes: {
     carousal_item: Schema.Attribute.Component<'home.carousel-text-item', true>;
@@ -310,7 +310,7 @@ export interface HomeArtistSection extends Struct.ComponentSchema {
 export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
   collectionName: 'components_home_build_momentum_sections';
   info: {
-    displayName: 'Build Momentum Section';
+    displayName: 'Build Momentum';
   };
   attributes: {
     heading: Schema.Attribute.String;
@@ -332,7 +332,7 @@ export interface HomeCarouselTextItem extends Struct.ComponentSchema {
 export interface HomeContactSection extends Struct.ComponentSchema {
   collectionName: 'components_home_contact_sections';
   info: {
-    displayName: 'Contact Section';
+    displayName: 'Contact';
   };
   attributes: {
     background_image: Schema.Attribute.Media<'images'>;
@@ -382,7 +382,7 @@ export interface HomeLogoSlider extends Struct.ComponentSchema {
 export interface HomeNolchaExperienceSection extends Struct.ComponentSchema {
   collectionName: 'components_home_nolcha_experience_sections';
   info: {
-    displayName: 'Nolcha Experience Section';
+    displayName: 'Nolcha Experience';
   };
   attributes: {
     accordion_sections: Schema.Attribute.Component<'home.accordion-item', true>;
@@ -421,7 +421,7 @@ export interface HomeServiceItem extends Struct.ComponentSchema {
 export interface HomeServiceSection extends Struct.ComponentSchema {
   collectionName: 'components_home_service_sections';
   info: {
-    displayName: 'Service Section';
+    displayName: 'Service';
   };
   attributes: {
     caption: Schema.Attribute.Text;
@@ -447,7 +447,7 @@ export interface HomeSpeakerItem extends Struct.ComponentSchema {
 export interface HomeSpeakerSection extends Struct.ComponentSchema {
   collectionName: 'components_home_speaker_sections';
   info: {
-    displayName: 'Speaker Section';
+    displayName: 'Speaker';
   };
   attributes: {
     speakers: Schema.Attribute.Component<'home.speaker-item', true>;
@@ -458,7 +458,7 @@ export interface HomeSpeakerSection extends Struct.ComponentSchema {
 export interface HomeTextHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_home_text_hero_sections';
   info: {
-    displayName: 'Text Hero Section';
+    displayName: 'Text Hero';
   };
   attributes: {
     slides: Schema.Attribute.Component<'home.text-hero-slide', true>;
@@ -501,7 +501,7 @@ export interface HomeUpcomingEvent extends Struct.ComponentSchema {
 export interface HomeUpcomingEventsSection extends Struct.ComponentSchema {
   collectionName: 'components_home_upcoming_events_sections';
   info: {
-    displayName: 'Upcoming Events Section';
+    displayName: 'Upcoming Events';
   };
   attributes: {
     events: Schema.Attribute.Component<'home.upcoming-event', true>;
@@ -541,7 +541,7 @@ export interface PressPressCard extends Struct.ComponentSchema {
 export interface PressPressStatementSection extends Struct.ComponentSchema {
   collectionName: 'components_press_press_statement_sections';
   info: {
-    displayName: 'Press Statement Section';
+    displayName: 'Press Statement';
     icon: 'quote';
   };
   attributes: {
@@ -571,7 +571,7 @@ export interface ProjectFeaturedContentSection extends Struct.ComponentSchema {
   collectionName: 'components_project_featured_content_sections';
   info: {
     description: 'Text content shown after a featured gallery item.';
-    displayName: 'Featured Content Section';
+    displayName: 'Featured Content';
     icon: 'alignJustify';
   };
   attributes: {
@@ -621,7 +621,7 @@ export interface SharedPartnerSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_sections';
   info: {
     description: 'Reusable partner/logo wall section';
-    displayName: 'Partner Section';
+    displayName: 'Partner';
   };
   attributes: {
     description: Schema.Attribute.Text;
@@ -670,7 +670,7 @@ export interface SharedVideoHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_video_hero_sections';
   info: {
     description: 'Reusable video hero configuration for marketing pages';
-    displayName: 'Video Hero Section';
+    displayName: 'Video Hero';
   };
   attributes: {
     firstPart: Schema.Attribute.String & Schema.Attribute.Required;
@@ -683,7 +683,7 @@ export interface WhiteLabelCtaSection extends Struct.ComponentSchema {
   collectionName: 'components_white_label_cta_sections';
   info: {
     description: 'White-label call to action block';
-    displayName: 'CTA Section';
+    displayName: 'CTA';
   };
   attributes: {
     backgroundImage: Schema.Attribute.Media<'images'>;
@@ -711,7 +711,7 @@ export interface WhiteLabelInfrastructureSection
   collectionName: 'components_white_label_infrastructure_sections';
   info: {
     description: 'White-label infrastructure grid and supporting copy';
-    displayName: 'Infrastructure Section';
+    displayName: 'Infrastructure';
   };
   attributes: {
     heading: Schema.Attribute.String & Schema.Attribute.Required;
@@ -724,7 +724,7 @@ export interface WhiteLabelIntroSection extends Struct.ComponentSchema {
   collectionName: 'components_white_label_intro_sections';
   info: {
     description: 'White-label intro section with image and copy';
-    displayName: 'Intro Section';
+    displayName: 'Intro';
   };
   attributes: {
     heading: Schema.Attribute.String & Schema.Attribute.Required;

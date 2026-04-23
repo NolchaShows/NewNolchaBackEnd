@@ -4,7 +4,7 @@
   "info": {
     "singularName": "press-page",
     "pluralName": "press-pages",
-    "displayName": "Press Page",
+    "displayName": "Press",
     "description": "Singleton content for the Press page."
   },
   "options": {
