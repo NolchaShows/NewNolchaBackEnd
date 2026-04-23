@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigation_menus",
+  "info": {
+    "singularName": "navigation-menu",
+    "pluralName": "navigation-menus",
+    "displayName": "Navigation",
+    "description": "Manage header navigation items and dropdown children."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.navigation-item",
+      "required": false
+    }
+  }
+}

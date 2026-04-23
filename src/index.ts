@@ -226,6 +226,8 @@ export default {
     if (!publicRole) return;
 
     const actions = [
+      'api::navigation-menu.navigation-menu.find',
+      'api::navigation-menu.navigation-menu.findOne',
       'api::home-page.home-page.find',
       'api::home-page.home-page.findOne',
       'api::experience-page.experience-page.find',

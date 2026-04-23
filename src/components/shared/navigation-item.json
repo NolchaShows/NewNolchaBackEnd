@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_shared_navigation_items",
+  "info": {
+    "displayName": "Navigation Item",
+    "icon": "menu"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": false
+    },
+    "ctaTitle": {
+      "type": "string",
+      "required": false
+    },
+    "ctaDescription": {
+      "type": "text",
+      "required": false
+    },
+    "ctaHref": {
+      "type": "string",
+      "required": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "children": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.navigation-child-item",
+      "required": false
+    }
+  }
+}

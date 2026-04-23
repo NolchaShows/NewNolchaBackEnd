@@ -701,6 +701,36 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNavigationMenuNavigationMenu
+  extends Struct.SingleTypeSchema {
+  collectionName: 'navigation_menus';
+  info: {
+    description: 'Manage header navigation items and dropdown children.';
+    displayName: 'Navigation';
+    pluralName: 'navigation-menus';
+    singularName: 'navigation-menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.Component<'shared.navigation-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-menu.navigation-menu'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   collectionName: 'press_pages';
   info: {
@@ -1388,6 +1418,7 @@ declare module '@strapi/strapi' {
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-speaker-section.shared-speaker-section': ApiSharedSpeakerSectionSharedSpeakerSection;

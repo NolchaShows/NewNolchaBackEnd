@@ -605,6 +605,37 @@ export interface ProjectMediaGallery extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedNavigationChildItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_navigation_child_items';
+  info: {
+    displayName: 'Navigation Child';
+    icon: 'bulletList';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedNavigationItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_navigation_items';
+  info: {
+    displayName: 'Navigation Item';
+    icon: 'menu';
+  };
+  attributes: {
+    children: Schema.Attribute.Component<'shared.navigation-child-item', true>;
+    ctaDescription: Schema.Attribute.Text;
+    ctaHref: Schema.Attribute.String;
+    ctaTitle: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedPartnerItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_partner_items';
   info: {
@@ -781,6 +812,8 @@ declare module '@strapi/strapi' {
       'project.detail-row': ProjectDetailRow;
       'project.featured-content-section': ProjectFeaturedContentSection;
       'project.media-gallery': ProjectMediaGallery;
+      'shared.navigation-child-item': SharedNavigationChildItem;
+      'shared.navigation-item': SharedNavigationItem;
       'shared.partner-item': SharedPartnerItem;
       'shared.partner-section': SharedPartnerSection;
       'shared.seo': SharedSeo;
