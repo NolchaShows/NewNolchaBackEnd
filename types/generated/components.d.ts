@@ -626,9 +626,6 @@ export interface SharedNavigationItem extends Struct.ComponentSchema {
   };
   attributes: {
     children: Schema.Attribute.Component<'shared.navigation-child-item', true>;
-    ctaDescription: Schema.Attribute.Text;
-    ctaHref: Schema.Attribute.String;
-    ctaTitle: Schema.Attribute.String;
     href: Schema.Attribute.String & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
