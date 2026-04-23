@@ -32,6 +32,12 @@
       "component": "experience.hero",
       "required": false
     },
+    "listingImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "detail_rows": {
       "type": "component",
       "repeatable": true,

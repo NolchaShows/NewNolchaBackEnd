@@ -79,6 +79,7 @@ export default factories.createCoreController(
           featured_experiences: {
             populate: {
               hero: { populate: ['video'] },
+              listingImage: true,
               detail_rows: { populate: ['tags'] },
               gallery: {
                 populate: {

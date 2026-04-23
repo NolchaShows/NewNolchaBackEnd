@@ -569,6 +569,7 @@ export interface ApiExperiencePageExperiencePage
     detail_rows: Schema.Attribute.Component<'project.detail-row', true>;
     gallery: Schema.Attribute.Component<'project.media-gallery', false>;
     hero: Schema.Attribute.Component<'experience.hero', false>;
+    listingImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

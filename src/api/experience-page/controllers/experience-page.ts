@@ -17,6 +17,7 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },
+          listingImage: true,
           detail_rows: { populate: ['tags'] },
           gallery: {
             populate: {
