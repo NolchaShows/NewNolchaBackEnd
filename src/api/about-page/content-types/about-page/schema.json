@@ -33,11 +33,6 @@
       "component": "about.services-section",
       "required": false
     },
-    "ecosystemSection": {
-      "type": "component",
-      "component": "about.ecosystem-section",
-      "required": false
-    },
     "clientsSection": {
       "type": "component",
       "component": "about.clients-section",

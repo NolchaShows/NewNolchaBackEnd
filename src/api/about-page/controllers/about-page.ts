@@ -11,7 +11,6 @@ export default factories.createCoreController(UID, () => ({
         statementSection: true,
         differentiatorsSection: { populate: ['items'] },
         servicesSection: { populate: ['stories', 'video'] },
-        ecosystemSection: { populate: ['image'] },
         clientsSection: { populate: ['logos'] },
         pressSection: { populate: ['featureImage'] },
       },
