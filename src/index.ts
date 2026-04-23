@@ -237,9 +237,6 @@ export default {
       'api::speakers-page.speakers-page.find',
       'api::speakers-page.speakers-page.findOne',
       'api::speakers-page.speakers-page.findBySlug',
-      // White label page
-      'api::white-label-page.white-label-page.find',
-      'api::white-label-page.white-label-page.findOne',
       // Press page (single type)
       'api::press-page.press-page.find',
       'api::press-page.press-page.findOne',

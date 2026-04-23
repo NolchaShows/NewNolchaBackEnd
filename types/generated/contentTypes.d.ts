@@ -872,52 +872,6 @@ export interface ApiSpeakersPageSpeakersPage
   };
 }
 
-export interface ApiWhiteLabelPageWhiteLabelPage
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'white_label_pages';
-  info: {
-    description: 'Strapi content model for the white-label marketing page';
-    displayName: 'White Label Page';
-    pluralName: 'white-label-pages';
-    singularName: 'white-label-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    cta_section: Schema.Attribute.Component<'white-label.cta-section', false>;
-    hero_section: Schema.Attribute.Component<
-      'shared.video-hero-section',
-      false
-    >;
-    infrastructure_section: Schema.Attribute.Component<
-      'white-label.infrastructure-section',
-      false
-    >;
-    intro_section: Schema.Attribute.Component<
-      'white-label.intro-section',
-      false
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::white-label-page.white-label-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    shared_partner_section: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::shared-partner-section.shared-partner-section'
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1439,7 +1393,6 @@ declare module '@strapi/strapi' {
       'api::shared-speaker-section.shared-speaker-section': ApiSharedSpeakerSectionSharedSpeakerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;
-      'api::white-label-page.white-label-page': ApiWhiteLabelPageWhiteLabelPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
