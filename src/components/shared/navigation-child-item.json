@@ -10,9 +10,13 @@
       "type": "string",
       "required": true
     },
+    "slug": {
+      "type": "string",
+      "required": false
+    },
     "href": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",
