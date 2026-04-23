@@ -40,19 +40,6 @@ export interface AboutDifferentiatorsSection extends Struct.ComponentSchema {
   };
 }
 
-export interface AboutEcosystemSection extends Struct.ComponentSchema {
-  collectionName: 'components_about_ecosystem_sections';
-  info: {
-    displayName: 'Ecosystem Section';
-    icon: 'landscape';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'>;
-    label: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface AboutPressSection extends Struct.ComponentSchema {
   collectionName: 'components_about_press_sections';
   info: {
@@ -752,7 +739,6 @@ declare module '@strapi/strapi' {
       'about.clients-section': AboutClientsSection;
       'about.differentiator-item': AboutDifferentiatorItem;
       'about.differentiators-section': AboutDifferentiatorsSection;
-      'about.ecosystem-section': AboutEcosystemSection;
       'about.press-section': AboutPressSection;
       'about.service-story': AboutServiceStory;
       'about.services-section': AboutServicesSection;

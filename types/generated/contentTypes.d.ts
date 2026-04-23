@@ -450,10 +450,6 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       'about.differentiators-section',
       false
     >;
-    ecosystemSection: Schema.Attribute.Component<
-      'about.ecosystem-section',
-      false
-    >;
     heroVideo: Schema.Attribute.Media<'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
