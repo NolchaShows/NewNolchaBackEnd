@@ -26,12 +26,17 @@ export default factories.createCoreController(
       const entity = await strapi.db.query('api::designer.designer').findOne({
         where: { slug, publishedAt: { $notNull: true } },
         populate: {
-          heroImage: true,
+          seo: { populate: ['ogImage'] },
+          hero: { populate: ['video'] },
           listingImage: true,
-          paragraphs: true,
-          sliderImages: { populate: ['image'] },
-          socialImages: { populate: ['image'] },
-          sections: { populate: ['image'] },
+          detail_rows: { populate: ['tags'] },
+          gallery: {
+            populate: {
+              standard_media: true,
+              featured_media: true,
+              featured_content_sections: true,
+            },
+          },
         },
       });
 

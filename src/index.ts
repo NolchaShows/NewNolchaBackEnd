@@ -246,6 +246,7 @@ export default {
       // Designer pages
       'api::designer.designer.find',
       'api::designer.designer.findOne',
+      'api::designer.designer.findBySlug',
       // Featured Artist pages
       'api::featured-artist.featured-artist.find',
       'api::featured-artist.featured-artist.findOne',

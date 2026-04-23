@@ -5,8 +5,8 @@ export default {
       path: '/designers/by-slug/:slug',
       handler: 'designer.findBySlug',
       config: {
-        auth: false
-      }
-    }
+        auth: false,
+      },
+    },
   ],
 };

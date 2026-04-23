@@ -528,8 +528,9 @@ export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    heading: Schema.Attribute.Text;
-    heroImage: Schema.Attribute.Media<'images'>;
+    detail_rows: Schema.Attribute.Component<'project.detail-row', true>;
+    gallery: Schema.Attribute.Component<'project.media-gallery', false>;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
     listingImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -537,14 +538,12 @@ export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
       'api::designer.designer'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
-    paragraphs: Schema.Attribute.Component<'designer.paragraph', true>;
     publishedAt: Schema.Attribute.DateTime;
-    sections: Schema.Attribute.Component<'designer.section', true>;
-    sliderImages: Schema.Attribute.Component<'designer.slider-image', true>;
-    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
-    socialImages: Schema.Attribute.Component<'designer.social-image', true>;
-    source: Schema.Attribute.String;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
