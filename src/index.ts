@@ -250,9 +250,6 @@ export default {
       // Featured Artist pages
       'api::featured-artist.featured-artist.find',
       'api::featured-artist.featured-artist.findOne',
-      // Project pages
-      'api::project-page.project-page.find',
-      'api::project-page.project-page.findOne',
       // Reusable shared sections
       'api::shared-partner-section.shared-partner-section.find',
       'api::shared-partner-section.shared-partner-section.findOne',
