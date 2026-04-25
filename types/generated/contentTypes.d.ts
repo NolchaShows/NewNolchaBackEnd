@@ -509,6 +509,36 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDesignerPageDesignerPage extends Struct.SingleTypeSchema {
+  collectionName: 'designer_page';
+  info: {
+    description: 'Hero and Artists section for /designers';
+    displayName: 'Designers (listing page)';
+    pluralName: 'designer-pages';
+    singularName: 'designer-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    artist_section: Schema.Attribute.Component<'home.artist-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::designer-page.designer-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
   collectionName: 'designers';
   info: {
@@ -616,6 +646,37 @@ export interface ApiFeaturedArtistFeaturedArtist
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFeaturedArtistsPageFeaturedArtistsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'featured_artists_page';
+  info: {
+    description: 'Hero and Artists section for /featured-artists';
+    displayName: 'Featured artists (listing page)';
+    pluralName: 'featured-artists-pages';
+    singularName: 'featured-artists-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    artist_section: Schema.Attribute.Component<'home.artist-section', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'experience.hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::featured-artists-page.featured-artists-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1414,9 +1475,11 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::charity-page.charity-page': ApiCharityPageCharityPage;
+      'api::designer-page.designer-page': ApiDesignerPageDesignerPage;
       'api::designer.designer': ApiDesignerDesigner;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
+      'api::featured-artists-page.featured-artists-page': ApiFeaturedArtistsPageFeaturedArtistsPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;

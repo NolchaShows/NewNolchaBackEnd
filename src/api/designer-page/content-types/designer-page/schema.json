@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "designer_page",
+  "info": {
+    "singularName": "designer-page",
+    "pluralName": "designer-pages",
+    "displayName": "Designers (listing page)",
+    "description": "Hero and Artists section for /designers"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "artist_section": {
+      "type": "component",
+      "component": "home.artist-section",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "featured_artists_page",
+  "info": {
+    "singularName": "featured-artists-page",
+    "pluralName": "featured-artists-pages",
+    "displayName": "Featured artists (listing page)",
+    "description": "Hero and Artists section for /featured-artists"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "experience.hero",
+      "required": false
+    },
+    "artist_section": {
+      "type": "component",
+      "component": "home.artist-section",
+      "required": false
+    }
+  }
+}
