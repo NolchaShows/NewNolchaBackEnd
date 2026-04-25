@@ -9,7 +9,7 @@ export default factories.createCoreController(
       const entity = await strapi.db.query(UID).findOne({
         where: { publishedAt: { $notNull: true } },
         populate: {
-          hero: { populate: ['video'] },
+          hero: { populate: { video: true } },
           artist_section: {
             populate: {
               carousal_item: true,
