@@ -256,6 +256,9 @@ export default {
       'api::shared-speaker-section.shared-speaker-section.findOne',
       'api::shared-tweet-carousel.shared-tweet-carousel.find',
       'api::shared-tweet-carousel.shared-tweet-carousel.findOne',
+      // Global footer
+      'api::footer.footer.find',
+      'api::footer.footer.findOne',
     ];
 
     const existing = await strapi.db.query('plugin::users-permissions.permission').findMany({

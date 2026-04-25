@@ -683,6 +683,45 @@ export interface ApiFeaturedArtistsPageFeaturedArtistsPage
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    description: 'Footer: Stay Informed copy (editable), logo, link columns, contact, social. Email subscribe UI is only on the site (not configured here).';
+    displayName: 'Site footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact: Schema.Attribute.Component<'shared.footer-contact', false>;
+    copyright: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
+    publishedAt: Schema.Attribute.DateTime;
+    quick_links: Schema.Attribute.Component<'shared.footer-column', false>;
+    resources: Schema.Attribute.Component<'shared.footer-column', false>;
+    social_instagram: Schema.Attribute.String;
+    social_linkedin: Schema.Attribute.String;
+    social_x: Schema.Attribute.String;
+    stay_informed_description: Schema.Attribute.Text;
+    stay_informed_title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1480,6 +1519,7 @@ declare module '@strapi/strapi' {
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::featured-artists-page.featured-artists-page': ApiFeaturedArtistsPageFeaturedArtistsPage;
+      'api::footer.footer': ApiFooterFooter;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;

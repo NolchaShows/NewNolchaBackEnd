@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Site footer",
+    "description": "Footer: Stay Informed copy (editable), logo, link columns, contact, social. Email subscribe UI is only on the site (not configured here)."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "stay_informed_title": {
+      "type": "string",
+      "required": false
+    },
+    "stay_informed_description": {
+      "type": "text",
+      "required": false
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "social_linkedin": {
+      "type": "string",
+      "required": false
+    },
+    "social_instagram": {
+      "type": "string",
+      "required": false
+    },
+    "social_x": {
+      "type": "string",
+      "required": false
+    },
+    "quick_links": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.footer-column",
+      "required": false
+    },
+    "resources": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.footer-column",
+      "required": false
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.footer-contact",
+      "required": false
+    },
+    "copyright": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

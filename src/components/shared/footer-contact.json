@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_footer_contacts",
+  "info": {
+    "displayName": "Footer contact block",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string",
+      "required": false
+    },
+    "address": {
+      "type": "text",
+      "required": false
+    },
+    "email": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

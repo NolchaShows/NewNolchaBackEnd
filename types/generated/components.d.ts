@@ -605,6 +605,44 @@ export interface ProjectMediaGallery extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFooterColumn extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_columns';
+  info: {
+    displayName: 'Footer link column';
+    icon: 'link';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'shared.footer-link', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedFooterContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_contacts';
+  info: {
+    displayName: 'Footer contact block';
+    icon: 'phone';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    company: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedFooterLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_links';
+  info: {
+    displayName: 'Footer link';
+    icon: 'link';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedNavigationChildItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_navigation_child_items';
   info: {
@@ -811,6 +849,9 @@ declare module '@strapi/strapi' {
       'project.detail-row': ProjectDetailRow;
       'project.featured-content-section': ProjectFeaturedContentSection;
       'project.media-gallery': ProjectMediaGallery;
+      'shared.footer-column': SharedFooterColumn;
+      'shared.footer-contact': SharedFooterContact;
+      'shared.footer-link': SharedFooterLink;
       'shared.navigation-child-item': SharedNavigationChildItem;
       'shared.navigation-item': SharedNavigationItem;
       'shared.partner-item': SharedPartnerItem;
