@@ -14,9 +14,9 @@
       "type": "string",
       "required": false
     },
-    "modal": {
-      "type": "boolean",
-      "default": false
+    "externalUrl": {
+      "type": "string",
+      "required": false
     },
     "href": {
       "type": "string",

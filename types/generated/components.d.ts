@@ -612,10 +612,10 @@ export interface SharedNavigationChildItem extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    externalUrl: Schema.Attribute.String;
     href: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     label: Schema.Attribute.String & Schema.Attribute.Required;
-    modal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     slug: Schema.Attribute.String;
   };
 }
