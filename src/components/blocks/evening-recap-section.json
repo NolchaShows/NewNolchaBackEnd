@@ -14,6 +14,12 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["videos"]
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.evening-recap-slide",
+      "required": false
     }
   }
 }

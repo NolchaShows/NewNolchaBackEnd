@@ -30,7 +30,12 @@ export default factories.createCoreController(
               },
             },
           },
-          evening_recap_section: { populate: ['video'] },
+          evening_recap_section: {
+            populate: {
+              video: true,
+              slides: { populate: ['video'] },
+            },
+          },
           service_section: {
             populate: {
               image: true,

@@ -116,6 +116,19 @@ export interface BlocksEveningRecapSection extends Struct.ComponentSchema {
     icon: 'clock';
   };
   attributes: {
+    slides: Schema.Attribute.Component<'blocks.evening-recap-slide', true>;
+    title: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+  };
+}
+
+export interface BlocksEveningRecapSlide extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_evening_recap_slides';
+  info: {
+    displayName: 'Evening Recap slide';
+    icon: 'play';
+  };
+  attributes: {
     title: Schema.Attribute.String;
     video: Schema.Attribute.Media<'videos'>;
   };
@@ -813,6 +826,7 @@ declare module '@strapi/strapi' {
       'about.statement-section': AboutStatementSection;
       'about.text-item': AboutTextItem;
       'blocks.evening-recap-section': BlocksEveningRecapSection;
+      'blocks.evening-recap-slide': BlocksEveningRecapSlide;
       'blocks.fashion-grid-section': BlocksFashionGridSection;
       'blocks.gallery': BlocksGallery;
       'blocks.gallery-item': BlocksGalleryItem;
