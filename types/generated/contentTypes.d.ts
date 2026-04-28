@@ -604,6 +604,10 @@ export interface ApiExperiencePageExperiencePage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    shared_tweet_carousel: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::shared-tweet-carousel.shared-tweet-carousel'
+    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
