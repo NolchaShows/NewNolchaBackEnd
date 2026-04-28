@@ -573,7 +573,7 @@ export interface ProjectDetailRow extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     tags: Schema.Attribute.Component<'blocks.tag', true>;
     title: Schema.Attribute.String;
