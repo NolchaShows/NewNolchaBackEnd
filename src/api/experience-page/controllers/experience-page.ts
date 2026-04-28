@@ -19,7 +19,11 @@ export default factories.createCoreController(
           hero: { populate: ['video'] },
           listingImage: true,
           detail_rows: { populate: ['tags'] },
-          shared_tweet_carousel: { populate: ['items'] },
+          shared_tweet_carousel: {
+            populate: {
+              items: true,
+            },
+          },
           gallery: {
             populate: {
               standard_media: true,
