@@ -26,7 +26,13 @@ export default factories.createCoreController(
           upcoming_events_section: {
             populate: {
               events: {
-                populate: ['image', 'logo', 'mainImage', 'galleryImages'],
+                populate: {
+                  image: true,
+                  logo: true,
+                  mainImage: true,
+                  galleryImages: true,
+                  tweet_carousel: { populate: ['items'] },
+                },
               },
             },
           },

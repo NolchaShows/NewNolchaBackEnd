@@ -43,6 +43,11 @@
       "type": "media",
       "multiple": true,
       "allowedTypes": ["images"]
+    },
+    "tweet_carousel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-tweet-carousel.shared-tweet-carousel"
     }
   }
 }
