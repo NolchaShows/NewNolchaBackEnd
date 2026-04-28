@@ -6,20 +6,20 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "text"
-    },
-    "carousal_item": {
-      "type": "component",
-      "repeatable": true,
-      "component": "home.carousel-text-item"
+      "type": "text",
+      "required": true
     },
     "media": {
       "type": "media",
       "multiple": true,
-      "allowedTypes": ["images", "videos"]
+      "allowedTypes": ["videos"],
+      "required": true,
+      "min": 4,
+      "max": 4
     }
   }
 }

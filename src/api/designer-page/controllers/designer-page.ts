@@ -12,7 +12,6 @@ export default factories.createCoreController(
           hero: { populate: { video: true } },
           artist_section: {
             populate: {
-              carousal_item: true,
               media: true,
             },
           },

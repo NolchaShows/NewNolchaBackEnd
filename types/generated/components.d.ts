@@ -313,10 +313,17 @@ export interface HomeArtistSection extends Struct.ComponentSchema {
     displayName: 'Artist';
   };
   attributes: {
-    carousal_item: Schema.Attribute.Component<'home.carousel-text-item', true>;
-    description: Schema.Attribute.Text;
-    media: Schema.Attribute.Media<'images' | 'videos', true>;
-    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'videos', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 4;
+        },
+        number
+      >;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

@@ -75,7 +75,6 @@ export default factories.createCoreController(
           press_media_image: true,
           artist_section: {
             populate: {
-              carousal_item: true,
               media: true,
             },
           },
