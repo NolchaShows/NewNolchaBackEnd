@@ -24,6 +24,9 @@
     "rsvpLink": {
       "type": "string"
     },
+    "externalUrl": {
+      "type": "string"
+    },
     "image": {
       "type": "media",
       "multiple": false,

@@ -506,6 +506,7 @@ export interface HomeUpcomingEvent extends Struct.ComponentSchema {
   };
   attributes: {
     date: Schema.Attribute.String;
+    externalUrl: Schema.Attribute.String;
     galleryImages: Schema.Attribute.Media<'images', true>;
     image: Schema.Attribute.Media<'images'>;
     location: Schema.Attribute.Text;
