@@ -507,6 +507,10 @@ export interface HomeUpcomingEvent extends Struct.ComponentSchema {
   };
   attributes: {
     date: Schema.Attribute.String;
+    evening_recap_section: Schema.Attribute.Component<
+      'blocks.evening-recap-section',
+      false
+    >;
     externalUrl: Schema.Attribute.String;
     galleryImages: Schema.Attribute.Media<'images', true>;
     image: Schema.Attribute.Media<'images'>;

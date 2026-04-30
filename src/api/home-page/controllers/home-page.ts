@@ -32,6 +32,12 @@ export default factories.createCoreController(
                   mainImage: true,
                   galleryImages: true,
                   tweet_carousel: { populate: ['items'] },
+                  evening_recap_section: {
+                    populate: {
+                      video: true,
+                      slides: { populate: ['video'] },
+                    },
+                  },
                 },
               },
             },

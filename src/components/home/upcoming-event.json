@@ -51,6 +51,11 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::shared-tweet-carousel.shared-tweet-carousel"
+    },
+    "evening_recap_section": {
+      "type": "component",
+      "component": "blocks.evening-recap-section",
+      "required": false
     }
   }
 }
