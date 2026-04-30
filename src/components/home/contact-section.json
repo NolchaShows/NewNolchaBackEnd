@@ -35,6 +35,11 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"]
+    },
+    "sponsors_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
     }
   }
 }

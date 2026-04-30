@@ -362,6 +362,7 @@ export interface HomeContactSection extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     message_placeholder: Schema.Attribute.String;
     second_name_placeholder: Schema.Attribute.String;
+    sponsors_image: Schema.Attribute.Media<'images'>;
     submit_button_text: Schema.Attribute.String;
     video: Schema.Attribute.Media<'videos'>;
   };
