@@ -518,6 +518,8 @@ export interface HomeUpcomingEvent extends Struct.ComponentSchema {
     logo: Schema.Attribute.Media<'images'>;
     mainImage: Schema.Attribute.Media<'images'>;
     rsvpLink: Schema.Attribute.String;
+    secondaryImage: Schema.Attribute.Media<'images'>;
+    tertiaryImage: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     tweet_carousel: Schema.Attribute.Relation<
       'manyToOne',

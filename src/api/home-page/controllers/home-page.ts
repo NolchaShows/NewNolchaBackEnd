@@ -30,6 +30,8 @@ export default factories.createCoreController(
                   image: true,
                   logo: true,
                   mainImage: true,
+                  secondaryImage: true,
+                  tertiaryImage: true,
                   galleryImages: true,
                   tweet_carousel: { populate: ['items'] },
                   evening_recap_section: {

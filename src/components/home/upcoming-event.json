@@ -42,6 +42,16 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
+    "secondaryImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "tertiaryImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "galleryImages": {
       "type": "media",
       "multiple": true,
