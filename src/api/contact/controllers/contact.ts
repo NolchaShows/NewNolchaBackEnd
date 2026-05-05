@@ -2,8 +2,26 @@ export default {
   async send(ctx) {
     const { firstName, lastName, email, message } = ctx.request.body || {};
 
-    if (!firstName || !lastName || !email || !message) {
+    const safeFirstName = String(firstName || '').trim();
+    const safeLastName = String(lastName || '').trim();
+    const safeEmail = String(email || '').trim();
+    const safeMessage = String(message || '').trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const escapeHtml = (value: string) =>
+      value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+    if (!safeFirstName || !safeLastName || !safeEmail || !safeMessage) {
       return ctx.badRequest('All fields are required');
+    }
+
+    if (!emailRegex.test(safeEmail)) {
+      return ctx.badRequest('A valid email is required');
     }
 
     const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'lalla@helloagentic.ai';
@@ -12,20 +30,20 @@ export default {
       await strapi.plugins.email.services.email.send({
         to: toEmail,
         from: process.env.SMTP_USERNAME,
-        replyTo: email,
-        subject: `New contact form submission from ${firstName} ${lastName}`,
+        replyTo: safeEmail,
+        subject: `New contact form submission from ${safeFirstName} ${safeLastName}`,
         text: [
-          `Name: ${firstName} ${lastName}`,
-          `Email: ${email}`,
+          `Name: ${safeFirstName} ${safeLastName}`,
+          `Email: ${safeEmail}`,
           '',
           'Message:',
-          message,
+          safeMessage,
         ].join('\n'),
         html: `
-          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Name:</strong> ${escapeHtml(safeFirstName)} ${escapeHtml(safeLastName)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(safeEmail)}</p>
           <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br/>')}</p>
+          <p>${escapeHtml(safeMessage).replace(/\n/g, '<br/>')}</p>
         `,
       });
 
