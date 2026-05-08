@@ -6,14 +6,8 @@ export default factories.createCoreController(
   UID,
   ({ strapi }) => ({
     async findBySlug(ctx) {
-      const slug = ctx.params?.slug;
-
-      if (!slug) {
-        return ctx.badRequest('Missing slug');
-      }
-
       const entity = await strapi.db.query(UID).findOne({
-        where: { slug, publishedAt: { $notNull: true } },
+        where: { publishedAt: { $notNull: true } },
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video'] },

@@ -1,11 +1,11 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "speakers_pages",
   "info": {
     "singularName": "speakers-page",
     "pluralName": "speakers-pages",
     "displayName": "Speakers",
-    "description": "Structured speakers page rendered by the Next.js route /speakers."
+    "description": "Singleton content for the Speakers page."
   },
   "options": {
     "draftAndPublish": true

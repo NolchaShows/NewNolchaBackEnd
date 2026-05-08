@@ -967,11 +967,10 @@ export interface ApiSharedTweetCarouselSharedTweetCarousel
   };
 }
 
-export interface ApiSpeakersPageSpeakersPage
-  extends Struct.CollectionTypeSchema {
+export interface ApiSpeakersPageSpeakersPage extends Struct.SingleTypeSchema {
   collectionName: 'speakers_pages';
   info: {
-    description: 'Structured speakers page rendered by the Next.js route /speakers.';
+    description: 'Singleton content for the Speakers page.';
     displayName: 'Speakers';
     pluralName: 'speakers-pages';
     singularName: 'speakers-page';
