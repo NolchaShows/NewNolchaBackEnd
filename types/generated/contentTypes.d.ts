@@ -533,6 +533,7 @@ export interface ApiDesignerPageDesignerPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -681,6 +682,7 @@ export interface ApiFeaturedArtistsPageFeaturedArtistsPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -859,6 +861,7 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
     mediaCoverage: Schema.Attribute.Component<'press.media-coverage', false>;
     pressCards: Schema.Attribute.Component<'press.press-card', true>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     statementSection: Schema.Attribute.Component<
       'press.press-statement-section',
       false
