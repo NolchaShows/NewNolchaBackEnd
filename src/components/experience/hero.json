@@ -1,9 +1,9 @@
 {
   "collectionName": "components_experience_heroes",
   "info": {
-    "displayName": "Hero (Video)",
+    "displayName": "Hero (Media)",
     "icon": "play",
-    "description": "Hero section with a single uploaded video."
+    "description": "Hero section with a single uploaded video or image."
   },
   "options": {},
   "attributes": {
@@ -17,7 +17,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": ["videos", "images"]
     }
   }
 }

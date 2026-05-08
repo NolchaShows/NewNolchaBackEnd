@@ -285,14 +285,14 @@ export interface DesignerSocialImage extends Struct.ComponentSchema {
 export interface ExperienceHero extends Struct.ComponentSchema {
   collectionName: 'components_experience_heroes';
   info: {
-    description: 'Hero section with a single uploaded video.';
-    displayName: 'Hero (Video)';
+    description: 'Hero section with a single uploaded video or image.';
+    displayName: 'Hero (Media)';
     icon: 'play';
   };
   attributes: {
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String;
-    video: Schema.Attribute.Media<'videos'>;
+    video: Schema.Attribute.Media<'videos' | 'images'>;
   };
 }
 
