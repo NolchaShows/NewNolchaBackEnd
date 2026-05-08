@@ -217,33 +217,6 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
-    // One-time migration helper for Speakers -> Single Type.
-    // Set SPEAKERS_SINGLETYPE_AUTO_MIGRATE=true, start Strapi once, then remove the env.
-    if (process.env.SPEAKERS_SINGLETYPE_AUTO_MIGRATE === 'true') {
-      try {
-        const UID = 'api::speakers-page.speakers-page';
-        const speakersEntries = await strapi.db.query(UID).findMany({
-          orderBy: [{ publishedAt: 'desc' }, { updatedAt: 'desc' }],
-        });
-
-        if (speakersEntries.length > 1) {
-          const [keep, ...duplicates] = speakersEntries;
-          for (const entry of duplicates) {
-            await strapi.db.query(UID).delete({ where: { id: entry.id } });
-          }
-          strapi.log.info(
-            `[speakers migration] kept speakers entry id=${keep.id}, removed ${duplicates.length} duplicate entries`
-          );
-        } else {
-          strapi.log.info(
-            `[speakers migration] no duplicate speakers entries found (${speakersEntries.length} entry)`
-          );
-        }
-      } catch (migrationError) {
-        strapi.log.error('[speakers migration] failed to auto-migrate speakers entries', migrationError);
-      }
-    }
-
     // Ensure Public role can read Experience Pages via the Content API (find + findOne).
     // In Strapi v5 users-permissions stores enabled permissions as records in `up_permissions`.
     const publicRole = await strapi.db.query('plugin::users-permissions.role').findOne({
