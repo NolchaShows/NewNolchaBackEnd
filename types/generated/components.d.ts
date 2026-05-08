@@ -446,9 +446,9 @@ export interface HomeServiceSection extends Struct.ComponentSchema {
   };
   attributes: {
     caption: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'videos'>;
     services: Schema.Attribute.Component<'home.service-item', true>;
     title: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
   };
 }
 

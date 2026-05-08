@@ -11,7 +11,7 @@
     "caption": {
       "type": "text"
     },
-    "image": {
+    "video": {
       "type": "media",
       "multiple": false,
       "allowedTypes": ["videos"]
