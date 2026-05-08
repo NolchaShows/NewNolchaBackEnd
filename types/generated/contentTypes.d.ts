@@ -459,6 +459,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     pressSection: Schema.Attribute.Component<'about.press-section', false>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
     servicesSection: Schema.Attribute.Component<
       'about.services-section',
       false
