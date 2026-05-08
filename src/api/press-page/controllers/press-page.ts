@@ -8,6 +8,7 @@ export default factories.createCoreController(UID, () => ({
     ctx.query = {
       ...ctx.query,
       populate: {
+        seo: { populate: ['ogImage'] },
         mediaCoverage: { populate: ['image'] },
         pressCards: { populate: ['newsPaperLogo', 'image'] },
       },

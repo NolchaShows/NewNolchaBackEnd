@@ -12,6 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    },
     "mediaCoverage": {
       "type": "component",
       "component": "press.media-coverage",
