@@ -22,6 +22,15 @@ export default ({ env }) => {
     },
     upload: {
       config: {
+        breakpoints: {
+          xlarge: 1920,
+          large: 1000,
+          medium: 750,
+          small: 500,
+          xsmall: 64,
+        },
+        sizeOptimization: true,
+        responsiveDimensions: true,
         provider: 'aws-s3',
         providerOptions: {
           // Optional but recommended: serve public URLs from your own domain/CDN

@@ -33,5 +33,6 @@ export default [
   },
   'strapi::session',
   'strapi::favicon',
+  'global::cache-headers',
   'strapi::public',
 ];

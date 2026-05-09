@@ -5,6 +5,10 @@ const UID = 'api::home-page.home-page' as any;
 export default factories.createCoreController(
   UID,
   ({ strapi }) => ({
+    /**
+     * Above-the-fold only: hero, SEO, build momentum, image gallery, logo slider.
+     * Keeping this populate shallow reduces the initial DB JOIN cost.
+     */
     async find(ctx) {
       const entity = await strapi.db.query(UID).findOne({
         where: { publishedAt: { $notNull: true } },
@@ -23,6 +27,25 @@ export default factories.createCoreController(
               logos: true,
             },
           },
+        },
+      });
+
+      if (!entity) {
+        return ctx.notFound('Home page not found');
+      }
+
+      const sanitized = await this.sanitizeOutput(entity, ctx);
+      return this.transformResponse(sanitized);
+    },
+
+    /**
+     * Below-the-fold data: everything not needed for first paint.
+     * Fetched in parallel with the above-fold endpoint on the frontend.
+     */
+    async belowFold(ctx) {
+      const entity = await strapi.db.query(UID).findOne({
+        where: { publishedAt: { $notNull: true } },
+        populate: {
           upcoming_events_section: {
             populate: {
               events: {
