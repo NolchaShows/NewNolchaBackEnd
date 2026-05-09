@@ -230,6 +230,7 @@ export default {
       'api::navigation-menu.navigation-menu.findOne',
       'api::home-page.home-page.find',
       'api::home-page.home-page.findOne',
+      'api::home-page.home-page.belowFold',
       'api::experience-page.experience-page.find',
       'api::experience-page.experience-page.findOne',
       'api::experience-page.experience-page.findBySlug',
