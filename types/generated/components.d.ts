@@ -213,6 +213,7 @@ export interface BlocksTag extends Struct.ComponentSchema {
     icon: 'tag';
   };
   attributes: {
+    color: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
