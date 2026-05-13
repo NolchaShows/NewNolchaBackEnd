@@ -291,6 +291,7 @@ export interface ExperienceHero extends Struct.ComponentSchema {
   };
   attributes: {
     subtitle: Schema.Attribute.String;
+    thumbnail: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     video: Schema.Attribute.Media<'videos' | 'images'>;
   };

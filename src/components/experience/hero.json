@@ -18,6 +18,12 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["videos", "images"]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }

@@ -27,7 +27,7 @@ export default factories.createCoreController(
         where: { slug, publishedAt: { $notNull: true } },
         populate: {
           seo: { populate: ['ogImage'] },
-          hero: { populate: ['video'] },
+          hero: { populate: ['video', 'thumbnail'] },
           detail_rows: { populate: ['tags'] },
           gallery: {
             populate: {

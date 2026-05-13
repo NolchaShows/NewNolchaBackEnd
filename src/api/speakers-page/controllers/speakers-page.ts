@@ -10,7 +10,7 @@ export default factories.createCoreController(
         where: { publishedAt: { $notNull: true } },
         populate: {
           seo: { populate: ['ogImage'] },
-          hero: { populate: ['video'] },
+          hero: { populate: ['video', 'thumbnail'] },
           shared_speaker_section: {
             populate: {
               speakers: { populate: ['image'] },

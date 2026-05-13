@@ -6,7 +6,7 @@ const UID = 'api::home-page.home-page' as any;
 // Keep identical so the frontend can use either endpoint as a source of truth.
 const FULL_POPULATE = {
   seo: { populate: ['ogImage'] },
-  hero: { populate: ['video'] },
+  hero: { populate: ['video', 'thumbnail'] },
   build_momentum_section: {
     populate: {
       paragraphs: true,
@@ -92,7 +92,7 @@ const FULL_POPULATE = {
   shared_tweet_carousel: { populate: ['items'] },
   featured_experiences: {
     populate: {
-      hero: { populate: ['video'] },
+      hero: { populate: ['video', 'thumbnail'] },
       listingImage: true,
       detail_rows: { populate: ['tags'] },
       gallery: {
