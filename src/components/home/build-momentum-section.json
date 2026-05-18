@@ -13,6 +13,14 @@
       "repeatable": true,
       "component": "home.rich-paragraph"
     },
+    "ctaText": {
+      "type": "string",
+      "default": "GET IN TOUCH"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "/#contact"
+    },
     "logos": {
       "type": "media",
       "multiple": true,

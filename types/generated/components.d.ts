@@ -335,6 +335,9 @@ export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
     displayName: 'Build Momentum';
   };
   attributes: {
+    ctaText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'GET IN TOUCH'>;
+    ctaUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/#contact'>;
     heading: Schema.Attribute.String;
     logos: Schema.Attribute.Media<'images', true>;
     paragraphs: Schema.Attribute.Component<'home.rich-paragraph', true>;
