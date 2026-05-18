@@ -312,20 +312,15 @@ export interface HomeAccordionItem extends Struct.ComponentSchema {
 export interface HomeArtistSection extends Struct.ComponentSchema {
   collectionName: 'components_home_artist_sections';
   info: {
+    description: 'Artist section (home, designers, featured artists listing)';
     displayName: 'Artist';
   };
   attributes: {
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
-    media: Schema.Attribute.Media<'videos', true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 4;
-          min: 4;
-        },
-        number
-      >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    media: Schema.Attribute.Media<'videos', true>;
+    title: Schema.Attribute.String;
+    viewAllLabel: Schema.Attribute.String;
+    viewAllUrl: Schema.Attribute.String;
   };
 }
 
