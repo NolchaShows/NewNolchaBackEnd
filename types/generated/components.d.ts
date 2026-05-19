@@ -435,6 +435,7 @@ export interface HomeServiceItem extends Struct.ComponentSchema {
     description: Schema.Attribute.RichText;
     label: Schema.Attribute.String;
     text: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
     work: Schema.Attribute.Text;
   };
 }

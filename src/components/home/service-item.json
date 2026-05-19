@@ -16,6 +16,11 @@
     },
     "work": {
       "type": "text"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
     }
   }
 }

@@ -48,8 +48,10 @@ const FULL_POPULATE = {
   },
   service_section: {
     populate: {
-      image: true,
-      services: true,
+      video: true,
+      services: {
+        populate: ['video'],
+      },
     },
   },
   shared_speaker_section: {
