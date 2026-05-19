@@ -746,6 +746,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'home.build-momentum-section',
       false
     >;
+    clients_section: Schema.Attribute.Component<'about.clients-section', false>;
     contact_section: Schema.Attribute.Component<'home.contact-section', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

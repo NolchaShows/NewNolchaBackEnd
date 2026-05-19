@@ -71,6 +71,11 @@ const FULL_POPULATE = {
       },
     },
   },
+  clients_section: {
+    populate: {
+      logos: true,
+    },
+  },
   feature_banner_one: true,
   nolcha_experience_section: {
     populate: {

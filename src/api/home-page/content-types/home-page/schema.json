@@ -68,6 +68,11 @@
       "target": "api::shared-partner-section.shared-partner-section",
       "required": false
     },
+    "clients_section": {
+      "type": "component",
+      "component": "about.clients-section",
+      "required": false
+    },
     "nolcha_experience_section": {
       "type": "component",
       "component": "home.nolcha-experience-section",
