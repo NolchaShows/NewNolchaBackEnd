@@ -6,16 +6,7 @@
   "options": {},
   "attributes": {
     "text": {
-      "type": "text"
-    },
-    "text_before": {
-      "type": "text"
-    },
-    "highlight": {
-      "type": "string"
-    },
-    "text_after": {
-      "type": "text"
+      "type": "richtext"
     }
   }
 }

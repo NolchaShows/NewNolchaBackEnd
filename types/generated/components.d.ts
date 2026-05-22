@@ -419,10 +419,7 @@ export interface HomeRichParagraph extends Struct.ComponentSchema {
     displayName: 'Rich Paragraph';
   };
   attributes: {
-    highlight: Schema.Attribute.String;
-    text: Schema.Attribute.Text;
-    text_after: Schema.Attribute.Text;
-    text_before: Schema.Attribute.Text;
+    text: Schema.Attribute.RichText;
   };
 }
 
