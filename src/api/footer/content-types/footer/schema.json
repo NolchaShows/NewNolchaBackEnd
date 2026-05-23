@@ -17,7 +17,7 @@
       "required": false
     },
     "stay_informed_description": {
-      "type": "text",
+      "type": "richtext",
       "required": false
     },
     "logo": {
@@ -27,7 +27,7 @@
       "allowedTypes": ["images"]
     },
     "description": {
-      "type": "text",
+      "type": "richtext",
       "required": false
     },
     "social_linkedin": {

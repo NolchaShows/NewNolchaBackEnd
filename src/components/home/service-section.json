@@ -9,12 +9,14 @@
       "type": "string"
     },
     "caption": {
-      "type": "text"
+      "type": "richtext"
     },
     "video": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": [
+        "videos"
+      ]
     },
     "services": {
       "type": "component",

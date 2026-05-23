@@ -707,7 +707,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -721,7 +721,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     social_instagram: Schema.Attribute.String;
     social_linkedin: Schema.Attribute.String;
     social_x: Schema.Attribute.String;
-    stay_informed_description: Schema.Attribute.Text;
+    stay_informed_description: Schema.Attribute.RichText;
     stay_informed_title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -890,7 +890,7 @@ export interface ApiSharedPartnerSectionSharedPartnerSection
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     key: Schema.Attribute.UID<'title'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

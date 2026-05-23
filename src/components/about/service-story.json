@@ -6,7 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "title": { "type": "string" },
-    "description": { "type": "text" }
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
   }
 }

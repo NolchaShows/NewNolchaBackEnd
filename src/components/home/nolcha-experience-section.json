@@ -9,12 +9,14 @@
       "type": "text"
     },
     "image_caption": {
-      "type": "text"
+      "type": "richtext"
     },
     "main_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "accordion_sections": {
       "type": "component",

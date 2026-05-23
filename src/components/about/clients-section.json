@@ -6,16 +6,28 @@
   },
   "options": {},
   "attributes": {
-    "label": { "type": "string" },
-    "title": { "type": "string" },
-    "description": { "type": "text" },
-    "ctaText": { "type": "string" },
-    "ctaUrl": { "type": "string" },
+    "label": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaUrl": {
+      "type": "string"
+    },
     "logos": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

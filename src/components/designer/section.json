@@ -15,10 +15,12 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "description": {
-      "type": "text",
+      "type": "richtext",
       "required": false
     }
   }

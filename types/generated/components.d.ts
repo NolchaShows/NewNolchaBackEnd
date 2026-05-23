@@ -9,7 +9,7 @@ export interface AboutClientsSection extends Struct.ComponentSchema {
   attributes: {
     ctaText: Schema.Attribute.String;
     ctaUrl: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     label: Schema.Attribute.String;
     logos: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
@@ -23,7 +23,7 @@ export interface AboutDifferentiatorItem extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
   };
 }
@@ -61,7 +61,7 @@ export interface AboutServiceStory extends Struct.ComponentSchema {
     icon: 'file';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     title: Schema.Attribute.String;
   };
 }
@@ -91,7 +91,7 @@ export interface AboutStatementSection extends Struct.ComponentSchema {
   attributes: {
     ctaText: Schema.Attribute.String;
     ctaUrl: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     headline: Schema.Attribute.String;
     label: Schema.Attribute.String;
     rightItems: Schema.Attribute.Component<'about.text-item', true>;
@@ -241,7 +241,7 @@ export interface DesignerParagraph extends Struct.ComponentSchema {
     icon: 'align-left';
   };
   attributes: {
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 
@@ -253,7 +253,7 @@ export interface DesignerSection extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -316,7 +316,7 @@ export interface HomeArtistSection extends Struct.ComponentSchema {
     displayName: 'Artist';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     media: Schema.Attribute.Media<'videos', true>;
     title: Schema.Attribute.String;
     viewAllLabel: Schema.Attribute.String;
@@ -356,7 +356,7 @@ export interface HomeContactSection extends Struct.ComponentSchema {
   };
   attributes: {
     background_image: Schema.Attribute.Media<'images'>;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     email_placeholder: Schema.Attribute.String;
     first_name_placeholder: Schema.Attribute.String;
     heading: Schema.Attribute.String;
@@ -408,7 +408,7 @@ export interface HomeNolchaExperienceSection extends Struct.ComponentSchema {
   attributes: {
     accordion_sections: Schema.Attribute.Component<'home.accordion-item', true>;
     heading: Schema.Attribute.Text;
-    image_caption: Schema.Attribute.Text;
+    image_caption: Schema.Attribute.RichText;
     main_image: Schema.Attribute.Media<'images'>;
   };
 }
@@ -443,7 +443,7 @@ export interface HomeServiceSection extends Struct.ComponentSchema {
     displayName: 'Service';
   };
   attributes: {
-    caption: Schema.Attribute.Text;
+    caption: Schema.Attribute.RichText;
     services: Schema.Attribute.Component<'home.service-item', true>;
     title: Schema.Attribute.String;
     video: Schema.Attribute.Media<'videos'>;
@@ -490,7 +490,7 @@ export interface HomeTextHeroSlide extends Struct.ComponentSchema {
     displayName: 'Text Hero Slide';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     logo_image: Schema.Attribute.Media<'images'>;
     main_image: Schema.Attribute.Media<'images'>;
     second_image: Schema.Attribute.Media<'images'>;
@@ -549,7 +549,7 @@ export interface PressMediaCoverage extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     linkText: Schema.Attribute.String;
     linkUrl: Schema.Attribute.String;
-    paragraphText: Schema.Attribute.Text;
+    paragraphText: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -605,7 +605,7 @@ export interface ProjectFeaturedContentSection extends Struct.ComponentSchema {
     icon: 'alignJustify';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     label: Schema.Attribute.String;
   };
 }
@@ -722,7 +722,7 @@ export interface SharedPartnerSection extends Struct.ComponentSchema {
     displayName: 'Partner';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     partners: Schema.Attribute.Component<'shared.partner-item', true>;
     title: Schema.Attribute.String;
   };
@@ -788,7 +788,7 @@ export interface WhiteLabelCtaSection extends Struct.ComponentSchema {
     ctaLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Get Started'>;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/contact-us'>;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.RichText;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

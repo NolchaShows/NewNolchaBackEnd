@@ -6,11 +6,21 @@
   },
   "options": {},
   "attributes": {
-    "label": { "type": "string" },
-    "headline": { "type": "string" },
-    "description": { "type": "text" },
-    "ctaText": { "type": "string" },
-    "ctaUrl": { "type": "string" },
+    "label": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "ctaText": {
+      "type": "string"
+    },
+    "ctaUrl": {
+      "type": "string"
+    },
     "rightItems": {
       "type": "component",
       "repeatable": true,

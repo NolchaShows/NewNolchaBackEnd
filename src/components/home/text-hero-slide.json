@@ -6,7 +6,7 @@
   "options": {},
   "attributes": {
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "video_url": {
       "type": "string"
@@ -14,17 +14,23 @@
     "main_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "second_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "logo_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

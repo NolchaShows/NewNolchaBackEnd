@@ -10,7 +10,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "viewAllLabel": {
       "type": "string"
@@ -21,7 +21,9 @@
     "media": {
       "type": "media",
       "multiple": true,
-      "allowedTypes": ["videos"]
+      "allowedTypes": [
+        "videos"
+      ]
     }
   }
 }

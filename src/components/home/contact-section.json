@@ -9,7 +9,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "first_name_placeholder": {
       "type": "string"
@@ -29,17 +29,23 @@
     "background_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "video": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": [
+        "videos"
+      ]
     },
     "sponsors_image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
