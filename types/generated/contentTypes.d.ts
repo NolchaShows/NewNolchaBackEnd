@@ -874,6 +874,41 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivacyPolicyPagePrivacyPolicyPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policy_pages';
+  info: {
+    description: 'Singleton content for the Privacy Policy page.';
+    displayName: 'Privacy Policy';
+    pluralName: 'privacy-policy-pages';
+    singularName: 'privacy-policy-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy-page.privacy-policy-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Privacy Policy'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSharedPartnerSectionSharedPartnerSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'shared_partner_sections';
@@ -1005,6 +1040,41 @@ export interface ApiSpeakersPageSpeakersPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTermsOfUsePageTermsOfUsePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'terms_of_use_pages';
+  info: {
+    description: 'Singleton content for the Terms of Use page.';
+    displayName: 'Terms of Use';
+    pluralName: 'terms-of-use-pages';
+    singularName: 'terms-of-use-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.RichText;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    intro: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-of-use-page.terms-of-use-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Terms of Use'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1532,10 +1602,12 @@ declare module '@strapi/strapi' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;
+      'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
       'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-speaker-section.shared-speaker-section': ApiSharedSpeakerSectionSharedSpeakerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;
+      'api::terms-of-use-page.terms-of-use-page': ApiTermsOfUsePageTermsOfUsePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

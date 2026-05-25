@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_of_use_pages",
+  "info": {
+    "singularName": "terms-of-use-page",
+    "pluralName": "terms-of-use-pages",
+    "displayName": "Terms of Use",
+    "description": "Singleton content for the Terms of Use page."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Terms of Use"
+    },
+    "intro": {
+      "type": "richtext",
+      "required": false
+    },
+    "content": {
+      "type": "richtext",
+      "required": false
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    }
+  }
+}

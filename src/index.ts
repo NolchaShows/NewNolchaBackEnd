@@ -260,6 +260,11 @@ export default {
       // Global footer
       'api::footer.footer.find',
       'api::footer.footer.findOne',
+      // Legal pages
+      'api::privacy-policy-page.privacy-policy-page.find',
+      'api::privacy-policy-page.privacy-policy-page.findOne',
+      'api::terms-of-use-page.terms-of-use-page.find',
+      'api::terms-of-use-page.terms-of-use-page.findOne',
     ];
 
     const existing = await strapi.db.query('plugin::users-permissions.permission').findMany({
