@@ -10,7 +10,10 @@ export default factories.createCoreController(UID, () => ({
       populate: {
         seo: { populate: ['ogImage'] },
         mediaCoverage: { populate: ['image'] },
-        pressCards: { populate: ['newsPaperLogo', 'image'] },
+        pressCards: {
+          populate: ['newsPaperLogo', 'image'],
+          pagination: { limit: 100 },
+        },
       },
     };
 

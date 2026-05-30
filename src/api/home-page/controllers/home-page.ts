@@ -111,7 +111,7 @@ const FULL_POPULATE = {
       },
     },
   },
-  contact_section: { populate: ['background_image', 'video'] },
+  contact_section: { populate: ['background_image', 'video', 'sponsors_image'] },
 };
 
 export default factories.createCoreController(
