@@ -92,7 +92,7 @@ export interface AboutStatementSection extends Struct.ComponentSchema {
     ctaText: Schema.Attribute.String;
     ctaUrl: Schema.Attribute.String;
     description: Schema.Attribute.RichText;
-    headline: Schema.Attribute.String;
+    headline: Schema.Attribute.RichText;
     label: Schema.Attribute.String;
     rightItems: Schema.Attribute.Component<'about.text-item', true>;
   };

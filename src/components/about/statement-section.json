@@ -10,7 +10,7 @@
       "type": "string"
     },
     "headline": {
-      "type": "string"
+      "type": "richtext"
     },
     "description": {
       "type": "richtext"
