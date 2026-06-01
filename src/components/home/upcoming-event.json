@@ -30,11 +30,6 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
-    },
-    "list_image": {
-      "type": "media",
-      "multiple": false,
       "allowedTypes": ["images"],
       "description": "Thumbnail in the home page Upcoming Events accordion."
     },
