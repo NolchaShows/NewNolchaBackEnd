@@ -32,6 +32,18 @@
       "multiple": false,
       "allowedTypes": ["images"]
     },
+    "list_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Thumbnail in the home page Upcoming Events accordion."
+    },
+    "nav_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Image shown in the site menu under Upcoming."
+    },
     "logo": {
       "type": "media",
       "multiple": false,

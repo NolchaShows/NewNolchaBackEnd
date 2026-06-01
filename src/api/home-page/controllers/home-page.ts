@@ -24,6 +24,8 @@ const FULL_POPULATE = {
       events: {
         populate: {
           image: true,
+          list_image: true,
+          nav_image: true,
           logo: true,
           mainImage: true,
           secondaryImage: true,
