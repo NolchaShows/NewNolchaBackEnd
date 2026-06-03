@@ -663,6 +663,41 @@ export interface ApiExperiencePageExperiencePage
   };
 }
 
+export interface ApiExperiencesPageExperiencesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'experiences_pages';
+  info: {
+    description: 'Singleton content for the main /experiences index page.';
+    displayName: 'Experiences';
+    pluralName: 'experiences-pages';
+    singularName: 'experiences-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    filterLabel: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'SHOW FILTERS'>;
+    headline: Schema.Attribute.String & Schema.Attribute.DefaultTo<'NOLCHA.'>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'[ EXPERIENCES ]'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experiences-page.experiences-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFeaturedArtistFeaturedArtist
   extends Struct.CollectionTypeSchema {
   collectionName: 'featured_artists';
@@ -1640,6 +1675,7 @@ declare module '@strapi/strapi' {
       'api::designer.designer': ApiDesignerDesigner;
       'api::experience-category.experience-category': ApiExperienceCategoryExperienceCategory;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
+      'api::experiences-page.experiences-page': ApiExperiencesPageExperiencesPage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::featured-artists-page.featured-artists-page': ApiFeaturedArtistsPageFeaturedArtistsPage;
       'api::footer.footer': ApiFooterFooter;

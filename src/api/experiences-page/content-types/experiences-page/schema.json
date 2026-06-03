@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "experiences_pages",
+  "info": {
+    "singularName": "experiences-page",
+    "pluralName": "experiences-pages",
+    "displayName": "Experiences",
+    "description": "Singleton content for the main /experiences index page."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": false,
+      "default": "[ EXPERIENCES ]"
+    },
+    "headline": {
+      "type": "string",
+      "required": false,
+      "default": "NOLCHA."
+    },
+    "filterLabel": {
+      "type": "string",
+      "required": false,
+      "default": "SHOW FILTERS"
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "required": false
+    }
+  }
+}
