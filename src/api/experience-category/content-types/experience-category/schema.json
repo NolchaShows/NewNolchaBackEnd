@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experience_categories",
+  "info": {
+    "singularName": "experience-category",
+    "pluralName": "experience-categories",
+    "displayName": "Experience Category",
+    "description": "Groups experience pages on the /experiences index with optional listing tags."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true,
+      "unique": true
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.tag",
+      "required": false
+    },
+    "experience_pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience-page.experience-page",
+      "inversedBy": "categories"
+    }
+  }
+}

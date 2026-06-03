@@ -578,6 +578,45 @@ export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiExperienceCategoryExperienceCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'experience_categories';
+  info: {
+    description: 'Groups experience pages on the /experiences index with optional listing tags.';
+    displayName: 'Experience Category';
+    pluralName: 'experience-categories';
+    singularName: 'experience-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    experience_pages: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::experience-page.experience-page'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::experience-category.experience-category'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    sortOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    tags: Schema.Attribute.Component<'blocks.tag', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExperiencePageExperiencePage
   extends Struct.CollectionTypeSchema {
   collectionName: 'experience_pages';
@@ -591,6 +630,10 @@ export interface ApiExperiencePageExperiencePage
     draftAndPublish: true;
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::experience-category.experience-category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1595,6 +1638,7 @@ declare module '@strapi/strapi' {
       'api::charity-page.charity-page': ApiCharityPageCharityPage;
       'api::designer-page.designer-page': ApiDesignerPageDesignerPage;
       'api::designer.designer': ApiDesignerDesigner;
+      'api::experience-category.experience-category': ApiExperienceCategoryExperienceCategory;
       'api::experience-page.experience-page': ApiExperiencePageExperiencePage;
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::featured-artists-page.featured-artists-page': ApiFeaturedArtistsPageFeaturedArtistsPage;

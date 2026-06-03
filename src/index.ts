@@ -234,6 +234,8 @@ export default {
       'api::experience-page.experience-page.find',
       'api::experience-page.experience-page.findOne',
       'api::experience-page.experience-page.findBySlug',
+      'api::experience-category.experience-category.find',
+      'api::experience-category.experience-category.findOne',
       'api::charity-page.charity-page.find',
       'api::charity-page.charity-page.findOne',
       'api::charity-page.charity-page.findBySlug',

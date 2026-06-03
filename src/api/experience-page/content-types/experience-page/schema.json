@@ -38,6 +38,12 @@
       "required": false,
       "allowedTypes": ["images"]
     },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::experience-category.experience-category",
+      "mappedBy": "experience_pages"
+    },
     "detail_rows": {
       "type": "component",
       "repeatable": true,
