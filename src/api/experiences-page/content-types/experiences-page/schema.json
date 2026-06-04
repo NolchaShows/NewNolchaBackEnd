@@ -27,6 +27,11 @@
       "required": false,
       "default": "SHOW FILTERS"
     },
+    "uncategorizedTitle": {
+      "type": "string",
+      "required": false,
+      "default": "[ OTHER EXPERIENCES ]"
+    },
     "seo": {
       "type": "component",
       "component": "shared.seo",

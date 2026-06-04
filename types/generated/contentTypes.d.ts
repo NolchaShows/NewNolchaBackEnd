@@ -692,6 +692,8 @@ export interface ApiExperiencesPageExperiencesPage
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    uncategorizedTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'[ OTHER EXPERIENCES ]'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
