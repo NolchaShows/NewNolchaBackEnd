@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "form_notifications",
+  "info": {
+    "singularName": "form-notifications",
+    "pluralName": "form-notifications-settings",
+    "displayName": "Form notifications",
+    "description": "Recipient email for contact form and newsletter submissions."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "submissionRecipientEmail": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

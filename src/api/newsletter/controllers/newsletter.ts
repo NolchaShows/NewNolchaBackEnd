@@ -1,3 +1,5 @@
+import { getSubmissionRecipientEmail } from '../../../utils/getSubmissionRecipientEmail';
+
 export default {
   async subscribe(ctx) {
     const { email } = ctx.request.body || {};
@@ -12,7 +14,7 @@ export default {
       return ctx.badRequest('A valid email is required');
     }
 
-    const toEmail = process.env.CONTACT_FORM_TO_EMAIL || 'lalla@helloagentic.ai';
+    const toEmail = await getSubmissionRecipientEmail(strapi);
 
     try {
       await strapi.plugins.email.services.email.send({
