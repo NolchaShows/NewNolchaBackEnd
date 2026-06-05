@@ -809,6 +809,37 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFormNotificationsFormNotifications
+  extends Struct.SingleTypeSchema {
+  collectionName: 'form_notifications';
+  info: {
+    description: 'Recipient email for contact form and newsletter submissions.';
+    displayName: 'Form notifications';
+    pluralName: 'form-notifications-settings';
+    singularName: 'form-notifications';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::form-notifications.form-notifications'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    submissionRecipientEmail: Schema.Attribute.Email &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1681,6 +1712,7 @@ declare module '@strapi/strapi' {
       'api::featured-artist.featured-artist': ApiFeaturedArtistFeaturedArtist;
       'api::featured-artists-page.featured-artists-page': ApiFeaturedArtistsPageFeaturedArtistsPage;
       'api::footer.footer': ApiFooterFooter;
+      'api::form-notifications.form-notifications': ApiFormNotificationsFormNotifications;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;
