@@ -5,7 +5,7 @@
     "singularName": "experiences-page",
     "pluralName": "experiences-pages",
     "displayName": "Experiences",
-    "description": "Singleton content for the main /experiences index page."
+    "description": "Singleton content for the main /experiences index page. Category names from Experience Category entries appear as section headlines."
   },
   "options": {
     "draftAndPublish": true
@@ -16,11 +16,6 @@
       "type": "string",
       "required": false,
       "default": "[ EXPERIENCES ]"
-    },
-    "headline": {
-      "type": "string",
-      "required": false,
-      "default": "NOLCHA."
     },
     "filterLabel": {
       "type": "string",

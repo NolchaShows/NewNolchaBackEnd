@@ -5,7 +5,7 @@
     "singularName": "experience-page",
     "pluralName": "experience-pages",
     "displayName": "Experience",
-    "description": "Dynamic experience pages rendered by the Next.js route /experiences/[slug]."
+    "description": "Dynamic experience pages rendered by the Next.js route /experiences/[slug]. Tags appear under the experience name on the /experiences index."
   },
   "options": {
     "draftAndPublish": true
@@ -37,6 +37,12 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"]
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.tag",
+      "required": false
     },
     "categories": {
       "type": "relation",

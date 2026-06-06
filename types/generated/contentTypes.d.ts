@@ -582,7 +582,7 @@ export interface ApiExperienceCategoryExperienceCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'experience_categories';
   info: {
-    description: 'Groups experience pages on the /experiences index with optional listing tags.';
+    description: 'Groups experience pages on the /experiences index.';
     displayName: 'Experience Category';
     pluralName: 'experience-categories';
     singularName: 'experience-category';
@@ -610,7 +610,6 @@ export interface ApiExperienceCategoryExperienceCategory
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     sortOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    tags: Schema.Attribute.Component<'blocks.tag', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -621,7 +620,7 @@ export interface ApiExperiencePageExperiencePage
   extends Struct.CollectionTypeSchema {
   collectionName: 'experience_pages';
   info: {
-    description: 'Dynamic experience pages rendered by the Next.js route /experiences/[slug].';
+    description: 'Dynamic experience pages rendered by the Next.js route /experiences/[slug]. Tags appear under the experience name on the /experiences index.';
     displayName: 'Experience';
     pluralName: 'experience-pages';
     singularName: 'experience-page';
@@ -656,6 +655,7 @@ export interface ApiExperiencePageExperiencePage
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    tags: Schema.Attribute.Component<'blocks.tag', true>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -667,7 +667,7 @@ export interface ApiExperiencesPageExperiencesPage
   extends Struct.SingleTypeSchema {
   collectionName: 'experiences_pages';
   info: {
-    description: 'Singleton content for the main /experiences index page.';
+    description: 'Singleton content for the main /experiences index page. Category names from Experience Category entries appear as section headlines.';
     displayName: 'Experiences';
     pluralName: 'experiences-pages';
     singularName: 'experiences-page';
@@ -681,7 +681,6 @@ export interface ApiExperiencesPageExperiencesPage
       Schema.Attribute.Private;
     filterLabel: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'SHOW FILTERS'>;
-    headline: Schema.Attribute.String & Schema.Attribute.DefaultTo<'NOLCHA.'>;
     label: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'[ EXPERIENCES ]'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

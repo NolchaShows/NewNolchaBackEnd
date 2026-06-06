@@ -5,7 +5,7 @@
     "singularName": "experience-category",
     "pluralName": "experience-categories",
     "displayName": "Experience Category",
-    "description": "Groups experience pages on the /experiences index with optional listing tags."
+    "description": "Groups experience pages on the /experiences index."
   },
   "options": {
     "draftAndPublish": true
@@ -25,12 +25,6 @@
     "sortOrder": {
       "type": "integer",
       "default": 0
-    },
-    "tags": {
-      "type": "component",
-      "repeatable": true,
-      "component": "blocks.tag",
-      "required": false
     },
     "experience_pages": {
       "type": "relation",
