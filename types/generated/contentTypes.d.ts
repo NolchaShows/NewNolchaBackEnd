@@ -477,7 +477,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
 export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
   collectionName: 'charity_pages';
   info: {
-    description: 'Dynamic charity pages rendered by the Next.js route /charity/[slug]. Matches the Experience Page content model (hero, detail rows, media gallery).';
+    description: 'Dynamic charity pages rendered by the Next.js route /charity/[slug]. Use listingImage for menu and listing previews (same as Experience).';
     displayName: 'Charity';
     pluralName: 'charity-pages';
     singularName: 'charity-page';
@@ -492,6 +492,7 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
     detail_rows: Schema.Attribute.Component<'project.detail-row', true>;
     gallery: Schema.Attribute.Component<'project.media-gallery', false>;
     hero: Schema.Attribute.Component<'experience.hero', false>;
+    listingImage: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

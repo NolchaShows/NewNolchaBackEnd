@@ -5,7 +5,7 @@
     "singularName": "charity-page",
     "pluralName": "charity-pages",
     "displayName": "Charity",
-    "description": "Dynamic charity pages rendered by the Next.js route /charity/[slug]. Matches the Experience Page content model (hero, detail rows, media gallery)."
+    "description": "Dynamic charity pages rendered by the Next.js route /charity/[slug]. Use listingImage for menu and listing previews (same as Experience)."
   },
   "options": {
     "draftAndPublish": true
@@ -31,6 +31,12 @@
       "type": "component",
       "component": "experience.hero",
       "required": false
+    },
+    "listingImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     },
     "detail_rows": {
       "type": "component",

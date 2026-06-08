@@ -9,6 +9,15 @@ export default factories.createCoreController(
       const entities = await strapi.db.query('api::charity-page.charity-page').findMany({
         where: { publishedAt: { $notNull: true } },
         select: ['title', 'slug', 'publishedAt'],
+        populate: {
+          listingImage: true,
+          hero: {
+            populate: {
+              thumbnail: true,
+              video: true,
+            },
+          },
+        },
         orderBy: { publishedAt: 'desc' },
       });
 
@@ -28,6 +37,7 @@ export default factories.createCoreController(
         populate: {
           seo: { populate: ['ogImage'] },
           hero: { populate: ['video', 'thumbnail'] },
+          listingImage: true,
           detail_rows: { populate: ['tags'] },
           gallery: {
             populate: {
