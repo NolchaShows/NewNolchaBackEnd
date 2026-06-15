@@ -800,6 +800,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     resources: Schema.Attribute.Component<'shared.footer-column', false>;
     social_instagram: Schema.Attribute.String;
     social_linkedin: Schema.Attribute.String;
+    social_links: Schema.Attribute.Component<'shared.footer-social-link', true>;
     social_x: Schema.Attribute.String;
     stay_informed_description: Schema.Attribute.RichText;
     stay_informed_title: Schema.Attribute.String;

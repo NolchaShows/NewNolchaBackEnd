@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_footer_social_links",
+  "info": {
+    "displayName": "Footer social link",
+    "icon": "earth",
+    "description": "Social profile link shown in the site footer."
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": ["linkedin", "instagram", "x", "facebook", "youtube", "tiktok", "other"],
+      "required": true,
+      "default": "other"
+    },
+    "label": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

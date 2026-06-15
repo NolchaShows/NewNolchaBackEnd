@@ -674,6 +674,24 @@ export interface SharedFooterLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedFooterSocialLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_footer_social_links';
+  info: {
+    description: 'Social profile link shown in the site footer.';
+    displayName: 'Footer social link';
+    icon: 'earth';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    platform: Schema.Attribute.Enumeration<
+      ['linkedin', 'instagram', 'x', 'facebook', 'youtube', 'tiktok', 'other']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'other'>;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedNavigationChildItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_navigation_child_items';
   info: {
@@ -884,6 +902,7 @@ declare module '@strapi/strapi' {
       'shared.footer-column': SharedFooterColumn;
       'shared.footer-contact': SharedFooterContact;
       'shared.footer-link': SharedFooterLink;
+      'shared.footer-social-link': SharedFooterSocialLink;
       'shared.navigation-child-item': SharedNavigationChildItem;
       'shared.navigation-item': SharedNavigationItem;
       'shared.partner-item': SharedPartnerItem;
