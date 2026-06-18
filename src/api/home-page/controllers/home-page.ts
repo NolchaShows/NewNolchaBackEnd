@@ -65,13 +65,6 @@ const FULL_POPULATE = {
       slides: { populate: ['main_image', 'second_image', 'logo_image'] },
     },
   },
-  shared_partner_section: {
-    populate: {
-      partners: {
-        populate: ['primary', 'secondary'],
-      },
-    },
-  },
   clients_section: {
     populate: {
       logos: true,
@@ -152,7 +145,6 @@ export default factories.createCoreController(
           service_section: FULL_POPULATE.service_section,
           shared_speaker_section: FULL_POPULATE.shared_speaker_section,
           texthero_section: FULL_POPULATE.texthero_section,
-          shared_partner_section: FULL_POPULATE.shared_partner_section,
           feature_banner_one: true,
           nolcha_experience_section: FULL_POPULATE.nolcha_experience_section,
           press_media_image: true,

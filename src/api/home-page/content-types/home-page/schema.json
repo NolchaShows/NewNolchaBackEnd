@@ -62,12 +62,6 @@
       "required": false,
       "allowedTypes": ["videos"]
     },
-    "shared_partner_section": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::shared-partner-section.shared-partner-section",
-      "required": false
-    },
     "clients_section": {
       "type": "component",
       "component": "about.clients-section",

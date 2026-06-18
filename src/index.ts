@@ -255,8 +255,6 @@ export default {
       'api::featured-artist.featured-artist.find',
       'api::featured-artist.featured-artist.findOne',
       // Reusable shared sections
-      'api::shared-partner-section.shared-partner-section.find',
-      'api::shared-partner-section.shared-partner-section.findOne',
       'api::shared-speaker-section.shared-speaker-section.find',
       'api::shared-speaker-section.shared-speaker-section.findOne',
       'api::shared-tweet-carousel.shared-tweet-carousel.find',
