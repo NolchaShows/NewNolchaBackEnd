@@ -8,6 +8,7 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
       where: { publishedAt: { $notNull: true } },
       populate: {
         logo: true,
+        social_links: true,
         quick_links: { populate: { links: true } },
         resources: { populate: { links: true } },
         contact: true,

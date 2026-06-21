@@ -15,7 +15,6 @@ export default factories.createCoreController(
       const entity = await strapi.db.query('api::experience-page.experience-page').findOne({
         where: { slug, publishedAt: { $notNull: true } },
         populate: {
-          seo: { populate: ['ogImage'] },
           hero: { populate: ['video', 'thumbnail'] },
           listingImage: true,
           detail_rows: { populate: ['tags'] },

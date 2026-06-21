@@ -36,18 +36,6 @@
       "component": "shared.footer-social-link",
       "required": false
     },
-    "social_linkedin": {
-      "type": "string",
-      "required": false
-    },
-    "social_instagram": {
-      "type": "string",
-      "required": false
-    },
-    "social_x": {
-      "type": "string",
-      "required": false
-    },
     "quick_links": {
       "type": "component",
       "repeatable": false,

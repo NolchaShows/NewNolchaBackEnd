@@ -457,9 +457,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       'api::about-page.about-page'
     > &
       Schema.Attribute.Private;
-    pressSection: Schema.Attribute.Component<'about.press-section', false>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     servicesSection: Schema.Attribute.Component<
       'about.services-section',
       false
@@ -500,7 +498,6 @@ export interface ApiCharityPageCharityPage extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -535,7 +532,6 @@ export interface ApiDesignerPageDesignerPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -568,7 +564,6 @@ export interface ApiDesignerDesigner extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -648,7 +643,6 @@ export interface ApiExperiencePageExperiencePage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     shared_tweet_carousel: Schema.Attribute.Relation<
       'manyToOne',
       'api::shared-tweet-carousel.shared-tweet-carousel'
@@ -727,7 +721,6 @@ export interface ApiFeaturedArtistFeaturedArtist
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -763,7 +756,6 @@ export interface ApiFeaturedArtistsPageFeaturedArtistsPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -798,10 +790,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     quick_links: Schema.Attribute.Component<'shared.footer-column', false>;
     resources: Schema.Attribute.Component<'shared.footer-column', false>;
-    social_instagram: Schema.Attribute.String;
-    social_linkedin: Schema.Attribute.String;
     social_links: Schema.Attribute.Component<'shared.footer-social-link', true>;
-    social_x: Schema.Attribute.String;
     stay_informed_description: Schema.Attribute.RichText;
     stay_informed_title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -892,12 +881,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     >;
     press_media_image: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     service_section: Schema.Attribute.Component<'home.service-section', false>;
-    shared_partner_section: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::shared-partner-section.shared-partner-section'
-    >;
     shared_speaker_section: Schema.Attribute.Relation<
       'manyToOne',
       'api::shared-speaker-section.shared-speaker-section'
@@ -910,7 +894,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'home.text-hero-section',
       false
     >;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     upcoming_events_section: Schema.Attribute.Component<
       'home.upcoming-events-section',
       false
@@ -975,7 +958,6 @@ export interface ApiPressPagePressPage extends Struct.SingleTypeSchema {
     mediaCoverage: Schema.Attribute.Component<'press.media-coverage', false>;
     pressCards: Schema.Attribute.Component<'press.press-card', true>;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     statementSection: Schema.Attribute.Component<
       'press.press-statement-section',
       false
@@ -1011,43 +993,9 @@ export interface ApiPrivacyPolicyPagePrivacyPolicyPage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Privacy Policy'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiSharedPartnerSectionSharedPartnerSection
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'shared_partner_sections';
-  info: {
-    description: 'Reusable partner/logo wall section that can be attached to multiple pages';
-    displayName: 'Shared Partner';
-    pluralName: 'shared-partner-sections';
-    singularName: 'shared-partner-section';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
-    key: Schema.Attribute.UID<'title'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::shared-partner-section.shared-partner-section'
-    > &
-      Schema.Attribute.Private;
-    partners: Schema.Attribute.Component<'shared.partner-item', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1143,7 +1091,6 @@ export interface ApiSpeakersPageSpeakersPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     shared_speaker_section: Schema.Attribute.Relation<
       'manyToOne',
       'api::shared-speaker-section.shared-speaker-section'
@@ -1183,7 +1130,6 @@ export interface ApiTermsOfUsePageTermsOfUsePage
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    seo: Schema.Attribute.Component<'shared.seo', false>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Terms of Use'>;
@@ -1718,7 +1664,6 @@ declare module '@strapi/strapi' {
       'api::navigation-menu.navigation-menu': ApiNavigationMenuNavigationMenu;
       'api::press-page.press-page': ApiPressPagePressPage;
       'api::privacy-policy-page.privacy-policy-page': ApiPrivacyPolicyPagePrivacyPolicyPage;
-      'api::shared-partner-section.shared-partner-section': ApiSharedPartnerSectionSharedPartnerSection;
       'api::shared-speaker-section.shared-speaker-section': ApiSharedSpeakerSectionSharedSpeakerSection;
       'api::shared-tweet-carousel.shared-tweet-carousel': ApiSharedTweetCarouselSharedTweetCarousel;
       'api::speakers-page.speakers-page': ApiSpeakersPageSpeakersPage;

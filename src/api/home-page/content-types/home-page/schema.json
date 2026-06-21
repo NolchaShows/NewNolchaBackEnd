@@ -12,15 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "required": false
-    },
     "hero": {
       "type": "component",
       "component": "experience.hero",

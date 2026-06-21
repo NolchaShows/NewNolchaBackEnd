@@ -5,7 +5,6 @@ const UID = 'api::home-page.home-page' as any;
 // Full populate shared between find and belowFold.
 // Keep identical so the frontend can use either endpoint as a source of truth.
 const FULL_POPULATE = {
-  seo: { populate: ['ogImage'] },
   hero: { populate: ['video', 'thumbnail'] },
   build_momentum_section: {
     populate: {

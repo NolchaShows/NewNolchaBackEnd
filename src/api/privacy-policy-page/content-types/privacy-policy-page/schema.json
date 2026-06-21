@@ -24,11 +24,6 @@
     "content": {
       "type": "richtext",
       "required": false
-    },
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "required": false
     }
   }
 }

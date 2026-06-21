@@ -22,11 +22,6 @@
       "required": true,
       "unique": true
     },
-    "seo": {
-      "type": "component",
-      "required": false,
-      "component": "shared.seo"
-    },
     "hero": {
       "type": "component",
       "component": "experience.hero",

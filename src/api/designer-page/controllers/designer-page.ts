@@ -9,7 +9,6 @@ export default factories.createCoreController(
       const entity = await strapi.db.query(UID).findOne({
         where: { publishedAt: { $notNull: true } },
         populate: {
-          seo: { populate: ['ogImage'] },
           hero: { populate: { video: true, thumbnail: true } },
           artist_section: {
             populate: {

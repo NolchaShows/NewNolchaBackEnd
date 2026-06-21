@@ -40,20 +40,6 @@ export interface AboutDifferentiatorsSection extends Struct.ComponentSchema {
   };
 }
 
-export interface AboutPressSection extends Struct.ComponentSchema {
-  collectionName: 'components_about_press_sections';
-  info: {
-    displayName: 'Press';
-    icon: 'book';
-  };
-  attributes: {
-    label: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    viewMoreText: Schema.Attribute.String;
-    viewMoreUrl: Schema.Attribute.String;
-  };
-}
-
 export interface AboutServiceStory extends Struct.ComponentSchema {
   collectionName: 'components_about_service_stories';
   info: {
@@ -134,28 +120,6 @@ export interface BlocksEveningRecapSlide extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksFashionGridSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_fashion_grid_sections';
-  info: {
-    displayName: 'Fashion Grid';
-    icon: 'grid';
-  };
-  attributes: {
-    bottomMedia: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-    leftMedia: Schema.Attribute.Media<'images' | 'videos'>;
-    middleMedia1: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-    middleMedia2: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-    middleMedia3: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-    rightMedia: Schema.Attribute.Media<'images' | 'videos'>;
-    topMedia: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-  };
-}
-
 export interface BlocksGallery extends Struct.ComponentSchema {
   collectionName: 'components_blocks_galleries';
   info: {
@@ -180,32 +144,6 @@ export interface BlocksGalleryItem extends Struct.ComponentSchema {
   };
 }
 
-export interface BlocksImageTextSection extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_image_text_sections';
-  info: {
-    displayName: 'Image + Text';
-    icon: 'picture';
-  };
-  attributes: {
-    description: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images'>;
-    tags: Schema.Attribute.Component<'blocks.tag', true>;
-    tagsLabel: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface BlocksParagraph extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_paragraphs';
-  info: {
-    displayName: 'Paragraph';
-    icon: 'align-left';
-  };
-  attributes: {
-    text: Schema.Attribute.RichText;
-  };
-}
-
 export interface BlocksTag extends Struct.ComponentSchema {
   collectionName: 'components_blocks_tags';
   info: {
@@ -215,71 +153,6 @@ export interface BlocksTag extends Struct.ComponentSchema {
   attributes: {
     color: Schema.Attribute.String;
     text: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface BlocksThreeImageRow extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_three_image_rows';
-  info: {
-    description: 'A row of exactly 3 media items (image or video).';
-    displayName: 'Three Image Row';
-    icon: 'apps';
-  };
-  attributes: {
-    firstMedia: Schema.Attribute.Media<'images' | 'videos'> &
-      Schema.Attribute.Required;
-    secondMedia: Schema.Attribute.Media<'images' | 'videos'>;
-    thirdMedia: Schema.Attribute.Media<'images' | 'videos'>;
-  };
-}
-
-export interface DesignerParagraph extends Struct.ComponentSchema {
-  collectionName: 'components_designer_paragraphs';
-  info: {
-    description: 'A text paragraph for designer bio';
-    displayName: 'Paragraph';
-    icon: 'align-left';
-  };
-  attributes: {
-    text: Schema.Attribute.RichText & Schema.Attribute.Required;
-  };
-}
-
-export interface DesignerSection extends Struct.ComponentSchema {
-  collectionName: 'components_designer_sections';
-  info: {
-    description: "A section showcasing designer's work category";
-    displayName: 'Designer Block';
-    icon: 'layer';
-  };
-  attributes: {
-    description: Schema.Attribute.RichText;
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface DesignerSliderImage extends Struct.ComponentSchema {
-  collectionName: 'components_designer_slider_images';
-  info: {
-    description: 'An image for the designer slider';
-    displayName: 'Slider Image';
-    icon: 'picture';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-  };
-}
-
-export interface DesignerSocialImage extends Struct.ComponentSchema {
-  collectionName: 'components_designer_social_images';
-  info: {
-    description: 'A social media image for the designer';
-    displayName: 'Social Image';
-    icon: 'picture';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }
 
@@ -339,16 +212,6 @@ export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
   };
 }
 
-export interface HomeCarouselTextItem extends Struct.ComponentSchema {
-  collectionName: 'components_home_carousel_text_items';
-  info: {
-    displayName: 'Carousel Text Item';
-  };
-  attributes: {
-    text: Schema.Attribute.String;
-  };
-}
-
 export interface HomeContactSection extends Struct.ComponentSchema {
   collectionName: 'components_home_contact_sections';
   info: {
@@ -375,17 +238,6 @@ export interface HomeImageGallerySlider extends Struct.ComponentSchema {
   };
   attributes: {
     images: Schema.Attribute.Media<'images', true>;
-  };
-}
-
-export interface HomeLogoItem extends Struct.ComponentSchema {
-  collectionName: 'components_home_logo_items';
-  info: {
-    displayName: 'Logo Item';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'>;
-    name: Schema.Attribute.String;
   };
 }
 
@@ -460,17 +312,6 @@ export interface HomeSpeakerItem extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String;
     twitter: Schema.Attribute.String;
-  };
-}
-
-export interface HomeSpeakerSection extends Struct.ComponentSchema {
-  collectionName: 'components_home_speaker_sections';
-  info: {
-    displayName: 'Speaker';
-  };
-  attributes: {
-    speakers: Schema.Attribute.Component<'home.speaker-item', true>;
-    title: Schema.Attribute.String;
   };
 }
 
@@ -549,7 +390,6 @@ export interface PressMediaCoverage extends Struct.ComponentSchema {
   attributes: {
     image: Schema.Attribute.Media<'images'>;
     linkText: Schema.Attribute.String;
-    linkUrl: Schema.Attribute.String;
     paragraphText: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -722,31 +562,6 @@ export interface SharedNavigationItem extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedPartnerItem extends Struct.ComponentSchema {
-  collectionName: 'components_shared_partner_items';
-  info: {
-    description: 'Reusable partner logo pair';
-    displayName: 'Partner Item';
-  };
-  attributes: {
-    primary: Schema.Attribute.Media<'images'>;
-    secondary: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface SharedPartnerSection extends Struct.ComponentSchema {
-  collectionName: 'components_shared_partner_sections';
-  info: {
-    description: 'Reusable partner/logo wall section';
-    displayName: 'Partner';
-  };
-  attributes: {
-    description: Schema.Attribute.RichText;
-    partners: Schema.Attribute.Component<'shared.partner-item', true>;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -761,17 +576,6 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedTextItem extends Struct.ComponentSchema {
-  collectionName: 'components_shared_text_items';
-  info: {
-    description: 'Reusable single text entry';
-    displayName: 'Text Item';
-  };
-  attributes: {
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedTweetItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_tweet_items';
   info: {
@@ -783,112 +587,33 @@ export interface SharedTweetItem extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedVideoHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_shared_video_hero_sections';
-  info: {
-    description: 'Reusable video hero configuration for marketing pages';
-    displayName: 'Video Hero';
-  };
-  attributes: {
-    firstPart: Schema.Attribute.String & Schema.Attribute.Required;
-    secondPart: Schema.Attribute.String;
-    video: Schema.Attribute.Media<'files' | 'videos'>;
-  };
-}
-
-export interface WhiteLabelCtaSection extends Struct.ComponentSchema {
-  collectionName: 'components_white_label_cta_sections';
-  info: {
-    description: 'White-label call to action block';
-    displayName: 'CTA';
-  };
-  attributes: {
-    backgroundImage: Schema.Attribute.Media<'images'>;
-    ctaLabel: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Get Started'>;
-    ctaUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/contact-us'>;
-    description: Schema.Attribute.RichText;
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface WhiteLabelInfrastructureItem extends Struct.ComponentSchema {
-  collectionName: 'components_white_label_infrastructure_items';
-  info: {
-    description: 'Single white-label infrastructure tile';
-    displayName: 'Infrastructure Item';
-  };
-  attributes: {
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface WhiteLabelInfrastructureSection
-  extends Struct.ComponentSchema {
-  collectionName: 'components_white_label_infrastructure_sections';
-  info: {
-    description: 'White-label infrastructure grid and supporting copy';
-    displayName: 'Infrastructure';
-  };
-  attributes: {
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
-    paragraph: Schema.Attribute.RichText;
-    tiles: Schema.Attribute.Component<'white-label.infrastructure-item', true>;
-  };
-}
-
-export interface WhiteLabelIntroSection extends Struct.ComponentSchema {
-  collectionName: 'components_white_label_intro_sections';
-  info: {
-    description: 'White-label intro section with image and copy';
-    displayName: 'Intro';
-  };
-  attributes: {
-    heading: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'>;
-    paragraph: Schema.Attribute.RichText;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.clients-section': AboutClientsSection;
       'about.differentiator-item': AboutDifferentiatorItem;
       'about.differentiators-section': AboutDifferentiatorsSection;
-      'about.press-section': AboutPressSection;
       'about.service-story': AboutServiceStory;
       'about.services-section': AboutServicesSection;
       'about.statement-section': AboutStatementSection;
       'about.text-item': AboutTextItem;
       'blocks.evening-recap-section': BlocksEveningRecapSection;
       'blocks.evening-recap-slide': BlocksEveningRecapSlide;
-      'blocks.fashion-grid-section': BlocksFashionGridSection;
       'blocks.gallery': BlocksGallery;
       'blocks.gallery-item': BlocksGalleryItem;
-      'blocks.image-text-section': BlocksImageTextSection;
-      'blocks.paragraph': BlocksParagraph;
       'blocks.tag': BlocksTag;
-      'blocks.three-image-row': BlocksThreeImageRow;
-      'designer.paragraph': DesignerParagraph;
-      'designer.section': DesignerSection;
-      'designer.slider-image': DesignerSliderImage;
-      'designer.social-image': DesignerSocialImage;
       'experience.hero': ExperienceHero;
       'home.accordion-item': HomeAccordionItem;
       'home.artist-section': HomeArtistSection;
       'home.build-momentum-section': HomeBuildMomentumSection;
-      'home.carousel-text-item': HomeCarouselTextItem;
       'home.contact-section': HomeContactSection;
       'home.image-gallery-slider': HomeImageGallerySlider;
-      'home.logo-item': HomeLogoItem;
       'home.logo-slider': HomeLogoSlider;
       'home.nolcha-experience-section': HomeNolchaExperienceSection;
       'home.rich-paragraph': HomeRichParagraph;
       'home.service-item': HomeServiceItem;
       'home.service-section': HomeServiceSection;
       'home.speaker-item': HomeSpeakerItem;
-      'home.speaker-section': HomeSpeakerSection;
       'home.text-hero-section': HomeTextHeroSection;
       'home.text-hero-slide': HomeTextHeroSlide;
       'home.upcoming-event': HomeUpcomingEvent;
@@ -905,16 +630,8 @@ declare module '@strapi/strapi' {
       'shared.footer-social-link': SharedFooterSocialLink;
       'shared.navigation-child-item': SharedNavigationChildItem;
       'shared.navigation-item': SharedNavigationItem;
-      'shared.partner-item': SharedPartnerItem;
-      'shared.partner-section': SharedPartnerSection;
       'shared.seo': SharedSeo;
-      'shared.text-item': SharedTextItem;
       'shared.tweet-item': SharedTweetItem;
-      'shared.video-hero-section': SharedVideoHeroSection;
-      'white-label.cta-section': WhiteLabelCtaSection;
-      'white-label.infrastructure-item': WhiteLabelInfrastructureItem;
-      'white-label.infrastructure-section': WhiteLabelInfrastructureSection;
-      'white-label.intro-section': WhiteLabelIntroSection;
     }
   }
 }

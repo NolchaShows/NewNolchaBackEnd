@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "required": false
-    },
     "heroVideo": {
       "type": "media",
       "multiple": false,
@@ -41,11 +36,6 @@
     "clientsSection": {
       "type": "component",
       "component": "about.clients-section",
-      "required": false
-    },
-    "pressSection": {
-      "type": "component",
-      "component": "about.press-section",
       "required": false
     }
   }

@@ -12,11 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "seo": {
-      "type": "component",
-      "component": "shared.seo",
-      "required": false
-    },
     "hero": {
       "type": "component",
       "component": "experience.hero",

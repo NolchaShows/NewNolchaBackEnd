@@ -16,9 +16,6 @@
     "linkText": {
       "type": "string"
     },
-    "linkUrl": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
       "multiple": false,
