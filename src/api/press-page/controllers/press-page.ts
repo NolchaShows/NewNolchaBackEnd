@@ -9,9 +9,9 @@ export default factories.createCoreController(UID, () => ({
       ...ctx.query,
       populate: {
         mediaCoverage: { populate: ['image'] },
+        statementSection: true,
         pressCards: {
           populate: ['newsPaperLogo', 'image'],
-          pagination: { limit: 100 },
         },
       },
     };
