@@ -206,6 +206,7 @@ export interface HomeBuildMomentumSection extends Struct.ComponentSchema {
     ctaText: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'GET IN TOUCH'>;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/#contact'>;
+    eyebrow: Schema.Attribute.String;
     heading: Schema.Attribute.String;
     logos: Schema.Attribute.Media<'images', true>;
     paragraphs: Schema.Attribute.Component<'home.rich-paragraph', true>;
