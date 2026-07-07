@@ -11,12 +11,6 @@ export default factories.createCoreController(
         select: ['title', 'slug', 'publishedAt'],
         populate: {
           listingImage: true,
-          hero: {
-            populate: {
-              thumbnail: true,
-              video: true,
-            },
-          },
         },
         orderBy: { publishedAt: 'desc' },
       });
