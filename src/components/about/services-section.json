@@ -7,7 +7,7 @@
   "options": {},
   "attributes": {
     "label": { "type": "string" },
-    "title": { "type": "string" },
+    "title": { "type": "richtext" },
     "ctaText": { "type": "string" },
     "ctaUrl": { "type": "string" },
     "video": {

@@ -63,7 +63,7 @@ export interface AboutServicesSection extends Struct.ComponentSchema {
     ctaUrl: Schema.Attribute.String;
     label: Schema.Attribute.String;
     stories: Schema.Attribute.Component<'about.service-story', true>;
-    title: Schema.Attribute.String;
+    title: Schema.Attribute.RichText;
     video: Schema.Attribute.Media<'videos'>;
   };
 }
