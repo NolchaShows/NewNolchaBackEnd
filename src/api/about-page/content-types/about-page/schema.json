@@ -26,7 +26,15 @@
     "differentiatorsSection": {
       "type": "component",
       "component": "about.differentiators-section",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
     },
     "servicesSection": {
       "type": "component",

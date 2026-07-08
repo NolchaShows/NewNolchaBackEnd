@@ -449,7 +449,15 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     differentiatorsSection: Schema.Attribute.Component<
       'about.differentiators-section',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          visible: false;
+        };
+        'content-type-builder': {
+          visible: false;
+        };
+      }>;
     heroVideo: Schema.Attribute.Media<'videos'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

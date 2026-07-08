@@ -5,7 +5,7 @@ const UID = 'api::about-page.about-page' as any;
 const ABOUT_POPULATE = {
   heroVideo: true,
   statementSection: { populate: ['rightItems'] },
-  differentiatorsSection: { populate: ['items'] },
+  // differentiatorsSection hidden from site + API responses
   servicesSection: { populate: ['stories', 'video'] },
   clientsSection: { populate: ['logos'] },
 };
