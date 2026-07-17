@@ -20,7 +20,7 @@
     "video": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["videos"]
+      "allowedTypes": ["images", "videos"]
     }
   }
 }
