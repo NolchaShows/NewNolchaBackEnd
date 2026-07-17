@@ -139,9 +139,25 @@ export default factories.createCoreController(UID, ({ strapi }) => ({
       return ctx.notFound('Home page not found');
     }
 
+    let sharedTweetCarousel = relationEntity?.shared_tweet_carousel ?? null;
+
+    // Fallback: homepage Shared Tweet Carousel entry (key=homepage) when the
+    // Home relation isn't populated by Document Service / isn't linked yet.
+    if (!sharedTweetCarousel) {
+      sharedTweetCarousel = await strapi.db
+        .query('api::shared-tweet-carousel.shared-tweet-carousel' as any)
+        .findOne({
+          where: {
+            key: 'homepage',
+            publishedAt: { $notNull: true },
+          },
+          populate: ['items'],
+        });
+    }
+
     const merged = {
       ...(componentEntity || {}),
-      shared_tweet_carousel: relationEntity?.shared_tweet_carousel ?? null,
+      shared_tweet_carousel: sharedTweetCarousel ?? null,
       shared_speaker_section: relationEntity?.shared_speaker_section ?? null,
     };
 

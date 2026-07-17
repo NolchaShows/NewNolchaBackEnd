@@ -115,6 +115,7 @@
       "relation": "manyToMany",
       "target": "api::experience-page.experience-page",
       "required": false,
+      "visible": false,
       "pluginOptions": {
         "content-manager": {
           "visible": false

@@ -1,5 +1,81 @@
 import type { Core } from '@strapi/strapi';
 
+const HOME_PAGE_UID = 'api::home-page.home-page';
+
+type ContentManagerLayoutRow = Array<{ name?: string; size?: number }>;
+
+type ContentManagerConfiguration = {
+  layouts?: {
+    list?: string[];
+    edit?: ContentManagerLayoutRow[];
+    editRelations?: string[];
+  };
+  metadatas?: Record<
+    string,
+    {
+      edit?: { visible?: boolean; editable?: boolean; [key: string]: unknown };
+      list?: Record<string, unknown>;
+    }
+  >;
+  [key: string]: unknown;
+};
+
+async function hideHomePageFieldsInContentManager(
+  strapi: Core.Strapi,
+  fieldNames: string[]
+) {
+  try {
+    const store = strapi.store({ type: 'plugin', name: 'content_manager' });
+    const storeKey = `configuration_content_types::${HOME_PAGE_UID}`;
+    const current = (await store.get({ key: storeKey })) as
+      | ContentManagerConfiguration
+      | null;
+
+    if (!current || typeof current !== 'object') return;
+
+    const hidden = new Set(fieldNames);
+    const next: ContentManagerConfiguration = {
+      ...current,
+      layouts: { ...(current.layouts || {}) },
+      metadatas: { ...(current.metadatas || {}) },
+    };
+
+    if (Array.isArray(next.layouts?.list)) {
+      next.layouts.list = next.layouts.list.filter((name) => !hidden.has(name));
+    }
+
+    if (Array.isArray(next.layouts?.editRelations)) {
+      next.layouts.editRelations = next.layouts.editRelations.filter(
+        (name) => !hidden.has(name)
+      );
+    }
+
+    if (Array.isArray(next.layouts?.edit)) {
+      next.layouts.edit = next.layouts.edit
+        .map((row) => row.filter((field) => !hidden.has(String(field?.name || ''))))
+        .filter((row) => row.length > 0);
+    }
+
+    for (const fieldName of fieldNames) {
+      const existingMeta = next.metadatas?.[fieldName] || {};
+      next.metadatas![fieldName] = {
+        ...existingMeta,
+        edit: {
+          ...(existingMeta.edit || {}),
+          visible: false,
+          editable: false,
+        },
+      };
+    }
+
+    await store.set({ key: storeKey, value: next });
+  } catch (error) {
+    strapi.log.warn(
+      `Failed to hide Home page fields in Content Manager: ${String(error)}`
+    );
+  }
+}
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -217,6 +293,13 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
+    // Hide deprecated Home fields from the Content Manager edit view.
+    // pluginOptions alone is not enough when a saved layout still includes them.
+    await hideHomePageFieldsInContentManager(strapi, [
+      'featured_experiences',
+      'nolcha_experience_section',
+    ]);
+
     // Ensure Public role can read Experience Pages via the Content API (find + findOne).
     // In Strapi v5 users-permissions stores enabled permissions as records in `up_permissions`.
     const publicRole = await strapi.db.query('plugin::users-permissions.role').findOne({
