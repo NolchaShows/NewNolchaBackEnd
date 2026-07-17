@@ -83,12 +83,7 @@ const BELOW_FOLD_POPULATE = {
     },
   },
   feature_banner_one: true,
-  nolcha_experience_section: {
-    populate: {
-      main_image: true,
-      accordion_sections: true,
-    },
-  },
+  // nolcha_experience_section hidden from site + API responses
   press_media_image: true,
   artist_section: {
     populate: {

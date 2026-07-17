@@ -61,7 +61,15 @@
     "nolcha_experience_section": {
       "type": "component",
       "component": "home.nolcha-experience-section",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
     },
     "shared_speaker_section": {
       "type": "relation",

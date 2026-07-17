@@ -886,7 +886,15 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     nolcha_experience_section: Schema.Attribute.Component<
       'home.nolcha-experience-section',
       false
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          visible: false;
+        };
+        'content-type-builder': {
+          visible: false;
+        };
+      }>;
     press_media_image: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
     service_section: Schema.Attribute.Component<'home.service-section', false>;
