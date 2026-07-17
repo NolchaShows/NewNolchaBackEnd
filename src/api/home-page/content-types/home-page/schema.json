@@ -114,7 +114,15 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::experience-page.experience-page",
-      "required": false
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
     },
     "contact_section": {
       "type": "component",

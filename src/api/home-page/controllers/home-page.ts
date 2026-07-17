@@ -29,8 +29,11 @@ const ABOVE_FOLD_POPULATE = {
   },
 };
 
-/** Below-the-fold: everything else with full nested relations. */
-const BELOW_FOLD_POPULATE = {
+/**
+ * Below-the-fold components/media. Cross-collection relations are loaded separately
+ * via the Document Service — `db.query` often omits them in Strapi 5.
+ */
+const BELOW_FOLD_COMPONENT_POPULATE = {
   upcoming_events_section: {
     populate: {
       events: {
@@ -67,11 +70,6 @@ const BELOW_FOLD_POPULATE = {
       },
     },
   },
-  shared_speaker_section: {
-    populate: {
-      speakers: { populate: ['image'] },
-    },
-  },
   texthero_section: {
     populate: {
       slides: { populate: ['main_image', 'second_image', 'logo_image'] },
@@ -83,7 +81,6 @@ const BELOW_FOLD_POPULATE = {
     },
   },
   feature_banner_one: true,
-  // nolcha_experience_section hidden from site + API responses
   press_media_image: true,
   artist_section: {
     populate: {
@@ -97,53 +94,58 @@ const BELOW_FOLD_POPULATE = {
       items: { populate: ['image'] },
     },
   },
-  shared_tweet_carousel: { populate: ['items'] },
-  featured_experiences: {
-    populate: {
-      hero: { populate: ['video', 'thumbnail'] },
-      listingImage: true,
-      detail_rows: { populate: ['tags'] },
-      gallery: {
-        populate: {
-          standard_media: true,
-          featured_media: true,
-          featured_content_sections: true,
-        },
-      },
-    },
-  },
   contact_section: { populate: ['background_image', 'video', 'sponsors_image'] },
 };
 
-export default factories.createCoreController(
-  UID,
-  ({ strapi }) => ({
-    async find(ctx) {
-      const entity = await strapi.db.query(UID).findOne({
-        where: { publishedAt: { $notNull: true } },
-        populate: ABOVE_FOLD_POPULATE,
-      });
-
-      if (!entity) {
-        return ctx.notFound('Home page not found');
-      }
-
-      const sanitized = await this.sanitizeOutput(entity, ctx);
-      return this.transformResponse(sanitized);
+/** Relations that `db.query` drops — load with Document Service. */
+const BELOW_FOLD_RELATION_POPULATE = {
+  shared_tweet_carousel: { populate: ['items'] },
+  shared_speaker_section: {
+    populate: {
+      speakers: { populate: ['image'] },
     },
+  },
+  // featured_experiences hidden from site + API responses
+};
 
-    async belowFold(ctx) {
-      const entity = await strapi.db.query(UID).findOne({
+export default factories.createCoreController(UID, ({ strapi }) => ({
+  async find(ctx) {
+    const entity = await strapi.db.query(UID).findOne({
+      where: { publishedAt: { $notNull: true } },
+      populate: ABOVE_FOLD_POPULATE,
+    });
+
+    if (!entity) {
+      return ctx.notFound('Home page not found');
+    }
+
+    const sanitized = await this.sanitizeOutput(entity, ctx);
+    return this.transformResponse(sanitized);
+  },
+
+  async belowFold(ctx) {
+    const [componentEntity, relationEntity] = await Promise.all([
+      strapi.db.query(UID).findOne({
         where: { publishedAt: { $notNull: true } },
-        populate: BELOW_FOLD_POPULATE,
-      });
+        populate: BELOW_FOLD_COMPONENT_POPULATE,
+      }),
+      strapi.documents(UID).findFirst({
+        status: 'published',
+        populate: BELOW_FOLD_RELATION_POPULATE,
+      }),
+    ]);
 
-      if (!entity) {
-        return ctx.notFound('Home page not found');
-      }
+    if (!componentEntity && !relationEntity) {
+      return ctx.notFound('Home page not found');
+    }
 
-      const sanitized = await this.sanitizeOutput(entity, ctx);
-      return this.transformResponse(sanitized);
-    },
-  })
-);
+    const merged = {
+      ...(componentEntity || {}),
+      shared_tweet_carousel: relationEntity?.shared_tweet_carousel ?? null,
+      shared_speaker_section: relationEntity?.shared_speaker_section ?? null,
+    };
+
+    const sanitized = await this.sanitizeOutput(merged, ctx);
+    return this.transformResponse(sanitized);
+  },
+}));

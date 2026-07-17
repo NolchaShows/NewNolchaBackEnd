@@ -869,7 +869,15 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     featured_experiences: Schema.Attribute.Relation<
       'manyToMany',
       'api::experience-page.experience-page'
-    >;
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          visible: false;
+        };
+        'content-type-builder': {
+          visible: false;
+        };
+      }>;
     gallery_section: Schema.Attribute.Component<'blocks.gallery', false>;
     hero: Schema.Attribute.Component<'experience.hero', false>;
     image_gallery_slider: Schema.Attribute.Component<
